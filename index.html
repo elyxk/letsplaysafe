@@ -1016,7 +1016,6 @@ function initMap(){
   SH_ICON=L.divIcon({html:`<div style="background:#FF6B6B;width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(255,107,107,.4);font-size:18px">🛡️</div>`,className:'',iconSize:[36,36],iconAnchor:[18,18]});
   map=L.map('map',{center:[31.5,35.0],zoom:8,zoomControl:false,attributionControl:false});
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{maxZoom:19}).addTo(map);
-  L.control.zoom({position:'bottomright'}).addTo(map);
   const RecenterCtrl=L.Control.extend({options:{position:'bottomright'},onAdd:function(){
     const btn=L.DomUtil.create('button','');
     btn.id='recenter-btn';btn.innerHTML='📍';btn.title='מצא אותי';
@@ -1026,6 +1025,7 @@ function initMap(){
     return btn;
   }});
   new RecenterCtrl().addTo(map);
+  L.control.zoom({position:'bottomright'}).addTo(map);
   pgCluster=L.markerClusterGroup({maxClusterRadius:50,disableClusteringAtZoom:16,spiderfyOnMaxZoom:true,showCoverageOnHover:false});
   shLayer=L.layerGroup();
   shLayer.addTo(map);pgCluster.addTo(map);
@@ -1270,6 +1270,7 @@ function closeDrawer(){
 function buildPgDrw(p){
   const name = pgLabel(p);
   const addrLine = (p.address && p.address.trim()) ? `<div class="drw-addr">${esc(p.address)}</div>` : '';
+  const pgNotesHtml = (p.notes && p.notes.trim()) ? `<div class="drw-notes">${esc(p.notes)}</div>` : '';
   let distHtml = '';
   if(userLoc){
     const d = hav(userLoc.lat, userLoc.lng, p.lat, p.lng);
@@ -1282,7 +1283,7 @@ function buildPgDrw(p){
     const sName = shLabel(s) || s.city || '';
     const sd = userLoc ? hav(userLoc.lat, userLoc.lng, s.lat, s.lng) : hav(p.lat, p.lng, s.lat, s.lng);
     const sb2 = userLoc ? brng(userLoc.lat, userLoc.lng, s.lat, s.lng) : brng(p.lat, p.lng, s.lat, s.lng);
-    const meta = [typeLabel(s.type), s.accessible ? t('acc') : ''].filter(Boolean).join(' · ');
+    const meta = [typeLabel(s.type), s.accessible ? t('acc') : '', s.notes||''].filter(Boolean).join(' · ');
     return `<div class="srow" onclick="openById('${esc(s.id)}','shelter')">
       <div class="srow-icon">🛡️</div>
       <div class="srow-info">
@@ -1299,6 +1300,7 @@ function buildPgDrw(p){
       <div>
         <div class="drw-title">${esc(name)}</div>
         ${addrLine}
+        ${pgNotesHtml}
       </div>
     </div>
     <button id="drw-close" onclick="closeDrawer()" aria-label="סגור">✕</button>
@@ -1317,6 +1319,7 @@ function buildShDrw(s){
   const titleText = 'מקלט' + (addr ? ' — ' + addr : (city ? ' — ' + city : ''));
   const cityLine = (addr && city && addr !== city) ? `<div class="drw-addr">${esc(city)}</div>` : '';
   const accBadge = s.accessible ? `<span class="badge bg-blue">${t('acc')}</span>` : '';
+  const shNotesHtml = (s.notes && s.notes.trim()) ? `<div class="drw-notes">${esc(s.notes)}</div>` : '';
   let distHtml = '';
   if(userLoc){
     const d = hav(userLoc.lat, userLoc.lng, s.lat, s.lng);
@@ -1340,6 +1343,7 @@ function buildShDrw(s){
       <span class="badge bg-grey">${typeLabel(s.type)}</span>
       ${accBadge}
     </div>
+    ${shNotesHtml}
     ${distHtml}
     <a class="btn-walk" href="${mapsUrl}" target="_blank" rel="noopener">${t('showRt')}</a>
     <div id="rev-sec"><div class="rev-loading">טוען ביקורות...</div></div>
