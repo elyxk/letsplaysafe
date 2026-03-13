@@ -939,31 +939,44 @@ const mobile=()=>window.innerWidth<768;
 // DATA — city/tile based
 // ===========================
 async function loadManifest(){
+  // Always fetch manifest fresh (it's tiny ~3KB) so we always get the latest generatedAt
+  // which is used to invalidate city file caches when data is updated
   try{
-    const c=localStorage.getItem(MANIFEST_KEY);
-    if(c){const m=JSON.parse(c);if((Date.now()-new Date(m.generatedAt))/86400000<DATA_TTL)return m;}
-  }catch(e){}
-  const r=await fetch('./data/manifest.json');
-  if(!r.ok)throw new Error('manifest fetch failed');
-  const m=await r.json();
-  try{localStorage.setItem(MANIFEST_KEY,JSON.stringify(m));}catch(e){}
-  return m;
+    const r=await fetch('./data/manifest.json');
+    if(!r.ok)throw new Error('manifest fetch failed');
+    const m=await r.json();
+    try{localStorage.setItem(MANIFEST_KEY,JSON.stringify(m));}catch(e){}
+    return m;
+  }catch(e){
+    // Fallback to cached manifest if fetch fails (offline)
+    try{
+      const c=localStorage.getItem(MANIFEST_KEY);
+      if(c)return JSON.parse(c);
+    }catch(e2){}
+    throw e;
+  }
 }
 
 async function loadCityFile(key){
   const cacheKey=CITY_KEY_PFX+key;
+  const manifestTs=new Date(manifestData.generatedAt).getTime();
   try{
     const c=localStorage.getItem(cacheKey);
     if(c){
-      const t=JSON.parse(c);
-      if((Date.now()-new Date(manifestData.generatedAt))/86400000<DATA_TTL)return t;
+      const wrapper=JSON.parse(c);
+      // Support both old format (raw file) and new format ({cachedAt, manifestTs, data})
+      const cachedManifestTs=wrapper._manifestTs||0;
+      const cachedAt=wrapper._cachedAt||0;
+      const data=wrapper._data||wrapper; // fallback: old cache stored raw file
+      const ageDays=(Date.now()-cachedAt)/86400000;
+      if(cachedManifestTs>=manifestTs&&ageDays<DATA_TTL)return data;
     }
   }catch(e){}
   try{
     const r=await fetch(`./data/${key}.json`);
     if(!r.ok)return{shelters:[],playgrounds:[]};
     const d=await r.json();
-    try{localStorage.setItem(cacheKey,JSON.stringify(d));}catch(e){}
+    try{localStorage.setItem(cacheKey,JSON.stringify({_manifestTs:manifestTs,_cachedAt:Date.now(),_data:d}));}catch(e){}
     return d;
   }catch(e){return{shelters:[],playgrounds:[]};}
 }
@@ -1019,13 +1032,13 @@ function initMap(){
   const RecenterCtrl=L.Control.extend({options:{position:'bottomright'},onAdd:function(){
     const btn=L.DomUtil.create('button','');
     btn.id='recenter-btn';btn.innerHTML='📍';btn.title='מצא אותי';
-    btn.style.cssText='width:34px;height:34px;font-size:18px;display:none;align-items:center;justify-content:center;background:white;border:1.5px solid rgba(0,0,0,0.09);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.15);cursor:pointer;margin-bottom:4px';
+    btn.style.cssText='width:34px;height:34px;font-size:18px;display:none;align-items:center;justify-content:center;background:white;border:1.5px solid rgba(0,0,0,0.09);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.15);cursor:pointer;margin-top:4px';
     L.DomEvent.on(btn,'click',recenterMap);
     L.DomEvent.disableClickPropagation(btn);
     return btn;
   }});
-  new RecenterCtrl().addTo(map);
   L.control.zoom({position:'bottomright'}).addTo(map);
+  new RecenterCtrl().addTo(map);
   pgCluster=L.markerClusterGroup({maxClusterRadius:50,disableClusteringAtZoom:16,spiderfyOnMaxZoom:true,showCoverageOnHover:false});
   shLayer=L.layerGroup();
   shLayer.addTo(map);pgCluster.addTo(map);
