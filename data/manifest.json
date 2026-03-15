@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-13T10:00:00.000Z",
+  "generatedAt": "2026-03-15T17:41:12.090Z",
   "step": 0.5,
   "latMin": 26,
   "lngMin": 33,
@@ -241,6 +241,20 @@
       },
       "shelterCount": 0,
       "playgroundCount": 18
+    },
+    {
+      "key": "bet_shemesh",
+      "name": "בית שמש",
+      "type": "city",
+      "source": "arcgis",
+      "bbox": {
+        "latMin": 31.7306,
+        "latMax": 31.7535,
+        "lngMin": 34.9582,
+        "lngMax": 34.9952
+      },
+      "shelterCount": 45,
+      "playgroundCount": 0
     },
     {
       "key": "tile_0_0",
