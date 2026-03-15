@@ -1,7 +1,7 @@
-# LetsGoPlay — Project Instructions
+# גינה בטוחה — Project Instructions
 
 ## Overview
-**LetsGoPlay** (לטס גו פליי) — a single-file website that helps Israeli parents find playgrounds near bomb shelters.
+**גינה בטוחה** ("Safe Garden") — a single-file website that helps Israeli parents find playgrounds near bomb shelters.
 
 ## Deliverable
 One file: `index.html` — all HTML, CSS, and JS inline. No framework, no build step.
@@ -133,10 +133,7 @@ When a municipality publishes better data via ArcGIS REST API:
 - Map always visible before GPS — never blank
 
 ### Pins
-| Type | Style |
-|---|---|
-| Playground | Green circle 🟢 |
-| Shelter | Coral/red circle 🔴 |
+See **Map Markers** in the Design System section above for exact colors and styles.
 
 ### Popups
 - **Playground tap**: name (fallback: `"מגרש משחקים"`), address (omit line if empty), distance from user, "מקלטים קרובים" list of 3 nearest shelters with distance in meters
@@ -152,25 +149,94 @@ When a municipality publishes better data via ArcGIS REST API:
 - "X" button exits emergency mode
 - No GPS → show `"אפשר גישה למיקום כדי להשתמש במצב חירום"`
 
-## UI / Design
+## UI / Design System
 
-- `dir="rtl"` `lang="he"` on `<html>`
-- Language switcher top-right: `עב | EN | FR`
-- Font: **Heebo** from Google Fonts
-- Emergency button color: `#FF6B6B`
-- Mobile-first — minimum 48px tap targets
-- Top bar: logo `"🛝 LetsGoPlay"`
-- Map skeleton visible immediately on load (tiles + UI chrome), spinner/placeholder overlay while data fetches, pins appear once data is ready
+### Brand Identity
+- **App name**: גינה בטוחה — always rendered two-tone: `<span style="color:#1BBCB3">גינה</span> <span style="color:#1C2D5E">בטוחה</span>`
+- **Mascot**: teal bird reading a map (from logo). Used as emoji `🐦` in sidebar and page title.
+- **Design language**: Duolingo ABC-inspired — playful, colorful, lots of white space, clean and minimal. Child-safe and friendly, never clinical or cold.
+- **Font**: **Heebo** (Hebrew-optimized, Google Fonts) — weights 400/500/600/700/800. Heebo at 800 weight is naturally rounded and playful enough without needing a separate display font.
 
-### CSS Design Tokens (from index.html)
+### Color Palette
+All colors are defined as CSS custom properties in `:root`. **Never use hardcoded hex values in new CSS — always use tokens.**
+
+| Token | Value | Usage |
+|---|---|---|
+| `--blue` | `#1BBCB3` | Primary actions, buttons, links, active states — the brand teal |
+| `--green` | `#4ECBA0` | Playground markers, icons, route button |
+| `--green-dark` | `#2A9A7A` | Playground hover/dark states |
+| `--coral` | `#FF6B35` | Shelter markers, emergency elements, shelter icons |
+| `--coral-dark` | `#E05520` | Shelter dark states |
+| `--coral-light` | `#FFF4EE` | Shelter tinted backgrounds |
+| `--orange` | `#F5A623` | Accent (review stars, location pin in logo) |
+| `--sky` | `#EAF8F6` | Teal-tinted info backgrounds, borders, hover states |
+| `--bg` | `#F7F9FB` | Page background — near-white, slightly warm |
+| `--white` | `#ffffff` | Cards, surfaces |
+| `--text` | `#1C2D5E` | Primary text — logo navy |
+| `--text2` | `#7B8BAA` | Secondary/metadata text |
+| `--text3` | `#BCC5D6` | Tertiary, disabled, placeholder |
+| `--border` | `rgba(28,45,94,0.07)` | Dividers, card borders |
+
+**Logo-extracted palette for reference (don't add new tokens without need):**
+- Teal: `#1BBCB3` · Navy: `#1C2D5E` · Orange: `#F5A623` · Soft green: `#5CC85C`
+
+### Typography
+- Font family: `'Heebo', sans-serif` via `--font`
+- Primary headings: `font-weight: 800`, `letter-spacing: -0.4px` to -0.5px
+- Body: `font-weight: 500–600`
+- Labels/metadata: `font-weight: 600–700`, `font-size: 11–13px`
+- Always use `color: var(--text)` for primary text, `var(--text2)` for secondary
+
+### Spacing & Shape
 ```css
---green-action: #34C759;
---blue-ui: #007AFF;
---coral: #FF6B6B;
---bg-light: #F0F7FF;
---sh-sm / --sh-md / --sh-lg   /* shadow scales */
---radius-sm: 10px ... --radius-xl: 28px
+--r-sm: 12px   /* inputs, tags, small cards */
+--r-md: 16px   /* standard cards, buttons */
+--r-lg: 22px   /* large containers */
+--r-xl: 28px   /* bottom sheets, modals, pill buttons */
 ```
+- Generous padding — never feel cramped
+- White space is intentional — lean into it
+
+### Shadows
+```css
+--sh-sm: 0 1px 4px rgba(28,45,94,0.06), 0 2px 8px rgba(28,45,94,0.05)
+--sh-md: 0 2px 12px rgba(28,45,94,0.08), 0 6px 24px rgba(28,45,94,0.07)
+--sh-lg: 0 4px 24px rgba(28,45,94,0.10), 0 12px 48px rgba(28,45,94,0.12)
+```
+Shadow tint is navy (`28,45,94`) not black — keeps them warm.
+
+### Component Patterns
+- **Buttons (primary)**: `background: var(--blue)`, white text, `border-radius: var(--r-md)` or `--r-xl`, `box-shadow: 0 4px 16px rgba(27,188,179,0.35)`, `min-height: 48px`
+- **Buttons (secondary/ghost)**: transparent bg, `color: var(--blue)`, `border: 2px solid rgba(27,188,179,0.30)`, hover → `background: var(--sky)`
+- **Active filter pills**: `background: var(--blue)`, white text, `box-shadow: 0 2px 8px rgba(27,188,179,0.30)`
+- **Cards**: white background, `border-radius: var(--r-md)`, `box-shadow: var(--sh-sm)` or `var(--sh-md)`
+- **Info/GPS cards**: `background: var(--sky)`, `border: 1px solid rgba(27,188,179,0.20)`
+- **Dividers/borders**: always `var(--border)` or `2px solid var(--sky)`
+- **Hover states on lists**: `background: var(--sky)` — never dark gray
+
+### Map Markers
+| Type | Style |
+|---|---|
+| Playground | Teal circle `#4ECBA0`, white SVG slide/swing icon, `box-shadow: 0 2px 10px rgba(78,203,160,.5)` |
+| Shelter | Orange-red teardrop `#FF6B35`, white shield chevron inside, white stroke |
+| Cluster (playgrounds) | Teal circle `#4ECBA0`, white count number |
+| Cluster (shelters) | Orange-red circle `#FF6B35`, white count number |
+| User location | Teal dot `var(--blue)`, pulsing teal ring |
+| User→shelter line | `color: #FF6B35`, weight 3, opacity 0.9 |
+
+### Emergency Mode
+- Full-screen gradient: `linear-gradient(160deg, #FF4500 0%, #FF6B35 100%)`
+- Strong and urgent — keep high contrast, large text
+- "Show on Map" button: white background, `color: var(--coral)`
+- Keep pulsing animation on emergency button: `emgPulse` keyframe with `rgba(255,107,53,...)` shadows
+
+### Layout Rules
+- `dir="rtl"` `lang="he"` on `<html>` at all times; flip to `ltr` only when English/French active
+- Mobile-first — all default styles are mobile, desktop overrides at `768px`
+- **Minimum 48px tap targets** on all interactive elements
+- Topbar: clean white `background: white`, teal bottom border `border-bottom: 2px solid var(--sky)`
+- Sidebar (desktop): `background: white`, teal left border `border-left: 2px solid var(--sky)`
+- Map skeleton always visible — never a blank screen before data loads
 
 ## Internationalization
 
