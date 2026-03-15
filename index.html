@@ -47,7 +47,7 @@ html,body{height:100%;overflow:hidden;font-family:var(--font);color:var(--text);
 button{font-family:var(--font);cursor:pointer;border:none;background:none}
 input,textarea{font-family:var(--font)}
 a{text-decoration:none;color:inherit}
-.tb-pill,.fp,.lcard,.btn-walk,.btn-add-rev,#emg-btn,.srow,.vt-btn{transition-timing-function:var(--spring)}
+.tb-pill,.fp,.lcard,.btn-walk-inline,.btn-add-rev,#emg-btn,.srow,.vt-btn{transition-timing-function:var(--spring)}
 
 /* ===== LAYOUT ===== */
 #app{display:flex;height:100%;position:relative;overflow:hidden}
@@ -438,12 +438,12 @@ a{text-decoration:none;color:inherit}
 .drw-notes{font-size:12px;font-style:italic;color:var(--text2);margin-top:2px}
 #drw-close{width:30px;height:30px;background:rgba(116,116,128,0.12);border-radius:50%;font-size:14px;color:var(--text2);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
 .drw-body{padding:0 20px 32px}
-.drw-dist{display:flex;align-items:center;padding:10px 0 14px;border-bottom:1px solid var(--border);margin-bottom:14px}
-.drw-dist-pill{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:20px;background:rgba(255,69,58,0.10)}
+.drw-action-row{display:flex;align-items:center;gap:10px;padding:10px 0 14px;border-bottom:1px solid var(--border);margin-bottom:14px}
+.drw-dist-pill{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:20px;background:rgba(255,69,58,0.10);flex-shrink:0}
 #drawer.pg .drw-dist-pill{background:rgba(52,199,89,0.12)}
-.drw-dist-num{font-size:20px;font-weight:800;color:var(--coral);line-height:1}
+.drw-dist-num{font-size:18px;font-weight:800;color:var(--coral);line-height:1}
 #drawer.pg .drw-dist-num{color:var(--green)}
-.drw-dist-lbl{font-size:13px;font-weight:600;color:var(--text2)}
+.drw-dist-lbl{font-size:12px;font-weight:600;color:var(--text2)}
 .badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
 .badge{padding:4px 10px;border-radius:20px;font-size:12px;font-weight:600;line-height:1}
 .bg-grey{background:rgba(116,116,128,0.12);color:var(--text)}
@@ -462,13 +462,16 @@ a{text-decoration:none;color:inherit}
 .srow-name{font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .srow-meta{font-size:12px;color:var(--text2);margin-top:1px}
 .srow-dist{font-size:15px;font-weight:800;color:var(--coral);flex-shrink:0}
-.btn-walk{
-  width:100%;background:var(--green);color:white;font-size:17px;font-weight:600;
-  padding:16px 20px;border-radius:var(--r-xl);min-height:54px;
-  display:flex;align-items:center;justify-content:center;gap:8px;letter-spacing:-0.2px;
-  margin-top:6px;transition:background .15s,transform .1s;text-decoration:none
+.btn-walk-inline{
+  flex:1;background:var(--green);color:white;font-size:15px;font-weight:600;
+  padding:12px 14px;border-radius:var(--r-md);min-height:46px;
+  display:flex;align-items:center;justify-content:center;gap:6px;letter-spacing:-0.1px;
+  transition:background .15s,transform .1s;text-decoration:none
 }
-.btn-walk:hover{background:var(--green-dark);transform:scale(0.98)}
+.btn-walk-inline:active{transform:scale(0.98)}
+#drawer.sh .btn-walk-inline{background:var(--coral)}
+/* Fallback full-width when no GPS (no dist pill) */
+.drw-action-row.no-dist .btn-walk-inline{width:100%}
 .drw-div{height:1px;background:var(--border);margin:18px 0 14px}
 
 /* ===== REVIEWS ===== */
@@ -864,7 +867,7 @@ const S = {
     sub:'גינות משחקים + מקלטים',find:'מצא גינות קרוב אליך',
     srchPh:'חפש שכונה, רחוב או עיר...',gpsTxt:'הפעל מיקום לראות גינות קרוב אליך',
     enableLoc:'אפשר גישה למיקום',srchAddr:'הכנס כתובת במקום',
-    emgOn:'🚨 מקלט הכי קרוב — אזעקה עכשיו!',emgOff:'הפעל מיקום לניווט רגלי מהיר',
+    emgOn:'אזעקה? מצא את המקלט הקרוב ←',emgOff:'הפעל מיקום לניווט רגלי מהיר',
     nearSh:'מקלטים קרובים',underground:'תת קרקעי',above:'מעל האדמה',
     acc:'♿ נגיש',showRt:'🗺️ הצג מסלול רגלי',showMap:'הצג על המפה',
     loading:'מחפש גינות ומקלטים...',pgDef:'גינת משחקים',
@@ -886,7 +889,7 @@ const S = {
     sub:'Playgrounds + Shelters',find:'Find playgrounds near me',
     srchPh:'Search neighborhood, street or city...',gpsTxt:'Enable location to see nearby playgrounds',
     enableLoc:'Allow Location',srchAddr:'Enter address instead',
-    emgOn:'🚨 Nearest Shelter — Emergency now!',emgOff:'Enable location for walking nav',
+    emgOn:'Siren? Find the nearest shelter →',emgOff:'Enable location for walking nav',
     nearSh:'Nearby Shelters',underground:'Underground',above:'Above Ground',
     acc:'♿ Accessible',showRt:'🗺️ Walking Route',showMap:'Show on Map',
     loading:'Finding nearby places...',pgDef:'Playground',
@@ -908,7 +911,7 @@ const S = {
     sub:'Aires de jeux + Abris',find:'Trouver des aires de jeux',
     srchPh:'Chercher un quartier, rue ou ville...',gpsTxt:'Activer la localisation',
     enableLoc:'Autoriser la localisation',srchAddr:'Saisir une adresse',
-    emgOn:"🚨 Abri le plus proche — Urgence!",emgOff:'Activer la localisation pour navigation',
+    emgOn:"Sirène ? Trouver l'abri le plus proche →",emgOff:'Activer la localisation pour navigation',
     nearSh:'Abris proches',underground:'Souterrain',above:'En surface',
     acc:'♿ Accessible',showRt:'🗺️ Itinéraire à pied',showMap:'Voir sur la carte',
     loading:'Recherche des endroits proches...',pgDef:'Aire de jeux',
@@ -1335,13 +1338,15 @@ function buildPgDrw(p){
   const name = pgLabel(p);
   const addrLine = (p.address && p.address.trim()) ? `<div class="drw-addr">${esc(p.address)}</div>` : '';
   const pgNotesHtml = (p.notes && p.notes.trim()) ? `<div class="drw-notes">${esc(p.notes)}</div>` : '';
+  const pgMapsUrl = `https://maps.google.com/?daddr=${p.lat},${p.lng}&travelmode=walking`;
   let distHtml = '';
   if(userLoc){
     const d = hav(userLoc.lat, userLoc.lng, p.lat, p.lng);
     const b = brng(userLoc.lat, userLoc.lng, p.lat, p.lng);
-    distHtml = `<div class="drw-dist"><div class="drw-dist-pill"><span class="drw-dist-num">${arrow(b)} ${fDist(d)}</span><span class="drw-dist-lbl">${t('walk')}</span></div></div>`;
+    distHtml = `<div class="drw-action-row"><div class="drw-dist-pill"><span class="drw-dist-num">${arrow(b)} ${fDist(d)}</span><span class="drw-dist-lbl">${t('walk')}</span></div><a class="btn-walk-inline" href="${pgMapsUrl}" target="_blank" rel="noopener">${t('showRt')}</a></div>`;
+  } else {
+    distHtml = `<div class="drw-action-row no-dist"><a class="btn-walk-inline" href="${pgMapsUrl}" target="_blank" rel="noopener">${t('showRt')}</a></div>`;
   }
-  const pgMapsUrl = `https://maps.google.com/?daddr=${p.lat},${p.lng}&travelmode=walking`;
   const fromLat = userLoc ? userLoc.lat : p.lat;
   const fromLng = userLoc ? userLoc.lng : p.lng;
   const shRows = nearSh(fromLat, fromLng, 3).map(s => {
@@ -1372,11 +1377,10 @@ function buildPgDrw(p){
   </div>
   <div class="drw-body">
     ${distHtml}
-    <a class="btn-walk" href="${pgMapsUrl}" target="_blank" rel="noopener">${t('showRt')}</a>
+    <div id="rev-sec"><div class="rev-loading">טוען ביקורות...</div></div>
     <div class="drw-div"></div>
     <div class="sec-title">${t('nearSh')}</div>
     ${shRows}
-    <div id="rev-sec"><div class="rev-loading">טוען ביקורות...</div></div>
   </div>`;
 }
 
@@ -1387,13 +1391,15 @@ function buildShDrw(s){
   const cityLine = (addr && city && addr !== city) ? `<div class="drw-addr">${esc(city)}</div>` : '';
   const accBadge = s.accessible ? `<span class="badge bg-blue">${t('acc')}</span>` : '';
   const shNotesHtml = (s.notes && s.notes.trim()) ? `<div class="drw-notes">${esc(s.notes)}</div>` : '';
+  const mapsUrl = `https://maps.google.com/?daddr=${s.lat},${s.lng}&travelmode=walking`;
   let distHtml = '';
   if(userLoc){
     const d = hav(userLoc.lat, userLoc.lng, s.lat, s.lng);
     const b = brng(userLoc.lat, userLoc.lng, s.lat, s.lng);
-    distHtml = `<div class="drw-dist"><div class="drw-dist-pill"><span class="drw-dist-num">${arrow(b)} ${fDist(d)}</span><span class="drw-dist-lbl">${t('walk')}</span></div></div>`;
+    distHtml = `<div class="drw-action-row"><div class="drw-dist-pill"><span class="drw-dist-num">${arrow(b)} ${fDist(d)}</span><span class="drw-dist-lbl">${t('walk')}</span></div><a class="btn-walk-inline" href="${mapsUrl}" target="_blank" rel="noopener">${t('showRt')}</a></div>`;
+  } else {
+    distHtml = `<div class="drw-action-row no-dist"><a class="btn-walk-inline" href="${mapsUrl}" target="_blank" rel="noopener">${t('showRt')}</a></div>`;
   }
-  const mapsUrl = `https://maps.google.com/?daddr=${s.lat},${s.lng}&travelmode=walking`;
   return `<div class="drw-handle"></div>
   <div class="drw-hdr">
     <div class="drw-icon-title">
@@ -1412,7 +1418,6 @@ function buildShDrw(s){
     </div>
     ${shNotesHtml}
     ${distHtml}
-    <a class="btn-walk" href="${mapsUrl}" target="_blank" rel="noopener">${t('showRt')}</a>
     <div id="rev-sec"><div class="rev-loading">טוען ביקורות...</div></div>
   </div>`;
 }
