@@ -271,17 +271,19 @@ a{text-decoration:none;color:inherit}
 }
 #loc-card.hidden{opacity:0;pointer-events:none;transform:translateX(-50%) translateY(12px);animation:none}
 @media(min-width:768px){#loc-card{display:none}}
-/* Dual icon mark */
-.lc-icons{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:20px}
-.lc-icon-circle{
-  width:60px;height:60px;border-radius:18px;
+/* Welcome card mascot */
+.lc-mascot{display:flex;align-items:flex-end;justify-content:center;gap:0;margin-bottom:4px;position:relative}
+.lc-bird{width:90px;height:90px;flex-shrink:0}
+.lc-scene-icons{display:flex;flex-direction:column;gap:8px;padding-bottom:6px;margin-right:-8px}
+.lc-scene-icon{
+  width:44px;height:44px;border-radius:13px;
   display:flex;align-items:center;justify-content:center;
-  font-size:28px;box-shadow:0 4px 12px rgba(28,45,94,0.10)
+  box-shadow:0 3px 8px rgba(28,45,94,0.12)
 }
-.lc-icon-circle.green{background:rgba(78,203,160,0.15)}
-.lc-icon-circle.coral{background:rgba(255,107,53,0.12)}
-/* Hide old single-icon element if still present */
-.lc-icon{display:none}
+.lc-scene-icon.green{background:rgba(78,203,160,0.15)}
+.lc-scene-icon.coral{background:rgba(255,107,53,0.10)}
+/* Hide old icon circles */
+.lc-icons,.lc-icon-circle,.lc-icon{display:none}
 .lc-city{font-size:22px;font-weight:800;letter-spacing:-0.5px;line-height:1.2;margin-bottom:8px;color:var(--text)}
 .lc-sub{font-size:14px;color:var(--text2);margin-bottom:24px;line-height:1.6}
 .lc-actions{display:flex;gap:8px;flex-direction:column}
@@ -352,49 +354,64 @@ a{text-decoration:none;color:inherit}
 .spinner{width:32px;height:32px;border:3px solid rgba(27,188,179,0.20);border-top-color:var(--blue);border-radius:50%;animation:spin .8s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .load-text{font-size:14px;font-weight:700;color:var(--text2)}
+@keyframes loadBird{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-10px) rotate(3deg)}}
 
 /* ===== FAKE MAP PLACEHOLDER ===== */
 /* Shown instead of Leaflet tiles until location is known */
 #map-placeholder{
   position:absolute;inset:0;z-index:1;
-  background-color:#EBF4F3;
-  /* Grid lines like map tiles */
-  background-image:
-    repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(27,188,179,.15) 40px),
-    repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(27,188,179,.15) 40px);
+  background:linear-gradient(180deg,#D6F0F8 0%,#EAF8F6 55%,#C8EDDB 100%);
   overflow:hidden;
 }
-/* Fake roads */
+/* Sky clouds */
 #map-placeholder::before{
-  content:'';position:absolute;inset:0;
+  content:'';position:absolute;
+  top:8%;left:0;right:0;height:60px;
   background:
-    linear-gradient(to bottom right,transparent 44%,rgba(255,255,255,.80) 45%,rgba(255,255,255,.80) 47%,transparent 48%),
-    linear-gradient(to bottom left,transparent 28%,rgba(255,255,255,.70) 29%,rgba(255,255,255,.70) 31%,transparent 32%),
-    linear-gradient(to right,transparent 18%,rgba(255,255,255,.60) 19%,rgba(255,255,255,.60) 21%,transparent 22%),
-    linear-gradient(to bottom,transparent 58%,rgba(255,255,255,.70) 59%,rgba(255,255,255,.70) 61%,transparent 62%),
-    linear-gradient(to right,transparent 60%,rgba(255,255,255,.55) 61%,rgba(255,255,255,.55) 63%,transparent 64%);
+    radial-gradient(ellipse 70px 28px at 15% 50%,rgba(255,255,255,.85) 60%,transparent 100%),
+    radial-gradient(ellipse 45px 20px at 22% 30%,rgba(255,255,255,.70) 60%,transparent 100%),
+    radial-gradient(ellipse 55px 22px at 28% 65%,rgba(255,255,255,.60) 60%,transparent 100%),
+    radial-gradient(ellipse 80px 30px at 62% 50%,rgba(255,255,255,.85) 60%,transparent 100%),
+    radial-gradient(ellipse 50px 22px at 70% 25%,rgba(255,255,255,.70) 60%,transparent 100%),
+    radial-gradient(ellipse 60px 24px at 78% 70%,rgba(255,255,255,.65) 60%,transparent 100%);
 }
-/* Fake green park blob */
+/* Green rolling hill at bottom */
 #map-placeholder::after{
   content:'';position:absolute;
-  width:180px;height:110px;border-radius:50%;
-  background:rgba(78,203,160,.15);
-  top:28%;right:12%;
-  box-shadow:0 0 0 60px rgba(78,203,160,.07);
+  bottom:-20px;left:-5%;right:-5%;height:42%;
+  background:#5CC85C;
+  border-radius:55% 55% 0 0 / 35% 35% 0 0;
+  opacity:.55;
 }
 /* Fake blurred pins scattered on placeholder */
 .fp-pin{
   position:absolute;
-  width:34px;height:34px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  font-size:15px;box-shadow:0 3px 12px rgba(28,45,94,.15);
   animation:fpFloat 3s ease-in-out infinite;
-  filter:blur(0.3px);opacity:.88;
-  border:2.5px solid white;
+  opacity:.92;
+  filter:drop-shadow(0 3px 8px rgba(28,45,94,.20));
 }
-.fp-pin.pg{background:#4ECBA0}
-.fp-pin.sh{background:#FF6B35}
-@keyframes fpFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+/* Playground pin: rounded square tile */
+.fp-pin.pg{
+  width:38px;height:38px;border-radius:13px;
+  background:#4ECBA0;border:2.5px solid white;
+}
+/* Shelter pin: circle with tail (like SH_ICON) */
+.fp-pin.sh{
+  width:38px;height:46px;flex-direction:column;
+  align-items:center;justify-content:flex-start;padding-top:3px;
+}
+.fp-pin.sh::after{
+  content:'';display:block;width:0;height:0;
+  border-left:7px solid transparent;border-right:7px solid transparent;
+  border-top:9px solid #FF6B35;margin-top:-1px;
+}
+.fp-pin-circle{
+  width:38px;height:38px;border-radius:50%;
+  background:#FF6B35;border:2.5px solid white;
+  display:flex;align-items:center;justify-content:center;
+}
+@keyframes fpFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 
 /* ===== USER DOT ===== */
 .udot-wrap{position:relative;width:22px;height:22px}
@@ -726,13 +743,62 @@ textarea.mod-input{resize:vertical;min-height:80px}
   <div id="map-area">
     <!-- Fake map placeholder (shown before location is granted, no network needed) -->
     <div id="map-placeholder">
-      <div class="fp-pin pg" style="top:20%;left:15%;animation-delay:.3s">🛝</div>
-      <div class="fp-pin sh" style="top:35%;left:58%;animation-delay:.9s">🛡️</div>
-      <div class="fp-pin pg" style="top:52%;left:32%;animation-delay:1.5s">🛝</div>
-      <div class="fp-pin sh" style="top:16%;left:70%;animation-delay:.6s">🛡️</div>
-      <div class="fp-pin pg" style="top:68%;left:74%;animation-delay:1.2s">🛝</div>
-      <div class="fp-pin sh" style="top:44%;left:8%;animation-delay:1.8s">🛡️</div>
-      <div class="fp-pin pg" style="top:75%;left:45%;animation-delay:.4s">🛝</div>
+      <!-- Playground pins: teal rounded-square tile with swing SVG -->
+      <div class="fp-pin pg" style="top:22%;left:14%;animation-delay:.3s">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round">
+          <line x1="5" y1="4" x2="5" y2="19"/><line x1="19" y1="4" x2="19" y2="19"/>
+          <line x1="5" y1="5" x2="19" y2="5"/>
+          <line x1="7" y1="5" x2="12" y2="14"/><line x1="17" y1="5" x2="12" y2="14"/>
+          <rect x="9" y="14" width="6" height="3" rx="1.5"/>
+        </svg>
+      </div>
+      <div class="fp-pin pg" style="top:50%;left:30%;animation-delay:1.5s">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round">
+          <line x1="5" y1="4" x2="5" y2="19"/><line x1="19" y1="4" x2="19" y2="19"/>
+          <line x1="5" y1="5" x2="19" y2="5"/>
+          <line x1="7" y1="5" x2="12" y2="14"/><line x1="17" y1="5" x2="12" y2="14"/>
+          <rect x="9" y="14" width="6" height="3" rx="1.5"/>
+        </svg>
+      </div>
+      <div class="fp-pin pg" style="top:65%;left:72%;animation-delay:1.2s">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round">
+          <line x1="5" y1="4" x2="5" y2="19"/><line x1="19" y1="4" x2="19" y2="19"/>
+          <line x1="5" y1="5" x2="19" y2="5"/>
+          <line x1="7" y1="5" x2="12" y2="14"/><line x1="17" y1="5" x2="12" y2="14"/>
+          <rect x="9" y="14" width="6" height="3" rx="1.5"/>
+        </svg>
+      </div>
+      <!-- Shelter pins: orange circle+tail with house SVG -->
+      <div class="fp-pin sh" style="top:30%;left:56%;animation-delay:.9s">
+        <div class="fp-pin-circle">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="3,12 12,4 21,12"/><rect x="7" y="12" width="10" height="9" rx="1.5"/>
+            <rect x="10" y="16" width="4" height="5" rx="1"/>
+          </svg>
+        </div>
+      </div>
+      <div class="fp-pin sh" style="top:14%;left:68%;animation-delay:.6s">
+        <div class="fp-pin-circle">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="3,12 12,4 21,12"/><rect x="7" y="12" width="10" height="9" rx="1.5"/>
+            <rect x="10" y="16" width="4" height="5" rx="1"/>
+          </svg>
+        </div>
+      </div>
+      <div class="fp-pin sh" style="top:42%;left:7%;animation-delay:1.8s">
+        <div class="fp-pin-circle">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="3,12 12,4 21,12"/><rect x="7" y="12" width="10" height="9" rx="1.5"/>
+            <rect x="10" y="16" width="4" height="5" rx="1"/>
+          </svg>
+        </div>
+      </div>
+      <!-- Path/road line suggestion -->
+      <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.18" viewBox="0 0 400 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 180 Q100 160 200 185 T400 170" stroke="white" stroke-width="8" fill="none"/>
+        <path d="M80 0 Q110 80 95 150 T120 300" stroke="white" stroke-width="6" fill="none"/>
+        <path d="M220 0 Q240 100 260 200 T250 300" stroke="white" stroke-width="5" fill="none"/>
+      </svg>
     </div>
     <div id="map"></div>
 
@@ -741,9 +807,59 @@ textarea.mod-input{resize:vertical;min-height:80px}
 
     <!-- Location pill: floating bottom pill to activate geolocation -->
     <div id="loc-card">
-      <div class="lc-icons">
-        <div class="lc-icon-circle green">🛝</div>
-        <div class="lc-icon-circle coral">🛡️</div>
+      <div class="lc-mascot">
+        <!-- Teal bird mascot reading map (matches logo) -->
+        <svg class="lc-bird" viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
+          <!-- Body -->
+          <ellipse cx="45" cy="56" rx="22" ry="24" fill="#1BBCB3"/>
+          <!-- White belly -->
+          <ellipse cx="45" cy="60" rx="13" ry="16" fill="#F0FFFE"/>
+          <!-- Head -->
+          <circle cx="45" cy="32" r="18" fill="#1BBCB3"/>
+          <!-- Eyes -->
+          <circle cx="38" cy="29" r="5.5" fill="white"/>
+          <circle cx="52" cy="29" r="5.5" fill="white"/>
+          <circle cx="39" cy="30" r="3" fill="#1C2D5E"/>
+          <circle cx="53" cy="30" r="3" fill="#1C2D5E"/>
+          <circle cx="40" cy="29" r="1" fill="white"/>
+          <circle cx="54" cy="29" r="1" fill="white"/>
+          <!-- Beak -->
+          <path d="M41 37 L45 41 L49 37 Z" fill="#F5A623"/>
+          <!-- Wing/arm holding map -->
+          <ellipse cx="26" cy="58" rx="7" ry="11" fill="#169E96" transform="rotate(-20 26 58)"/>
+          <!-- Map book -->
+          <rect x="28" y="52" width="22" height="16" rx="3" fill="#FFF8E7" stroke="#E5D5A0" stroke-width="1"/>
+          <line x1="39" y1="52" x2="39" y2="68" stroke="#E5D5A0" stroke-width="1"/>
+          <!-- Heart on map -->
+          <path d="M34 59 C34 57 36 56 37 58 C38 56 40 57 40 59 C40 61 37 63 37 63 C37 63 34 61 34 59Z" fill="#FF6B35" transform="scale(0.8) translate(5,5)"/>
+          <!-- Location pin above map -->
+          <circle cx="55" cy="44" r="4" fill="#F5A623"/>
+          <circle cx="55" cy="44" r="2" fill="white"/>
+          <path d="M55 48 L55 52" stroke="#F5A623" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Feet -->
+          <ellipse cx="38" cy="79" rx="6" ry="3" fill="#F5A623"/>
+          <ellipse cx="52" cy="79" rx="6" ry="3" fill="#F5A623"/>
+        </svg>
+        <!-- Side icons -->
+        <div class="lc-scene-icons">
+          <div class="lc-scene-icon green">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+              <line x1="4" y1="2" x2="4" y2="22" stroke="#4ECBA0" stroke-width="2.2" stroke-linecap="round"/>
+              <line x1="20" y1="2" x2="20" y2="22" stroke="#4ECBA0" stroke-width="2.2" stroke-linecap="round"/>
+              <line x1="4" y1="2" x2="20" y2="2" stroke="#4ECBA0" stroke-width="2.2" stroke-linecap="round"/>
+              <line x1="4" y1="5.5" x2="12" y2="15.5" stroke="#4ECBA0" stroke-width="2" stroke-linecap="round"/>
+              <line x1="20" y1="5.5" x2="12" y2="15.5" stroke="#4ECBA0" stroke-width="2" stroke-linecap="round"/>
+              <rect x="9" y="13.5" width="6" height="4" rx="2" fill="#4ECBA0"/>
+            </svg>
+          </div>
+          <div class="lc-scene-icon coral">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+              <rect x="4" y="11" width="16" height="10" rx="1.5" fill="#FF6B35"/>
+              <path d="M2 12 L12 4 L22 12" stroke="#FF6B35" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="9" y="15" width="6" height="6" rx="1" fill="white"/>
+            </svg>
+          </div>
+        </div>
       </div>
       <div class="lc-city" id="lc-city">גינות ומקלטים בקרבתך</div>
       <div class="lc-sub" id="lc-sub">אפשר מיקום כדי לראות גינות משחקים ומקלטים קרובים אליך</div>
@@ -835,8 +951,33 @@ textarea.mod-input{resize:vertical;min-height:80px}
 
 <!-- LOADING -->
 <div id="loading-overlay">
+  <!-- Bird mascot (matches logo) -->
+  <svg width="80" height="80" viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" style="animation:loadBird 1.6s ease-in-out infinite">
+    <!-- Body -->
+    <ellipse cx="45" cy="54" rx="26" ry="24" fill="#1BBCB3"/>
+    <!-- White belly -->
+    <ellipse cx="45" cy="58" rx="16" ry="16" fill="white" opacity=".85"/>
+    <!-- Left wing -->
+    <ellipse cx="21" cy="52" rx="10" ry="7" fill="#17A9A1" transform="rotate(-20 21 52)"/>
+    <!-- Right wing -->
+    <ellipse cx="69" cy="52" rx="10" ry="7" fill="#17A9A1" transform="rotate(20 69 52)"/>
+    <!-- Head -->
+    <circle cx="45" cy="33" r="18" fill="#1BBCB3"/>
+    <!-- Eyes -->
+    <circle cx="39" cy="31" r="6" fill="white"/><circle cx="39" cy="31" r="3.5" fill="#1C2D5E"/><circle cx="40.5" cy="29.5" r="1.2" fill="white"/>
+    <circle cx="51" cy="31" r="6" fill="white"/><circle cx="51" cy="31" r="3.5" fill="#1C2D5E"/><circle cx="52.5" cy="29.5" r="1.2" fill="white"/>
+    <!-- Beak -->
+    <path d="M43 37 L47 37 L45 41 Z" fill="#F5A623"/>
+    <!-- Feet -->
+    <g fill="#F5A623">
+      <rect x="38" y="76" width="4" height="6" rx="2"/>
+      <line x1="35" y1="82" x2="42" y2="82" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round"/>
+      <rect x="48" y="76" width="4" height="6" rx="2"/>
+      <line x1="45" y1="82" x2="52" y2="82" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+  </svg>
   <div class="spinner"></div>
-  <div class="load-text" id="load-text">טוען נתונים...</div>
+  <div class="load-text" id="load-text">מחפש גינות ומקלטים...</div>
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -1084,11 +1225,13 @@ let PG_ICON=null, SH_ICON=null;
 function pgIcon(){return PG_ICON;}
 function shIcon(){return SH_ICON;}
 
-function clusterIcon(bg,shadow){return function(cluster){return L.divIcon({html:`<div style="width:32px;height:32px;border-radius:50%;background:${bg};border:2.5px solid white;box-shadow:0 2px 8px ${shadow};display:flex;align-items:center;justify-content:center;font-family:var(--font);font-weight:800;font-size:13px;color:white">${cluster.getChildCount()}</div>`,className:'',iconSize:[36,36],iconAnchor:[18,18]});}}
+function clusterIcon(bg,shadow){return function(cluster){const n=cluster.getChildCount();const s=n>=100?38:34;return L.divIcon({html:`<div style="width:${s}px;height:${s}px;border-radius:${Math.round(s*0.35)}px;background:${bg};border:2.5px solid white;box-shadow:0 3px 10px ${shadow};display:flex;align-items:center;justify-content:center;font-family:'Heebo',sans-serif;font-weight:800;font-size:${n>=100?11:13}px;color:white;letter-spacing:-0.5px">${n}</div>`,className:'',iconSize:[s+4,s+4],iconAnchor:[Math.round((s+4)/2),Math.round((s+4)/2)]});}}
 
 function initMap(){
-  PG_ICON=L.divIcon({html:`<div style="width:36px;height:36px;border-radius:50%;background:#4ECBA0;border:2.5px solid white;box-shadow:0 2px 10px rgba(78,203,160,.5);display:flex;align-items:center;justify-content:center;box-sizing:border-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="22" height="22" fill="white"><rect x="54" y="18" width="8" height="52" rx="3"/><rect x="72" y="18" width="8" height="52" rx="3"/><rect x="52" y="30" width="30" height="5" rx="2"/><rect x="52" y="42" width="30" height="5" rx="2"/><rect x="52" y="54" width="30" height="5" rx="2"/><path d="M44 16 H86 Q92 16 92 22 Q92 28 86 28 H44 Q38 28 38 22 Q38 16 44 16Z"/><path d="M55 28 L16 68 Q12 74 16 78 Q20 82 25 78 L64 38Z"/><ellipse cx="18" cy="76" rx="7" ry="5"/></svg></div>`,className:'',iconSize:[36,36],iconAnchor:[18,18]});
-  SH_ICON=L.divIcon({html:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 46" width="38" height="46"><path d="M19 2C11.3 2 5 8.3 5 16c0 10 14 28 14 28S33 26 33 16C33 8.3 26.7 2 19 2z" fill="#FF6B35" stroke="white" stroke-width="2.5"/><path d="M19 8l-6 3V15c0 3.5 2.5 6.2 6 7.2 3.5-1 6-3.7 6-7.2V11L19 8z" fill="rgba(255,255,255,0.9)"/></svg>`,className:'',iconSize:[38,46],iconAnchor:[19,46]});
+  // Playground marker — rounded square tile with swing icon (matches logo style)
+  PG_ICON=L.divIcon({html:`<div style="width:40px;height:40px;border-radius:13px;background:#4ECBA0;border:2.5px solid white;box-shadow:0 3px 12px rgba(78,203,160,.55),0 1px 4px rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;box-sizing:border-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none"><line x1="4" y1="3" x2="4" y2="21" stroke="white" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="3" x2="20" y2="21" stroke="white" stroke-width="2" stroke-linecap="round"/><line x1="4" y1="3" x2="20" y2="3" stroke="white" stroke-width="2" stroke-linecap="round"/><line x1="4" y1="6" x2="12" y2="16" stroke="white" stroke-width="1.8" stroke-linecap="round"/><line x1="20" y1="6" x2="12" y2="16" stroke="white" stroke-width="1.8" stroke-linecap="round"/><rect x="9" y="14" width="6" height="4" rx="2" fill="white"/></svg></div>`,className:'',iconSize:[40,40],iconAnchor:[20,20]});
+  // Shelter marker — teardrop pin with shelter building icon (matches logo)
+  SH_ICON=L.divIcon({html:`<div style="position:relative;width:40px;height:48px"><div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-top:10px solid #FF6B35"></div><div style="position:absolute;top:0;left:0;width:40px;height:40px;border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;background:#FF6B35;border:2.5px solid white;box-shadow:0 3px 12px rgba(255,107,53,.55),0 1px 4px rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none"><rect x="4" y="11" width="16" height="10" rx="1.5" fill="white" opacity="0.95"/><path d="M2 12 L12 4 L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><rect x="9" y="15" width="6" height="6" rx="1" fill="#FF6B35"/><rect x="10" y="12.5" width="4" height="3" rx="0.8" fill="white" opacity="0.6"/></svg></div></div>`,className:'',iconSize:[40,48],iconAnchor:[20,48]});
   map=L.map('map',{center:[31.5,35.0],zoom:8,zoomControl:false,attributionControl:false});
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{maxZoom:19}).addTo(map);
   const RecenterCtrl=L.Control.extend({options:{position:'bottomright'},onAdd:function(){
@@ -1363,7 +1506,7 @@ function buildPgDrw(p){
     const sb2 = userLoc ? brng(userLoc.lat, userLoc.lng, s.lat, s.lng) : brng(p.lat, p.lng, s.lat, s.lng);
     const meta = [typeLabel(s.type), s.accessible ? t('acc') : '', s.notes||''].filter(Boolean).join(' · ');
     return `<div class="srow" onclick="openById('${esc(s.id)}','shelter')">
-      <div class="srow-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path d="M12 2L4 6v5c0 5 3.5 9.7 8 11 4.5-1.3 8-6 8-11V6L12 2z" fill="#FF6B35"/></svg></div>
+      <div class="srow-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none"><rect x="4" y="11" width="16" height="10" rx="1.5" fill="#FF6B35"/><path d="M2 12 L12 4 L22 12" stroke="#FF6B35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="15" width="6" height="6" rx="1" fill="white"/></svg></div>
       <div class="srow-info">
         <div class="srow-name">${esc(sName)}</div>
         <div class="srow-meta">${esc(meta)}</div>
@@ -1374,7 +1517,7 @@ function buildPgDrw(p){
   return `<div class="drw-handle"></div>
   <div class="drw-hdr">
     <div class="drw-icon-title">
-      <div class="drw-pin green"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="18" height="18" fill="#4ECBA0"><rect x="54" y="18" width="8" height="52" rx="3"/><rect x="72" y="18" width="8" height="52" rx="3"/><rect x="52" y="30" width="30" height="5" rx="2"/><rect x="52" y="42" width="30" height="5" rx="2"/><rect x="52" y="54" width="30" height="5" rx="2"/><path d="M44 16 H86 Q92 16 92 22 Q92 28 86 28 H44 Q38 28 38 22 Q38 16 44 16Z"/><path d="M55 28 L16 68 Q12 74 16 78 Q20 82 25 78 L64 38Z"/><ellipse cx="18" cy="76" rx="7" ry="5"/></svg></div>
+      <div class="drw-pin green"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none"><line x1="4" y1="2" x2="4" y2="22" stroke="#4ECBA0" stroke-width="2.2" stroke-linecap="round"/><line x1="20" y1="2" x2="20" y2="22" stroke="#4ECBA0" stroke-width="2.2" stroke-linecap="round"/><line x1="4" y1="2" x2="20" y2="2" stroke="#4ECBA0" stroke-width="2.2" stroke-linecap="round"/><line x1="4" y1="5.5" x2="12" y2="15.5" stroke="#4ECBA0" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="5.5" x2="12" y2="15.5" stroke="#4ECBA0" stroke-width="2" stroke-linecap="round"/><rect x="9" y="13.5" width="6" height="4" rx="2" fill="#4ECBA0"/></svg></div>
       <div>
         <div class="drw-title">${esc(name)}</div>
         ${addrLine}
@@ -1411,7 +1554,7 @@ function buildShDrw(s){
   return `<div class="drw-handle"></div>
   <div class="drw-hdr">
     <div class="drw-icon-title">
-      <div class="drw-pin coral"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 2L4 6v5c0 5 3.5 9.7 8 11 4.5-1.3 8-6 8-11V6L12 2z" fill="#FF6B35"/></svg></div>
+      <div class="drw-pin coral"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none"><rect x="4" y="11" width="16" height="10" rx="1.5" fill="#FF6B35"/><path d="M2 12 L12 4 L22 12" stroke="#FF6B35" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="15" width="6" height="6" rx="1" fill="white"/></svg></div>
       <div>
         <div class="drw-title">${esc(titleText)}</div>
         ${cityLine}
@@ -1541,8 +1684,8 @@ function renderList(){
   const html=items.slice(0,120).map(it=>{
     const tp=it._t,nm=tp==='playground'?pgLabel(it):(shLabel(it)||it.city||'');
     const ad=(it.address&&it.address.trim())?it.address:(it.city||'');
-    const pgSvg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="18" height="18" fill="#4ECBA0"><rect x="54" y="18" width="8" height="52" rx="3"/><rect x="72" y="18" width="8" height="52" rx="3"/><rect x="52" y="30" width="30" height="5" rx="2"/><rect x="52" y="42" width="30" height="5" rx="2"/><rect x="52" y="54" width="30" height="5" rx="2"/><path d="M44 16 H86 Q92 16 92 22 Q92 28 86 28 H44 Q38 28 38 22 Q38 16 44 16Z"/><path d="M55 28 L16 68 Q12 74 16 78 Q20 82 25 78 L64 38Z"/><ellipse cx="18" cy="76" rx="7" ry="5"/></svg>`;
-    const shSvg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 2L4 6v5c0 5 3.5 9.7 8 11 4.5-1.3 8-6 8-11V6L12 2z" fill="#FF6B35"/></svg>`;
+    const pgSvg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none"><line x1="4" y1="2" x2="4" y2="22" stroke="#4ECBA0" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="2" x2="20" y2="22" stroke="#4ECBA0" stroke-width="2" stroke-linecap="round"/><line x1="4" y1="2" x2="20" y2="2" stroke="#4ECBA0" stroke-width="2" stroke-linecap="round"/><line x1="4" y1="5" x2="12" y2="15" stroke="#4ECBA0" stroke-width="1.8" stroke-linecap="round"/><line x1="20" y1="5" x2="12" y2="15" stroke="#4ECBA0" stroke-width="1.8" stroke-linecap="round"/><rect x="9" y="13" width="6" height="4" rx="2" fill="#4ECBA0"/></svg>`;
+    const shSvg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none"><rect x="4" y="11" width="16" height="10" rx="1.5" fill="#FF6B35"/><path d="M2 12 L12 4 L22 12" stroke="#FF6B35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="15" width="6" height="6" rx="1" fill="white"/></svg>`;
     const ic=tp==='playground'?pgSvg:shSvg;
     const bg=tp==='playground'?'background:rgba(78,203,160,0.12)':'background:rgba(255,107,53,0.10)';
     const distStr=userLoc&&it._d!==undefined?`<span class="lcard-dist">${arrow(brng(userLoc.lat,userLoc.lng,it.lat,it.lng))} ${fDist(it._d)}</span>`:'';
