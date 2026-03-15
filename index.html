@@ -59,7 +59,7 @@ html,body{height:100%;overflow:hidden;font-family:var(--font);color:var(--text);
 button{font-family:var(--font);cursor:pointer;border:none;background:none}
 input,textarea{font-family:var(--font)}
 a{text-decoration:none;color:inherit}
-.tb-pill,.fp,.lcard,.btn-walk-inline,.btn-add-rev,#emg-btn,.srow,.vt-btn{transition-timing-function:var(--spring)}
+.tb-pill,.fp,.lcard,.btn-walk-inline,.btn-add-rev,#emg-btn,.srow{transition-timing-function:var(--spring)}
 
 /* ===== LAYOUT ===== */
 #app{display:flex;height:100%;position:relative;overflow:hidden}
@@ -256,20 +256,6 @@ a{text-decoration:none;color:inherit}
 }
 #gps-pill.hidden{display:none}
 
-/* View toggle */
-#view-toggle{
-  position:absolute;
-  top:calc(var(--topbar-h) + var(--filter-h) + 14px);right:14px;
-  background:white;border-radius:var(--r-sm);box-shadow:var(--sh-md);
-  z-index:400;display:flex;overflow:hidden;border:1.5px solid var(--border)
-}
-.vt-btn{
-  padding:10px 14px;font-size:16px;transition:background .15s;
-  min-height:44px;min-width:44px;display:flex;align-items:center;justify-content:center
-}
-.vt-btn.active{background:var(--text)}
-.vt-btn.active span{filter:invert(1)}
-
 /* Contribute floating button (mobile) */
 #contrib-fab{
   position:fixed;bottom:130px;left:14px;z-index:400;
@@ -298,17 +284,18 @@ a{text-decoration:none;color:inherit}
   background:white;width:100%;max-width:480px;
   border-radius:var(--r-xl) var(--r-xl) 0 0;
   padding:20px 20px 32px;
-  box-shadow:var(--sh-lg)
+  box-shadow:var(--sh-lg);
+  box-sizing:border-box;overflow:hidden
 }
 .contrib-handle{width:36px;height:4px;background:var(--text3);border-radius:2px;margin:0 auto 18px;cursor:pointer}
 .contrib-modal-title{font-size:17px;font-weight:800;color:var(--text);margin-bottom:4px;letter-spacing:-0.3px}
 .contrib-modal-sub{font-size:13px;color:var(--text2);font-weight:500;margin-bottom:14px;line-height:1.5}
-.contrib-modal-row{display:flex;gap:8px}
+.contrib-modal-row{display:flex;gap:8px;width:100%}
 .contrib-modal-input{
-  flex:1;font-family:var(--font);font-size:14px;font-weight:500;
+  flex:1;min-width:0;font-family:var(--font);font-size:14px;font-weight:500;
   padding:12px 14px;border:1.5px solid var(--border);border-radius:var(--r-sm);
   background:var(--bg);color:var(--text);outline:none;min-height:48px;
-  transition:border-color .15s
+  box-sizing:border-box;transition:border-color .15s
 }
 .contrib-modal-input:focus{border-color:var(--blue);background:white}
 .contrib-modal-btn{
@@ -703,13 +690,6 @@ textarea.mod-input{resize:vertical;min-height:80px}
 #emg-no-gps{font-size:16px;font-weight:600;color:white;text-align:center;line-height:1.6;padding:20px}
 
 /* ===== LIST VIEW ===== */
-#list-view{
-  position:absolute;
-  inset:calc(var(--topbar-h) + var(--filter-h)) 0 0 0;
-  background:var(--bg);overflow-y:auto;-webkit-overflow-scrolling:touch;
-  z-index:300;display:none;padding:12px 16px 100px
-}
-#list-view.show{display:block}
 .lcard{
   background:white;border-radius:0;padding:14px 16px;margin-bottom:0;
   display:flex;align-items:center;gap:12px;cursor:pointer;
@@ -811,7 +791,7 @@ textarea.mod-input{resize:vertical;min-height:80px}
 /* ===== DESKTOP OVERRIDES ===== */
 @media(min-width:768px){
   #welcome{display:none!important}
-  #topbar,#filterbar,#gps-pill,#emg-bar,#view-toggle,#list-view,#contrib-fab{display:none!important}
+  #topbar,#filterbar,#gps-pill,#emg-bar,#contrib-fab{display:none!important}
   #sidebar{display:flex}
 
   /* Desktop: drawer lives inside sidebar, not floating over map */
@@ -924,7 +904,7 @@ textarea.mod-input{resize:vertical;min-height:80px}
     </div>
     <div class="sb-disclaimer" id="sb-disclaimer">המידע מתעדכן באופן שוטף אך ייתכנו שינויים — לפרטים מדויקים פנו לעירייה שלכם או חייגו לקו החירום העירוני 🏛️</div>
     <div class="sb-footer">
-      <span class="sb-footer-txt" id="sb-footer-txt">נבנה ע"י <a href="https://github.com/elyxk" target="_blank" rel="noopener">elyxk</a></span>
+      <span class="sb-footer-txt" id="sb-footer-txt">נבנה ע"י <a href="https://www.linkedin.com/in/elysakahn" target="_blank" rel="noopener">elyxk</a></span>
     </div>
   </div>
 
@@ -982,12 +962,6 @@ textarea.mod-input{resize:vertical;min-height:80px}
     <!-- GPS pill -->
     <button id="gps-pill" class="hidden" onclick="requestGPS()">📍 <span id="gps-pill-lbl">מצא גינות קרוב אליך</span></button>
 
-    <!-- View toggle -->
-    <div id="view-toggle">
-      <button class="vt-btn active" id="vt-map" onclick="setView('map')"><span>🗺️</span></button>
-      <button class="vt-btn" id="vt-list" onclick="setView('list')"><span>☰</span></button>
-    </div>
-
     <!-- Search bar -->
     <div id="srch-wrap">
       <div class="srch-alert" id="srch-alert"></div>
@@ -998,9 +972,6 @@ textarea.mod-input{resize:vertical;min-height:80px}
       </div>
       <div id="srch-results"></div>
     </div>
-
-    <!-- List view (mobile overlay) -->
-    <div id="list-view"></div>
 
     <!-- Emergency bar (hidden until data loaded) -->
     <div id="emg-bar" style="display:none">
@@ -1207,10 +1178,10 @@ const S = {
 // STATE
 // ===========================
 let appData=null, userLoc=null, watchId=null, lang='he';
-let filter='all', view='map', emgActive=false;
+let filter='all', emgActive=false;
 let drwItem=null, drwType=null;
 const itemMap=new Map();
-let listViewListenerAdded=false, sbListListenerAdded=false;
+let sbListListenerAdded=false;
 let selStars=0, selPhoto=null, revLocId=null, revLocType=null;
 let srchDebounce=null, srchRes=[];
 let map, pgCluster, shCluster, userMarker, userLine, nearShCache=null;
@@ -1801,13 +1772,6 @@ function togglePgFilter(){
   document.getElementById('tb-sh-pill').classList.toggle('active-filter',isActive||filter==='all');
 }
 
-function setView(v){
-  view=v;
-  document.getElementById('vt-map')&&document.getElementById('vt-map').classList.toggle('active',v==='map');
-  document.getElementById('vt-list')&&document.getElementById('vt-list').classList.toggle('active',v==='list');
-  document.getElementById('list-view')&&document.getElementById('list-view').classList.toggle('show',v==='list');
-}
-
 // ===========================
 // LIST VIEW
 // ===========================
@@ -1838,14 +1802,6 @@ function renderList(){
       ${distStr}
     </div>`;
   }).join('');
-  const ml=document.getElementById('list-view');
-  if(ml){
-    ml.innerHTML=html;ml.style.padding='8px 12px 0';
-    if(!listViewListenerAdded){
-      listViewListenerAdded=true;
-      ml.addEventListener('click',e=>{const card=e.target.closest('.lcard');if(card){const item=itemMap.get(card.dataset.id);if(item)openDrawer(item,card.dataset.type);}});
-    }
-  }
   const sl=document.getElementById('sb-list');
   if(sl){
     sl.innerHTML=html;
@@ -1899,7 +1855,7 @@ function setLang(l){
   const sbContribInp=document.getElementById('sb-contrib-input');if(sbContribInp)sbContribInp.placeholder=t('contribPh');
   const contribInp=document.getElementById('contrib-modal-input');if(contribInp)contribInp.placeholder=t('contribPh');
   const footerEl=document.getElementById('site-footer-by');
-  if(footerEl)footerEl.innerHTML=`${t('footerBy')} <a href="https://github.com/elyxk" target="_blank" rel="noopener">elyxk</a>`;
+  if(footerEl)footerEl.innerHTML=`${t('footerBy')} <a href="https://www.linkedin.com/in/elysakahn" target="_blank" rel="noopener">elyxk</a>`;
   Object.entries(ids).forEach(([id,val])=>{const el=document.getElementById(id);if(el)el.textContent=val;});
   const srchInp=document.getElementById('srch-input');if(srchInp)srchInp.placeholder=t('srchPh');
   const sbSrch=document.getElementById('sb-search');if(sbSrch)sbSrch.placeholder=t('srchPh');
@@ -2178,7 +2134,7 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 <!-- SITE FOOTER — always visible -->
 <div id="site-footer">
   <div id="site-footer-disclaimer">המידע מתעדכן באופן שוטף אך ייתכנו שינויים — לפרטים מדויקים פנו לעירייה שלכם או חייגו לקו החירום העירוני 🏛️</div>
-  <div id="site-footer-by">נבנה ע"י <a href="https://github.com/elyxk" target="_blank" rel="noopener">elyxk</a></div>
+  <div id="site-footer-by">נבנה ע"י <a href="https://www.linkedin.com/in/elysakahn" target="_blank" rel="noopener">elyxk</a></div>
 </div>
 </body>
 </html>
