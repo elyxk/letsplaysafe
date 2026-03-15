@@ -31,7 +31,7 @@
   --sh-sm: 0 1px 4px rgba(28,45,94,0.06), 0 2px 8px rgba(28,45,94,0.05);
   --sh-md: 0 2px 12px rgba(28,45,94,0.08), 0 6px 24px rgba(28,45,94,0.07);
   --sh-lg: 0 4px 24px rgba(28,45,94,0.10), 0 12px 48px rgba(28,45,94,0.12);
-  --topbar-h: 88px;
+  --topbar-h: 54px;
   --filter-h: 0px;
   --header-green: transparent;
   --sidebar-w: 360px;
@@ -60,23 +60,28 @@ a{text-decoration:none;color:inherit}
 /* Bottom sheet hidden — not used in full-screen mode */
 #bottom-sheet{display:none}
 
-/* Mobile topbar — clean white with teal accent */
+/* Mobile topbar — single row, compact */
 #topbar{
   position:fixed;top:0;right:0;left:0;
   background:white;
   border-bottom:2px solid var(--sky);
-  display:flex;flex-direction:column;
-  padding:10px 16px 8px;gap:6px;z-index:500
+  display:flex;flex-direction:row;align-items:center;
+  padding:8px 12px;gap:8px;z-index:500;height:var(--topbar-h)
 }
-/* Row 1: name + lang + search */
-.tb-row1{display:flex;align-items:center;gap:8px;min-height:34px}
-/* Row 2: filter pills */
-.tb-row2{display:flex;align-items:center;gap:8px}
-.tb-pills{display:flex;gap:8px;flex-shrink:0}
+.tb-logo-img{
+  width:36px;height:36px;border-radius:8px;
+  object-fit:cover;object-position:12% center;
+  flex-shrink:0
+}
+/* name + lang + search all in one row */
+.tb-row1{display:flex;align-items:center;gap:8px;flex:1;min-width:0}
+/* Row 2: filter pills — folded into row 1 */
+.tb-row2{display:none}
+.tb-pills{display:flex;gap:6px;flex-shrink:0}
 .tb-pill{
-  width:36px;height:36px;border-radius:50%;
+  width:34px;height:34px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  font-size:15px;border:2px solid transparent;
+  font-size:16px;border:2px solid transparent;
   background:white;box-shadow:var(--sh-sm);
   transition:transform .15s,box-shadow .15s
 }
@@ -84,9 +89,9 @@ a{text-decoration:none;color:inherit}
 .tb-pill.green{border-color:var(--green);background:rgba(78,203,160,0.12)}
 .tb-pill.active-filter{transform:scale(1.10);box-shadow:var(--sh-md)}
 .tb-center{flex:1;min-width:0}
-.tb-name{font-size:18px;font-weight:800;color:var(--text);line-height:1;letter-spacing:-0.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tb-name{font-size:17px;font-weight:800;color:var(--text);line-height:1;letter-spacing:-0.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tb-tagline{display:none}
-.tb-menu{color:var(--blue);font-size:20px;padding:4px;flex-shrink:0;width:36px;height:36px;display:flex;align-items:center;justify-content:center}
+.tb-menu{color:var(--blue);font-size:20px;padding:4px;flex-shrink:0;width:34px;height:34px;display:flex;align-items:center;justify-content:center}
 
 /* Filter bar hidden on mobile (replaced by pills in header) */
 #filterbar{display:none}
@@ -118,16 +123,26 @@ a{text-decoration:none;color:inherit}
 
 /* ===== LANGUAGE SWITCHER ===== */
 #lang-sw{display:flex;gap:2px}
-.tb-lang-sw{
-  display:flex;gap:2px;flex-shrink:0;
-  background:rgba(116,116,128,0.12);border-radius:10px;padding:2px
+/* Single cycle button in topbar */
+.tb-lang-sw{display:flex;flex-shrink:0}
+.lang-cycle-btn{
+  background:rgba(27,188,179,0.10);color:var(--blue);
+  border:1.5px solid rgba(27,188,179,0.25);
+  border-radius:8px;padding:4px 8px;
+  font-size:11px;font-weight:800;
+  min-width:34px;min-height:34px;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .15s,transform .12s;letter-spacing:0.2px
 }
-.tb-lang-sw .lang-btn{
+.lang-cycle-btn:active{transform:scale(0.95);background:rgba(27,188,179,0.20)}
+/* Sidebar still uses three buttons */
+#sb-lang-sw{display:flex;gap:2px;background:rgba(116,116,128,0.10);border-radius:10px;padding:2px}
+#sb-lang-sw .lang-btn{
   color:var(--text2);min-width:0;min-height:0;
   padding:4px 8px;font-size:11px;font-weight:700;
   border-radius:8px;transition:all .15s
 }
-.tb-lang-sw .lang-btn.active{background:var(--blue);color:white;box-shadow:0 1px 4px rgba(27,188,179,0.30)}
+#sb-lang-sw .lang-btn.active{background:var(--blue);color:white;box-shadow:0 1px 4px rgba(27,188,179,0.30)}
 .lang-btn{
   padding:8px 10px;font-size:12px;font-weight:700;color:var(--text2);
   border-radius:8px;transition:all .15s;min-height:44px;min-width:44px
@@ -278,7 +293,7 @@ a{text-decoration:none;color:inherit}
 .lc-scene-icon{
   width:44px;height:44px;border-radius:13px;
   display:flex;align-items:center;justify-content:center;
-  box-shadow:0 3px 8px rgba(28,45,94,0.12)
+  box-shadow:0 3px 8px rgba(28,45,94,0.12);font-size:24px;line-height:1
 }
 .lc-scene-icon.green{background:rgba(78,203,160,0.15)}
 .lc-scene-icon.coral{background:rgba(255,107,53,0.10)}
@@ -638,6 +653,39 @@ textarea.mod-input{resize:vertical;min-height:80px}
 .marker-cluster-small,.marker-cluster-medium,.marker-cluster-large{background:transparent!important}
 .marker-cluster-small div,.marker-cluster-medium div,.marker-cluster-large div{background:transparent!important}
 
+/* ===== BIRD SPRITES ===== */
+/* Sprite sheet: 2048×2048, 3 cols × 4 rows, each cell ~683×512px */
+.bird{
+  background-image:url('assets/bird-sprites.png');
+  background-repeat:no-repeat;
+  display:inline-block;
+}
+/* 90px display — sheet scaled to 270×360 */
+.bird-90{background-size:270px 360px;width:90px;height:90px;flex-shrink:0}
+.bird-wave    {background-position:0 0}         /* R1C1 waving */
+.bird-location{background-position:-90px 0}     /* R1C2 location pin */
+.bird-shield  {background-position:-180px 0}    /* R1C3 shield */
+.bird-map     {background-position:0 -90px}     /* R2C1 reading map — welcome card */
+.bird-fly     {background-position:-90px -90px} /* R2C2 flying — loading */
+.bird-smile   {background-position:-180px -90px}/* R2C3 smiling */
+.bird-think   {background-position:0 -180px}    /* R3C1 thinking */
+.bird-run     {background-position:-90px -180px}/* R3C2 running to playground */
+.bird-thumbs  {background-position:-180px -180px}/* R3C3 thumbs up */
+.bird-celebrate{background-position:0 -270px}   /* R4C1 celebrating */
+/* 60px display — sheet scaled to 180×240 */
+.bird-60{background-size:180px 240px;width:60px;height:60px;flex-shrink:0}
+/* Map placeholder waving bird */
+.bird-map-ph{
+  background-image:url('assets/bird-sprites.png');
+  background-size:180px 240px;
+  background-position:0 0;
+  background-repeat:no-repeat;
+  width:60px;height:60px;
+  border-radius:8px;
+  position:absolute;bottom:32%;left:50%;transform:translateX(-50%);
+  z-index:2;animation:fpFloat 3.5s ease-in-out infinite
+}
+
 /* ===== DESKTOP OVERRIDES ===== */
 @media(min-width:768px){
   #welcome{display:none!important}
@@ -667,23 +715,18 @@ textarea.mod-input{resize:vertical;min-height:80px}
 
 <!-- MOBILE TOP BAR -->
 <div id="topbar">
-  <div class="tb-row1">
-    <div class="tb-center">
-      <div class="tb-name" id="m-sub"><span style="color:#1BBCB3">גינה</span> <span style="color:#1C2D5E">בטוחה</span></div>
-    </div>
-    <div id="tb-lang-sw" class="tb-lang-sw">
-      <button class="lang-btn active" onclick="setLang('he')">עב</button>
-      <button class="lang-btn" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" onclick="setLang('fr')">FR</button>
-    </div>
-    <button class="tb-menu" onclick="openSrch()">🔍</button>
+  <img src="assets/logo.png" class="tb-logo-img" alt="גינה בטוחה">
+  <div class="tb-center">
+    <div class="tb-name" id="m-sub"><span style="color:#1BBCB3">גינה</span> <span style="color:#1C2D5E">בטוחה</span></div>
   </div>
-  <div class="tb-row2">
-    <div class="tb-pills">
-      <button class="tb-pill red" id="tb-sh-pill" onclick="toggleShFilter()" title="מקלטים">🛡️</button>
-      <button class="tb-pill green active-filter" id="tb-pg-pill" onclick="togglePgFilter()" title="מגרשים">🛝</button>
-    </div>
+  <div class="tb-pills">
+    <button class="tb-pill red" id="tb-sh-pill" onclick="toggleShFilter()" title="מקלטים">🛡️</button>
+    <button class="tb-pill green active-filter" id="tb-pg-pill" onclick="togglePgFilter()" title="מגרשים">🛝</button>
   </div>
+  <div id="tb-lang-sw" class="tb-lang-sw">
+    <button class="lang-cycle-btn" id="lang-cycle" onclick="cycleLang()">עב</button>
+  </div>
+  <button class="tb-menu" onclick="openSrch()">🔍</button>
 </div>
 
 <!-- FILTER BAR (hidden on mobile, kept for desktop) -->
@@ -699,8 +742,8 @@ textarea.mod-input{resize:vertical;min-height:80px}
   <!-- SIDEBAR (desktop) -->
   <div id="sidebar">
     <div class="sb-topbar">
-      <div class="tb-left">
-        <span class="tb-logo" style="font-size:26px">🐦</span>
+      <div class="tb-left" style="display:flex;align-items:center;gap:10px">
+        <img src="assets/logo.png" style="width:40px;height:40px;border-radius:10px;object-fit:cover;object-position:12% center;flex-shrink:0" alt="גינה בטוחה">
         <div class="tb-text">
           <span class="tb-name" style="font-size:20px;font-weight:800;letter-spacing:-0.5px"><span style="color:#1BBCB3">גינה</span> <span style="color:#1C2D5E">בטוחה</span></span>
           <span class="tb-tagline" id="sb-sub" style="display:block;font-size:11px;color:#7B8BAA;margin-top:1px">גינות · מקלטים · בטחון</span>
@@ -743,57 +786,23 @@ textarea.mod-input{resize:vertical;min-height:80px}
   <div id="map-area">
     <!-- Fake map placeholder (shown before location is granted, no network needed) -->
     <div id="map-placeholder">
-      <!-- Playground pins: teal rounded-square tile with swing SVG -->
-      <div class="fp-pin pg" style="top:22%;left:14%;animation-delay:.3s">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round">
-          <line x1="5" y1="4" x2="5" y2="19"/><line x1="19" y1="4" x2="19" y2="19"/>
-          <line x1="5" y1="5" x2="19" y2="5"/>
-          <line x1="7" y1="5" x2="12" y2="14"/><line x1="17" y1="5" x2="12" y2="14"/>
-          <rect x="9" y="14" width="6" height="3" rx="1.5"/>
-        </svg>
-      </div>
-      <div class="fp-pin pg" style="top:50%;left:30%;animation-delay:1.5s">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round">
-          <line x1="5" y1="4" x2="5" y2="19"/><line x1="19" y1="4" x2="19" y2="19"/>
-          <line x1="5" y1="5" x2="19" y2="5"/>
-          <line x1="7" y1="5" x2="12" y2="14"/><line x1="17" y1="5" x2="12" y2="14"/>
-          <rect x="9" y="14" width="6" height="3" rx="1.5"/>
-        </svg>
-      </div>
-      <div class="fp-pin pg" style="top:65%;left:72%;animation-delay:1.2s">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round">
-          <line x1="5" y1="4" x2="5" y2="19"/><line x1="19" y1="4" x2="19" y2="19"/>
-          <line x1="5" y1="5" x2="19" y2="5"/>
-          <line x1="7" y1="5" x2="12" y2="14"/><line x1="17" y1="5" x2="12" y2="14"/>
-          <rect x="9" y="14" width="6" height="3" rx="1.5"/>
-        </svg>
-      </div>
-      <!-- Shelter pins: orange circle+tail with house SVG -->
+      <!-- Playground pins: teal tile with emoji -->
+      <div class="fp-pin pg" style="top:22%;left:14%;animation-delay:.3s;font-size:18px">🛝</div>
+      <div class="fp-pin pg" style="top:50%;left:30%;animation-delay:1.5s;font-size:18px">🛝</div>
+      <div class="fp-pin pg" style="top:65%;left:72%;animation-delay:1.2s;font-size:18px">🛝</div>
+      <!-- Shelter pins: orange circle+tail with emoji -->
       <div class="fp-pin sh" style="top:30%;left:56%;animation-delay:.9s">
-        <div class="fp-pin-circle">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="3,12 12,4 21,12"/><rect x="7" y="12" width="10" height="9" rx="1.5"/>
-            <rect x="10" y="16" width="4" height="5" rx="1"/>
-          </svg>
-        </div>
+        <div class="fp-pin-circle" style="font-size:16px">🛡️</div>
       </div>
       <div class="fp-pin sh" style="top:14%;left:68%;animation-delay:.6s">
-        <div class="fp-pin-circle">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="3,12 12,4 21,12"/><rect x="7" y="12" width="10" height="9" rx="1.5"/>
-            <rect x="10" y="16" width="4" height="5" rx="1"/>
-          </svg>
-        </div>
+        <div class="fp-pin-circle" style="font-size:16px">🛡️</div>
       </div>
       <div class="fp-pin sh" style="top:42%;left:7%;animation-delay:1.8s">
-        <div class="fp-pin-circle">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="3,12 12,4 21,12"/><rect x="7" y="12" width="10" height="9" rx="1.5"/>
-            <rect x="10" y="16" width="4" height="5" rx="1"/>
-          </svg>
-        </div>
+        <div class="fp-pin-circle" style="font-size:16px">🛡️</div>
       </div>
-      <!-- Path/road line suggestion -->
+      <!-- Waving bird mascot from sprite sheet (R1C1) -->
+      <div class="bird-map-ph"></div>
+      <!-- Path/road lines -->
       <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.18" viewBox="0 0 400 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 180 Q100 160 200 185 T400 170" stroke="white" stroke-width="8" fill="none"/>
         <path d="M80 0 Q110 80 95 150 T120 300" stroke="white" stroke-width="6" fill="none"/>
@@ -808,57 +817,12 @@ textarea.mod-input{resize:vertical;min-height:80px}
     <!-- Location pill: floating bottom pill to activate geolocation -->
     <div id="loc-card">
       <div class="lc-mascot">
-        <!-- Teal bird mascot reading map (matches logo) -->
-        <svg class="lc-bird" viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
-          <!-- Body -->
-          <ellipse cx="45" cy="56" rx="22" ry="24" fill="#1BBCB3"/>
-          <!-- White belly -->
-          <ellipse cx="45" cy="60" rx="13" ry="16" fill="#F0FFFE"/>
-          <!-- Head -->
-          <circle cx="45" cy="32" r="18" fill="#1BBCB3"/>
-          <!-- Eyes -->
-          <circle cx="38" cy="29" r="5.5" fill="white"/>
-          <circle cx="52" cy="29" r="5.5" fill="white"/>
-          <circle cx="39" cy="30" r="3" fill="#1C2D5E"/>
-          <circle cx="53" cy="30" r="3" fill="#1C2D5E"/>
-          <circle cx="40" cy="29" r="1" fill="white"/>
-          <circle cx="54" cy="29" r="1" fill="white"/>
-          <!-- Beak -->
-          <path d="M41 37 L45 41 L49 37 Z" fill="#F5A623"/>
-          <!-- Wing/arm holding map -->
-          <ellipse cx="26" cy="58" rx="7" ry="11" fill="#169E96" transform="rotate(-20 26 58)"/>
-          <!-- Map book -->
-          <rect x="28" y="52" width="22" height="16" rx="3" fill="#FFF8E7" stroke="#E5D5A0" stroke-width="1"/>
-          <line x1="39" y1="52" x2="39" y2="68" stroke="#E5D5A0" stroke-width="1"/>
-          <!-- Heart on map -->
-          <path d="M34 59 C34 57 36 56 37 58 C38 56 40 57 40 59 C40 61 37 63 37 63 C37 63 34 61 34 59Z" fill="#FF6B35" transform="scale(0.8) translate(5,5)"/>
-          <!-- Location pin above map -->
-          <circle cx="55" cy="44" r="4" fill="#F5A623"/>
-          <circle cx="55" cy="44" r="2" fill="white"/>
-          <path d="M55 48 L55 52" stroke="#F5A623" stroke-width="1.5" stroke-linecap="round"/>
-          <!-- Feet -->
-          <ellipse cx="38" cy="79" rx="6" ry="3" fill="#F5A623"/>
-          <ellipse cx="52" cy="79" rx="6" ry="3" fill="#F5A623"/>
-        </svg>
+        <!-- Real bird mascot from sprite sheet: sitting reading map (R2C1) -->
+        <div class="lc-bird bird bird-90 bird-map" style="border-radius:12px"></div>
         <!-- Side icons -->
         <div class="lc-scene-icons">
-          <div class="lc-scene-icon green">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
-              <line x1="4" y1="2" x2="4" y2="22" stroke="#4ECBA0" stroke-width="2.2" stroke-linecap="round"/>
-              <line x1="20" y1="2" x2="20" y2="22" stroke="#4ECBA0" stroke-width="2.2" stroke-linecap="round"/>
-              <line x1="4" y1="2" x2="20" y2="2" stroke="#4ECBA0" stroke-width="2.2" stroke-linecap="round"/>
-              <line x1="4" y1="5.5" x2="12" y2="15.5" stroke="#4ECBA0" stroke-width="2" stroke-linecap="round"/>
-              <line x1="20" y1="5.5" x2="12" y2="15.5" stroke="#4ECBA0" stroke-width="2" stroke-linecap="round"/>
-              <rect x="9" y="13.5" width="6" height="4" rx="2" fill="#4ECBA0"/>
-            </svg>
-          </div>
-          <div class="lc-scene-icon coral">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
-              <rect x="4" y="11" width="16" height="10" rx="1.5" fill="#FF6B35"/>
-              <path d="M2 12 L12 4 L22 12" stroke="#FF6B35" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-              <rect x="9" y="15" width="6" height="6" rx="1" fill="white"/>
-            </svg>
-          </div>
+          <div class="lc-scene-icon green">🛝</div>
+          <div class="lc-scene-icon coral">🛡️</div>
         </div>
       </div>
       <div class="lc-city" id="lc-city">גינות ומקלטים בקרבתך</div>
@@ -951,31 +915,8 @@ textarea.mod-input{resize:vertical;min-height:80px}
 
 <!-- LOADING -->
 <div id="loading-overlay">
-  <!-- Bird mascot (matches logo) -->
-  <svg width="80" height="80" viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" style="animation:loadBird 1.6s ease-in-out infinite">
-    <!-- Body -->
-    <ellipse cx="45" cy="54" rx="26" ry="24" fill="#1BBCB3"/>
-    <!-- White belly -->
-    <ellipse cx="45" cy="58" rx="16" ry="16" fill="white" opacity=".85"/>
-    <!-- Left wing -->
-    <ellipse cx="21" cy="52" rx="10" ry="7" fill="#17A9A1" transform="rotate(-20 21 52)"/>
-    <!-- Right wing -->
-    <ellipse cx="69" cy="52" rx="10" ry="7" fill="#17A9A1" transform="rotate(20 69 52)"/>
-    <!-- Head -->
-    <circle cx="45" cy="33" r="18" fill="#1BBCB3"/>
-    <!-- Eyes -->
-    <circle cx="39" cy="31" r="6" fill="white"/><circle cx="39" cy="31" r="3.5" fill="#1C2D5E"/><circle cx="40.5" cy="29.5" r="1.2" fill="white"/>
-    <circle cx="51" cy="31" r="6" fill="white"/><circle cx="51" cy="31" r="3.5" fill="#1C2D5E"/><circle cx="52.5" cy="29.5" r="1.2" fill="white"/>
-    <!-- Beak -->
-    <path d="M43 37 L47 37 L45 41 Z" fill="#F5A623"/>
-    <!-- Feet -->
-    <g fill="#F5A623">
-      <rect x="38" y="76" width="4" height="6" rx="2"/>
-      <line x1="35" y1="82" x2="42" y2="82" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round"/>
-      <rect x="48" y="76" width="4" height="6" rx="2"/>
-      <line x1="45" y1="82" x2="52" y2="82" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round"/>
-    </g>
-  </svg>
+  <!-- Real bird mascot: flying/happy pose (R2C2) -->
+  <div class="bird bird-90 bird-fly" style="border-radius:12px;animation:loadBird 1.6s ease-in-out infinite"></div>
   <div class="spinner"></div>
   <div class="load-text" id="load-text">מחפש גינות ומקלטים...</div>
 </div>
@@ -1228,10 +1169,10 @@ function shIcon(){return SH_ICON;}
 function clusterIcon(bg,shadow){return function(cluster){const n=cluster.getChildCount();const s=n>=100?38:34;return L.divIcon({html:`<div style="width:${s}px;height:${s}px;border-radius:${Math.round(s*0.35)}px;background:${bg};border:2.5px solid white;box-shadow:0 3px 10px ${shadow};display:flex;align-items:center;justify-content:center;font-family:'Heebo',sans-serif;font-weight:800;font-size:${n>=100?11:13}px;color:white;letter-spacing:-0.5px">${n}</div>`,className:'',iconSize:[s+4,s+4],iconAnchor:[Math.round((s+4)/2),Math.round((s+4)/2)]});}}
 
 function initMap(){
-  // Playground marker — rounded square tile with swing icon (matches logo style)
-  PG_ICON=L.divIcon({html:`<div style="width:40px;height:40px;border-radius:13px;background:#4ECBA0;border:2.5px solid white;box-shadow:0 3px 12px rgba(78,203,160,.55),0 1px 4px rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;box-sizing:border-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none"><line x1="4" y1="3" x2="4" y2="21" stroke="white" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="3" x2="20" y2="21" stroke="white" stroke-width="2" stroke-linecap="round"/><line x1="4" y1="3" x2="20" y2="3" stroke="white" stroke-width="2" stroke-linecap="round"/><line x1="4" y1="6" x2="12" y2="16" stroke="white" stroke-width="1.8" stroke-linecap="round"/><line x1="20" y1="6" x2="12" y2="16" stroke="white" stroke-width="1.8" stroke-linecap="round"/><rect x="9" y="14" width="6" height="4" rx="2" fill="white"/></svg></div>`,className:'',iconSize:[40,40],iconAnchor:[20,20]});
-  // Shelter marker — teardrop pin with shelter building icon (matches logo)
-  SH_ICON=L.divIcon({html:`<div style="position:relative;width:40px;height:48px"><div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-top:10px solid #FF6B35"></div><div style="position:absolute;top:0;left:0;width:40px;height:40px;border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;background:#FF6B35;border:2.5px solid white;box-shadow:0 3px 12px rgba(255,107,53,.55),0 1px 4px rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none"><rect x="4" y="11" width="16" height="10" rx="1.5" fill="white" opacity="0.95"/><path d="M2 12 L12 4 L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><rect x="9" y="15" width="6" height="6" rx="1" fill="#FF6B35"/><rect x="10" y="12.5" width="4" height="3" rx="0.8" fill="white" opacity="0.6"/></svg></div></div>`,className:'',iconSize:[40,48],iconAnchor:[20,48]});
+  // Playground marker — teal rounded square with 🛝 emoji
+  PG_ICON=L.divIcon({html:`<div style="width:40px;height:40px;border-radius:13px;background:#4ECBA0;border:2.5px solid white;box-shadow:0 3px 12px rgba(78,203,160,.55),0 1px 4px rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;font-size:20px;line-height:1">🛝</div>`,className:'',iconSize:[40,40],iconAnchor:[20,20]});
+  // Shelter marker — orange teardrop pin with 🛡️ emoji
+  SH_ICON=L.divIcon({html:`<div style="position:relative;width:40px;height:48px"><div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-top:10px solid #FF6B35"></div><div style="position:absolute;top:0;left:0;width:40px;height:40px;border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;background:#FF6B35;border:2.5px solid white;box-shadow:0 3px 12px rgba(255,107,53,.55),0 1px 4px rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;font-size:18px;line-height:1">🛡️</div></div>`,className:'',iconSize:[40,48],iconAnchor:[20,48]});
   map=L.map('map',{center:[31.5,35.0],zoom:8,zoomControl:false,attributionControl:false});
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{maxZoom:19}).addTo(map);
   const RecenterCtrl=L.Control.extend({options:{position:'bottomright'},onAdd:function(){
@@ -1517,7 +1458,7 @@ function buildPgDrw(p){
   return `<div class="drw-handle"></div>
   <div class="drw-hdr">
     <div class="drw-icon-title">
-      <div class="drw-pin green"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none"><line x1="4" y1="2" x2="4" y2="22" stroke="#4ECBA0" stroke-width="2.2" stroke-linecap="round"/><line x1="20" y1="2" x2="20" y2="22" stroke="#4ECBA0" stroke-width="2.2" stroke-linecap="round"/><line x1="4" y1="2" x2="20" y2="2" stroke="#4ECBA0" stroke-width="2.2" stroke-linecap="round"/><line x1="4" y1="5.5" x2="12" y2="15.5" stroke="#4ECBA0" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="5.5" x2="12" y2="15.5" stroke="#4ECBA0" stroke-width="2" stroke-linecap="round"/><rect x="9" y="13.5" width="6" height="4" rx="2" fill="#4ECBA0"/></svg></div>
+      <div class="drw-pin green" style="font-size:22px">🛝</div>
       <div>
         <div class="drw-title">${esc(name)}</div>
         ${addrLine}
@@ -1554,7 +1495,7 @@ function buildShDrw(s){
   return `<div class="drw-handle"></div>
   <div class="drw-hdr">
     <div class="drw-icon-title">
-      <div class="drw-pin coral"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none"><rect x="4" y="11" width="16" height="10" rx="1.5" fill="#FF6B35"/><path d="M2 12 L12 4 L22 12" stroke="#FF6B35" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="15" width="6" height="6" rx="1" fill="white"/></svg></div>
+      <div class="drw-pin coral" style="font-size:22px">🛡️</div>
       <div>
         <div class="drw-title">${esc(titleText)}</div>
         ${cityLine}
@@ -1684,8 +1625,8 @@ function renderList(){
   const html=items.slice(0,120).map(it=>{
     const tp=it._t,nm=tp==='playground'?pgLabel(it):(shLabel(it)||it.city||'');
     const ad=(it.address&&it.address.trim())?it.address:(it.city||'');
-    const pgSvg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none"><line x1="4" y1="2" x2="4" y2="22" stroke="#4ECBA0" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="2" x2="20" y2="22" stroke="#4ECBA0" stroke-width="2" stroke-linecap="round"/><line x1="4" y1="2" x2="20" y2="2" stroke="#4ECBA0" stroke-width="2" stroke-linecap="round"/><line x1="4" y1="5" x2="12" y2="15" stroke="#4ECBA0" stroke-width="1.8" stroke-linecap="round"/><line x1="20" y1="5" x2="12" y2="15" stroke="#4ECBA0" stroke-width="1.8" stroke-linecap="round"/><rect x="9" y="13" width="6" height="4" rx="2" fill="#4ECBA0"/></svg>`;
-    const shSvg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none"><rect x="4" y="11" width="16" height="10" rx="1.5" fill="#FF6B35"/><path d="M2 12 L12 4 L22 12" stroke="#FF6B35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="15" width="6" height="6" rx="1" fill="white"/></svg>`;
+    const pgSvg=`<span style="font-size:18px;line-height:1">🛝</span>`;
+    const shSvg=`<span style="font-size:16px;line-height:1">🛡️</span>`;
     const ic=tp==='playground'?pgSvg:shSvg;
     const bg=tp==='playground'?'background:rgba(78,203,160,0.12)':'background:rgba(255,107,53,0.10)';
     const distStr=userLoc&&it._d!==undefined?`<span class="lcard-dist">${arrow(brng(userLoc.lat,userLoc.lng,it.lat,it.lng))} ${fDist(it._d)}</span>`:'';
@@ -1719,11 +1660,20 @@ function renderList(){
 // ===========================
 // LANGUAGE
 // ===========================
+const LANGS=['he','en','fr'];
+function cycleLang(){
+  const idx=LANGS.indexOf(lang);
+  setLang(LANGS[(idx+1)%LANGS.length]);
+}
 function setLang(l){
   lang=l;
   document.documentElement.lang=l;
   document.documentElement.dir=(l==='he')?'rtl':'ltr';
-  document.querySelectorAll('.lang-btn').forEach(b=>{
+  // Update cycle button text
+  const cyc=document.getElementById('lang-cycle');
+  if(cyc)cyc.textContent=l==='he'?'עב':l.toUpperCase();
+  // Update sidebar 3-button switcher
+  document.querySelectorAll('#sb-lang-sw .lang-btn').forEach(b=>{
     b.classList.toggle('active',b.textContent.trim()===(l==='he'?'עב':l.toUpperCase()));
   });
   // m-sub keeps its two-tone HTML markup — only update sb-sub as plain text
