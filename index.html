@@ -198,6 +198,28 @@ a{text-decoration:none;color:inherit}
   display:flex;align-items:center;justify-content:center;gap:6px;
   box-shadow:0 2px 8px rgba(27,188,179,0.30)
 }
+.sb-contribute{padding:10px 14px 10px;flex-shrink:0;border-top:2px solid var(--sky)}
+.sb-contribute-title{font-size:12px;font-weight:700;color:var(--text2);margin-bottom:6px;letter-spacing:0.3px}
+.sb-contribute-form{display:flex;gap:6px}
+.sb-contribute-input{
+  flex:1;font-family:var(--font);font-size:13px;font-weight:500;
+  padding:8px 10px;border:1.5px solid var(--border);border-radius:var(--r-sm);
+  background:var(--bg);color:var(--text);outline:none;min-height:36px;
+  transition:border-color .15s
+}
+.sb-contribute-input:focus{border-color:var(--blue);background:white}
+.sb-contribute-btn{
+  background:var(--blue);color:white;font-family:var(--font);font-size:12px;font-weight:700;
+  padding:8px 12px;border-radius:var(--r-sm);min-height:36px;white-space:nowrap;
+  transition:background .15s,transform .1s
+}
+.sb-contribute-btn:hover{background:#17a09a}
+.sb-contribute-btn:active{transform:scale(.96)}
+.sb-contribute-thanks{font-size:12px;color:var(--green-dark);font-weight:600;display:none;margin-top:4px}
+.sb-footer{padding:8px 14px 10px;flex-shrink:0;text-align:center}
+.sb-footer-txt{font-size:11px;color:var(--text3);font-weight:500}
+.sb-footer-txt a{color:var(--text2);font-weight:600}
+.sb-footer-txt a:hover{color:var(--blue)}
 .sb-emergency{padding:10px 14px 14px;flex-shrink:0;border-top:2px solid var(--sky)}
 .sb-emg-btn{
   width:100%;background:var(--coral);color:white;
@@ -234,6 +256,51 @@ a{text-decoration:none;color:inherit}
 }
 .vt-btn.active{background:var(--text)}
 .vt-btn.active span{filter:invert(1)}
+
+/* Contribute floating button (mobile) */
+#contrib-fab{
+  position:fixed;bottom:90px;right:14px;z-index:400;
+  background:white;border:1.5px solid var(--border);border-radius:var(--r-xl);
+  box-shadow:var(--sh-sm);padding:8px 12px;
+  font-size:12px;font-weight:700;color:var(--text2);
+  display:flex;align-items:center;gap:5px;
+  transition:box-shadow .15s,color .15s
+}
+#contrib-fab:hover{color:var(--blue);box-shadow:var(--sh-md)}
+
+/* Contribute modal */
+#contrib-modal-bg{
+  position:fixed;inset:0;z-index:1200;
+  background:rgba(28,45,94,0.45);backdrop-filter:blur(4px);
+  display:none;align-items:flex-end;justify-content:center
+}
+#contrib-modal-bg.open{display:flex}
+#contrib-modal{
+  background:white;width:100%;max-width:480px;
+  border-radius:var(--r-xl) var(--r-xl) 0 0;
+  padding:20px 20px 32px;
+  box-shadow:var(--sh-lg)
+}
+.contrib-handle{width:36px;height:4px;background:var(--text3);border-radius:2px;margin:0 auto 18px;cursor:pointer}
+.contrib-modal-title{font-size:17px;font-weight:800;color:var(--text);margin-bottom:4px;letter-spacing:-0.3px}
+.contrib-modal-sub{font-size:13px;color:var(--text2);font-weight:500;margin-bottom:14px;line-height:1.5}
+.contrib-modal-row{display:flex;gap:8px}
+.contrib-modal-input{
+  flex:1;font-family:var(--font);font-size:14px;font-weight:500;
+  padding:12px 14px;border:1.5px solid var(--border);border-radius:var(--r-sm);
+  background:var(--bg);color:var(--text);outline:none;min-height:48px;
+  transition:border-color .15s
+}
+.contrib-modal-input:focus{border-color:var(--blue);background:white}
+.contrib-modal-btn{
+  background:var(--blue);color:white;font-family:var(--font);
+  font-size:14px;font-weight:700;padding:12px 18px;
+  border-radius:var(--r-sm);min-height:48px;white-space:nowrap;
+  transition:background .15s,transform .1s;box-shadow:0 4px 12px rgba(27,188,179,0.30)
+}
+.contrib-modal-btn:hover{background:#17a09a}
+.contrib-modal-btn:active{transform:scale(.96)}
+.contrib-modal-thanks{font-size:13px;color:var(--green-dark);font-weight:600;display:none;margin-top:10px;text-align:center}
 
 /* Emergency bar — fixed floating */
 #emg-bar{
@@ -706,7 +773,7 @@ textarea.mod-input{resize:vertical;min-height:80px}
 /* ===== DESKTOP OVERRIDES ===== */
 @media(min-width:768px){
   #welcome{display:none!important}
-  #topbar,#filterbar,#gps-pill,#emg-bar,#view-toggle,#list-view{display:none!important}
+  #topbar,#filterbar,#gps-pill,#emg-bar,#view-toggle,#list-view,#contrib-fab{display:none!important}
   #sidebar{display:flex}
 
   /* Desktop drawer: slide-in panel over the map, anchored to sidebar edge */
@@ -808,10 +875,21 @@ textarea.mod-input{resize:vertical;min-height:80px}
       <!-- list is injected here on desktop -->
       <div id="sb-list"></div>
     </div>
+    <div class="sb-contribute">
+      <div class="sb-contribute-title" id="sb-contrib-title">יש לך מפה עדכנית?</div>
+      <div class="sb-contribute-form">
+        <input class="sb-contribute-input" id="sb-contrib-input" type="url" placeholder="לינק למפה..." autocomplete="off">
+        <button class="sb-contribute-btn" id="sb-contrib-btn" onclick="submitContrib('sb')">שלח</button>
+      </div>
+      <div class="sb-contribute-thanks" id="sb-contrib-thanks">תודה! נבדוק את הלינק בקרוב 🐦</div>
+    </div>
     <div class="sb-emergency">
       <button class="sb-emg-btn dimmed" id="sb-emg-btn" onclick="onEmgTap()">
         🚨 <span id="sb-emg-lbl">הפעל מיקום לניווט רגלי מהיר</span>
       </button>
+    </div>
+    <div class="sb-footer">
+      <span class="sb-footer-txt" id="sb-footer-txt">נבנה ע"י <a href="https://github.com/elyxk" target="_blank" rel="noopener">elyxk</a></span>
     </div>
   </div>
 
@@ -949,6 +1027,23 @@ textarea.mod-input{resize:vertical;min-height:80px}
   </div>
 </div>
 
+<!-- CONTRIBUTE FAB (mobile) -->
+<button id="contrib-fab" onclick="openContribModal()">🗺️ <span id="contrib-fab-lbl">מפה עדכנית?</span></button>
+
+<!-- CONTRIBUTE MODAL (mobile) -->
+<div id="contrib-modal-bg" onclick="contribBgTap(event)">
+  <div id="contrib-modal">
+    <div class="contrib-handle" onclick="closeContribModal()"></div>
+    <div class="contrib-modal-title" id="contrib-modal-title">יש לך מפה עדכנית?</div>
+    <div class="contrib-modal-sub" id="contrib-modal-sub">שלח לינק למפה עדכנית של מקלטים בעירך ונוסיף אותה</div>
+    <div class="contrib-modal-row">
+      <input class="contrib-modal-input" id="contrib-modal-input" type="url" placeholder="לינק למפה..." autocomplete="off">
+      <button class="contrib-modal-btn" id="contrib-modal-btn" onclick="submitContrib('modal')">שלח</button>
+    </div>
+    <div class="contrib-modal-thanks" id="contrib-modal-thanks">תודה! נבדוק את הלינק בקרוב 🐦</div>
+  </div>
+</div>
+
 <!-- LOADING -->
 <div id="loading-overlay">
   <!-- Real bird mascot: flying/happy pose (R2C2) -->
@@ -1006,6 +1101,10 @@ const S = {
     browserNoGPS:'הדפדפן לא תומך במיקום',revSaveErr:'שגיאה בשמירת הביקורת, נסה שוב',close:'סגור',
     searching:'מחפש...', noResults:'לא נמצאו תוצאות', srchErr:'שגיאת חיפוש, נסה שוב',
     loadingRevs:'טוען ביקורות...', reqLoc:'מבקש מיקום...', retryLoad:'רענן את הדף כדי לנסות שוב',
+    contribTitle:'יש לך מפה עדכנית?',contribSub:'שלח לינק למפה עדכנית של מקלטים בעירך ונוסיף אותה',
+    contribPh:'לינק למפה...',contribBtn:'שלח',contribThanks:'תודה! נבדוק את הלינק בקרוב 🐦',
+    contribFab:'מפה עדכנית?',
+    footerBy:'נבנה ע"י',
   },
   en: {
     sub:'Playgrounds + Shelters',find:'Find playgrounds near me',
@@ -1030,6 +1129,10 @@ const S = {
     browserNoGPS:'Browser does not support location',revSaveErr:'Error saving review, try again',close:'Close',
     searching:'Searching...', noResults:'No results found', srchErr:'Search error, try again',
     loadingRevs:'Loading reviews...', reqLoc:'Requesting location...', retryLoad:'Refresh the page to try again',
+    contribTitle:'Have an updated map?',contribSub:'Send us a link to an updated shelter map for your city and we\'ll add it',
+    contribPh:'Link to map...',contribBtn:'Send',contribThanks:'Thanks! We\'ll check the link soon 🐦',
+    contribFab:'Updated map?',
+    footerBy:'Built by',
   },
   fr: {
     sub:'Aires de jeux + Abris',find:'Trouver des aires de jeux',
@@ -1054,6 +1157,10 @@ const S = {
     browserNoGPS:'Le navigateur ne supporte pas la géolocalisation',revSaveErr:"Erreur d'enregistrement, réessayez",close:'Fermer',
     searching:'Recherche...', noResults:'Aucun résultat', srchErr:'Erreur de recherche, réessayez',
     loadingRevs:'Chargement des avis...', reqLoc:'Demande de localisation...', retryLoad:'Rafraîchir la page pour réessayer',
+    contribTitle:'Vous avez une carte à jour?',contribSub:'Envoyez un lien vers une carte d\'abris à jour pour votre ville',
+    contribPh:'Lien vers la carte...',contribBtn:'Envoyer',contribThanks:'Merci! Nous vérifierons le lien bientôt 🐦',
+    contribFab:'Carte à jour?',
+    footerBy:'Créé par',
   }
 };
 
@@ -1737,7 +1844,14 @@ function setLang(l){
     'mod-title':t('revMod'),'mod-stars-lbl':t('starsLbl'),
     'mod-name-lbl':t('nameLbl'),'mod-cmt-lbl':t('cmtLbl'),'mod-photo-lbl':t('photoLbl'),
     'rev-submit':t('submitRev'),
+    'sb-contrib-title':t('contribTitle'),'contrib-fab-lbl':t('contribFab'),
+    'contrib-modal-title':t('contribTitle'),'contrib-modal-sub':t('contribSub'),
+    'sb-contrib-btn':t('contribBtn'),'contrib-modal-btn':t('contribBtn'),
   };
+  const sbContribInp=document.getElementById('sb-contrib-input');if(sbContribInp)sbContribInp.placeholder=t('contribPh');
+  const contribInp=document.getElementById('contrib-modal-input');if(contribInp)contribInp.placeholder=t('contribPh');
+  const footerEl=document.getElementById('sb-footer-txt');
+  if(footerEl)footerEl.innerHTML=`${t('footerBy')} <a href="https://github.com/elyxk" target="_blank" rel="noopener">elyxk</a>`;
   Object.entries(ids).forEach(([id,val])=>{const el=document.getElementById(id);if(el)el.textContent=val;});
   const srchInp=document.getElementById('srch-input');if(srchInp)srchInp.placeholder=t('srchPh');
   const sbSrch=document.getElementById('sb-search');if(sbSrch)sbSrch.placeholder=t('srchPh');
@@ -1749,6 +1863,45 @@ function setLang(l){
   setEmgReady(!!userLoc);
   if(appData)renderList();
   if(drwItem)openDrawer(drwItem,drwType,true);
+}
+
+// ===========================
+// CONTRIBUTE
+// ===========================
+function openContribModal(){
+  const m=document.getElementById('contrib-modal-bg');
+  if(m){m.classList.add('open');document.getElementById('contrib-modal-input').focus();}
+}
+function closeContribModal(){
+  const m=document.getElementById('contrib-modal-bg');
+  if(m)m.classList.remove('open');
+}
+function contribBgTap(e){
+  if(e.target===document.getElementById('contrib-modal-bg'))closeContribModal();
+}
+async function submitContrib(src){
+  const inputId=src==='modal'?'contrib-modal-input':'sb-contrib-input';
+  const thanksId=src==='modal'?'contrib-modal-thanks':'sb-contrib-thanks';
+  const btnId=src==='modal'?null:'sb-contrib-btn';
+  const inp=document.getElementById(inputId);
+  const url=(inp&&inp.value||'').trim();
+  if(!url)return;
+  // Save to Supabase if available, fallback to mailto
+  try{
+    const client=getSb();
+    if(client){
+      await client.from('map_contributions').insert({url,lang,submitted_at:new Date().toISOString()});
+    }
+  }catch(e){/* silently ignore — contribution is best-effort */}
+  // Show thanks
+  if(inp)inp.value='';
+  const thanks=document.getElementById(thanksId);if(thanks){thanks.textContent=t('contribThanks');thanks.style.display='block';}
+  if(btnId){const btn=document.getElementById(btnId);if(btn)btn.disabled=true;}
+  setTimeout(()=>{
+    if(thanks)thanks.style.display='none';
+    if(btnId){const btn=document.getElementById(btnId);if(btn)btn.disabled=false;}
+    if(src==='modal')closeContribModal();
+  },3000);
 }
 
 // ===========================
