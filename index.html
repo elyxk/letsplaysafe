@@ -216,7 +216,8 @@ a{text-decoration:none;color:inherit}
 .sb-contribute-btn:hover{background:#17a09a}
 .sb-contribute-btn:active{transform:scale(.96)}
 .sb-contribute-thanks{font-size:12px;color:var(--green-dark);font-weight:600;display:none;margin-top:4px}
-.sb-footer{padding:8px 14px 10px;flex-shrink:0;text-align:center}
+.sb-disclaimer{padding:10px 14px 0;flex-shrink:0;font-size:11px;color:var(--text3);line-height:1.5;text-align:center;border-top:1px solid var(--border)}
+.sb-footer{padding:6px 14px 10px;flex-shrink:0;text-align:center}
 .sb-footer-txt{font-size:11px;color:var(--text3);font-weight:500}
 .sb-footer-txt a{color:var(--text2);font-weight:600}
 .sb-footer-txt a:hover{color:var(--blue)}
@@ -369,6 +370,7 @@ a{text-decoration:none;color:inherit}
 .lc-city{font-size:22px;font-weight:800;letter-spacing:-0.5px;line-height:1.2;margin-bottom:8px;color:var(--text)}
 .lc-sub{font-size:14px;color:var(--text2);margin-bottom:24px;line-height:1.6}
 .lc-actions{display:flex;gap:8px;flex-direction:column}
+.lc-disclaimer{font-size:11px;color:var(--text3);line-height:1.5;margin-top:16px;padding-top:12px;border-top:1px solid var(--border);text-align:center}
 #card-gps-btn{
   background:var(--blue);color:white;font-size:17px;font-weight:700;
   padding:16px;border-radius:16px;min-height:56px;width:100%;
@@ -888,6 +890,7 @@ textarea.mod-input{resize:vertical;min-height:80px}
         🚨 <span id="sb-emg-lbl">הפעל מיקום לניווט רגלי מהיר</span>
       </button>
     </div>
+    <div class="sb-disclaimer" id="sb-disclaimer">המידע מתעדכן באופן שוטף אך ייתכנו שינויים — לפרטים מדויקים פנו לעירייה שלכם או חייגו לקו החירום העירוני 🏛️</div>
     <div class="sb-footer">
       <span class="sb-footer-txt" id="sb-footer-txt">נבנה ע"י <a href="https://github.com/elyxk" target="_blank" rel="noopener">elyxk</a></span>
     </div>
@@ -942,6 +945,7 @@ textarea.mod-input{resize:vertical;min-height:80px}
         <button id="card-gps-btn" onclick="requestGPS()"><span id="card-gps-lbl">אפשר גישה למיקום</span></button>
         <button id="card-srch-btn" onclick="openSrch()"><span id="card-srch-lbl">הכנס כתובת במקום</span></button>
       </div>
+      <div class="lc-disclaimer" id="lc-disclaimer">המידע מתעדכן באופן שוטף אך ייתכנו שינויים — לפרטים מדויקים פנו לעירייה שלכם או חייגו לקו החירום העירוני 🏛️</div>
     </div>
 
     <!-- GPS pill -->
@@ -1105,6 +1109,7 @@ const S = {
     contribPh:'לינק למפה...',contribBtn:'שלח',contribThanks:'תודה! נבדוק את הלינק בקרוב 🐦',
     contribFab:'מפה עדכנית?',
     footerBy:'נבנה ע"י',
+    disclaimer:'המידע מתעדכן באופן שוטף אך ייתכנו שינויים — לפרטים מדויקים פנו לעירייה שלכם או חייגו לקו החירום העירוני 🏛️',
   },
   en: {
     sub:'Playgrounds + Shelters',find:'Find playgrounds near me',
@@ -1133,6 +1138,7 @@ const S = {
     contribPh:'Link to map...',contribBtn:'Send',contribThanks:'Thanks! We\'ll check the link soon 🐦',
     contribFab:'Updated map?',
     footerBy:'Built by',
+    disclaimer:'We keep this map as up-to-date as possible, but always verify with your local municipality or call their emergency line for the most accurate info 🏛️',
   },
   fr: {
     sub:'Aires de jeux + Abris',find:'Trouver des aires de jeux',
@@ -1161,6 +1167,7 @@ const S = {
     contribPh:'Lien vers la carte...',contribBtn:'Envoyer',contribThanks:'Merci! Nous vérifierons le lien bientôt 🐦',
     contribFab:'Carte à jour?',
     footerBy:'Créé par',
+    disclaimer:'Nous maintenons cette carte à jour du mieux possible, mais vérifiez toujours auprès de votre mairie ou appelez leur ligne d\'urgence 🏛️',
   }
 };
 
@@ -1847,6 +1854,7 @@ function setLang(l){
     'sb-contrib-title':t('contribTitle'),'contrib-fab-lbl':t('contribFab'),
     'contrib-modal-title':t('contribTitle'),'contrib-modal-sub':t('contribSub'),
     'sb-contrib-btn':t('contribBtn'),'contrib-modal-btn':t('contribBtn'),
+    'lc-disclaimer':t('disclaimer'),'sb-disclaimer':t('disclaimer'),
   };
   const sbContribInp=document.getElementById('sb-contrib-input');if(sbContribInp)sbContribInp.placeholder=t('contribPh');
   const contribInp=document.getElementById('contrib-modal-input');if(contribInp)contribInp.placeholder=t('contribPh');
