@@ -2,7 +2,7 @@
 <html dir="rtl" lang="he">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>גינה בטוחה 🐦</title>
 <!-- Open Graph / WhatsApp / Telegram / Facebook -->
 <meta property="og:type" content="website">
@@ -314,16 +314,16 @@ a{text-decoration:none;color:inherit}
   position:fixed;bottom:0;left:0;right:0;z-index:390;
   background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
   border-top:1px solid var(--border);
-  padding:6px 16px 8px;
+  padding:6px 16px calc(8px + env(safe-area-inset-bottom, 0px));
   display:flex;flex-direction:column;align-items:center;gap:2px;
   pointer-events:none
 }
-#site-footer-disclaimer{font-size:10px;color:var(--text3);line-height:1.4;text-align:center}
-#site-footer-by{font-size:10px;color:var(--text3);font-weight:500}
+#site-footer-disclaimer{font-size:10px;color:var(--text3);line-height:1.4;text-align:center;white-space:normal;word-break:break-word}
+#site-footer-by{font-size:10px;color:var(--text3);font-weight:500;white-space:nowrap}
 #site-footer-by a{color:var(--text2);font-weight:600;pointer-events:auto}
 #site-footer-by a:hover{color:var(--blue)}
 @media(min-width:768px){
-  #site-footer{left:var(--sidebar-w)}
+  #site-footer{left:var(--sidebar-w);text-align:center}
 }
 
 #emg-bar{
@@ -1450,7 +1450,7 @@ function onLocKnown(lat,lng){
   if(userMarker)map.removeLayer(userMarker);
   userMarker=L.marker([lat,lng],{icon:dotIcon(),zIndexOffset:1000}).addTo(map);
   renderPins(); // replace preview pins with full-opacity pins
-  map.flyTo([lat,lng],15,{duration:1.2});
+  map.flyTo([lat,lng],17,{duration:1.2});
   map.once('moveend',filterPinsToView);
   setEmgReady(true);
   updateUserLine();
@@ -1472,7 +1472,7 @@ function onLocKnown(lat,lng){
 
 function recenterMap(){
   if(!userLoc)return;
-  map.flyTo([userLoc.lat,userLoc.lng],15,{duration:1});
+  map.flyTo([userLoc.lat,userLoc.lng],17,{duration:1});
 }
 
 function setEmgReady(on){
