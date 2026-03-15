@@ -4,6 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>גינה בטוחה 🐦</title>
+<!-- Open Graph / WhatsApp / Telegram / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://elyxk.github.io/letsplaysafe/">
+<meta property="og:title" content="גינה בטוחה — מגרשי משחקים ומקלטים בישראל">
+<meta property="og:description" content="מצאו מגרשי משחקים קרובים למקלט. לשחק בביטחון, לדעת שיש מקלט בקרבת מקום.">
+<meta property="og:image" content="https://elyxk.github.io/letsplaysafe/og-image.png">
+<!-- Twitter / X card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="גינה בטוחה — מגרשי משחקים ומקלטים בישראל">
+<meta name="twitter:description" content="מצאו מגרשי משחקים קרובים למקלט. לשחק בביטחון, לדעת שיש מקלט בקרבת מקום.">
+<meta name="twitter:image" content="https://elyxk.github.io/letsplaysafe/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -1650,6 +1661,7 @@ function buildPgDrw(p){
     <div class="drw-icon-title">
       <div class="drw-pin green" style="font-size:22px">🛝</div>
       <div>
+        <div style="font-size:11px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px">${t('pgTitle')}</div>
         <div class="drw-title">${esc(name)}</div>
         ${addrLine}
         ${pgNotesHtml}
