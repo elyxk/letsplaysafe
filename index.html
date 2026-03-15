@@ -708,13 +708,31 @@ textarea.mod-input{resize:vertical;min-height:80px}
   #welcome{display:none!important}
   #topbar,#filterbar,#gps-pill,#emg-bar,#view-toggle,#list-view{display:none!important}
   #sidebar{display:flex}
+
+  /* Desktop drawer: slide-in panel over the map, anchored to sidebar edge */
   #drawer{
-    position:static!important;transform:none!important;border-radius:0!important;
-    box-shadow:none!important;background:transparent!important;backdrop-filter:none!important;
-    -webkit-backdrop-filter:none!important;max-height:none!important;display:none
+    position:fixed!important;
+    top:0;bottom:0;
+    right:auto!important;left:var(--sidebar-w)!important;
+    width:360px;
+    background:white!important;
+    border-radius:0 var(--r-lg) var(--r-lg) 0!important;
+    box-shadow:var(--sh-lg),4px 0 0 0 var(--sky)!important;
+    backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+    z-index:800!important;
+    max-height:100vh!important;overflow-y:auto;-webkit-overflow-scrolling:touch;
+    transform:translateX(-110%)!important;
+    transition:transform .35s cubic-bezier(.32,.72,0,1)!important;
+    display:block!important
   }
-  #drw-bg{display:none!important}
-  #drawer.open{display:block}
+  #drawer.open{transform:translateX(0)!important}
+
+  /* Desktop drawer backdrop — covers map area only */
+  #drw-bg{
+    display:block!important;
+    right:0;left:var(--sidebar-w)!important
+  }
+
   .drw-handle{display:none}
   #map{padding-top:0!important}
   .sb-content #list-view{
@@ -789,8 +807,6 @@ textarea.mod-input{resize:vertical;min-height:80px}
       </div>
       <!-- list is injected here on desktop -->
       <div id="sb-list"></div>
-      <!-- drawer detail is injected here on desktop -->
-      <div id="drawer"></div>
     </div>
     <div class="sb-emergency">
       <button class="sb-emg-btn dimmed" id="sb-emg-btn" onclick="onEmgTap()">
@@ -888,7 +904,10 @@ textarea.mod-input{resize:vertical;min-height:80px}
   <div id="loc-prompt-card" class="loc-prompt" style="display:none"></div>
 </div>
 
-<!-- DRAWER BACKDROP (mobile only) -->
+<!-- DRAWER (mobile: bottom sheet, desktop: slide-in panel) -->
+<div id="drawer"></div>
+
+<!-- DRAWER BACKDROP -->
 <div id="drw-bg" onclick="closeDrawer()"></div>
 
 <!-- EMERGENCY OVERLAY -->
@@ -1244,13 +1263,21 @@ function filterPinsToView(){
 }
 
 
-function updateUserLine(){
+function clearPgLine(){
   if(userLine){map.removeLayer(userLine);userLine=null;}
+}
+function drawPgLine(pg){
+  clearPgLine();
+  if(!appData)return;
+  const ns=nearSh(pg.lat,pg.lng,1)[0];
+  if(!ns)return;
+  userLine=L.polyline([[pg.lat,pg.lng],[ns.lat,ns.lng]],{color:'#FF6B35',weight:3,opacity:.9,dashArray:'6 4',lineCap:'round'}).addTo(map);
+}
+function updateUserLine(){
+  // kept only for emergency mode: updates nearShCache from user position
   if(!userLoc||!appData)return;
   const ns=nearSh(userLoc.lat,userLoc.lng,1)[0];
-  if(!ns)return;
-  nearShCache=ns;
-  userLine=L.polyline([[userLoc.lat,userLoc.lng],[ns.lat,ns.lng]],{color:'#FF6B35',weight:3,opacity:.9,lineCap:'round'}).addTo(map);
+  if(ns)nearShCache=ns;
 }
 
 // ===========================
@@ -1419,27 +1446,31 @@ function openDrawer(item,type,refresh=false){
     drw.scrollTop=0;
     if(!refresh)map.panBy([0,-120],{animate:true});
   } else {
-    document.getElementById('sb-list').style.display='none';
-    const gc=document.getElementById('sb-gps-card');if(gc)gc.style.display='none';
-    drw.style.display='block';
+    // Desktop: slide drawer in over the map (keep sidebar list visible)
+    if(drw.parentElement!==document.body)document.body.appendChild(drw);
+    drw.scrollTop=0;
+    requestAnimationFrame(()=>drw.classList.add('open'));
+    document.getElementById('drw-bg').classList.add('show');
     map.panTo([item.lat,item.lng],{animate:true});
   }
   loadRevs(item.id,type);
+  if(type==='playground')drawPgLine(item);
+  else clearPgLine();
 }
 
 function openById(id,type){const item=itemMap.get(id);if(item)openDrawer(item,type);}
 
 function closeDrawer(){
+  clearPgLine();
   drwItem=null;drwType=null;
   const drw=document.getElementById('drawer');
+  drw.classList.remove('open');
+  document.getElementById('drw-bg').classList.remove('show');
   if(mobile()){
-    drw.classList.remove('open');
-    document.getElementById('drw-bg').classList.remove('show');
     document.getElementById('emg-bar').style.display='';
   } else {
-    drw.style.display='none';drw.innerHTML='';
-    document.getElementById('sb-list').style.display='';
-    if(!userLoc){const gc=document.getElementById('sb-gps-card');if(gc)gc.style.display='';}
+    // clear content after transition
+    setTimeout(()=>{if(!drw.classList.contains('open'))drw.innerHTML='';},370);
   }
 }
 
