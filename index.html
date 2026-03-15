@@ -163,7 +163,8 @@ a{text-decoration:none;color:inherit}
   display:none;width:var(--sidebar-w);height:100%;
   background:white;
   border-left:2px solid var(--sky);
-  flex-direction:column;z-index:100;flex-shrink:0
+  flex-direction:column;z-index:100;flex-shrink:0;
+  position:relative;overflow:hidden
 }
 .sb-topbar{
   display:flex;align-items:center;justify-content:space-between;
@@ -802,29 +803,25 @@ textarea.mod-input{resize:vertical;min-height:80px}
   #topbar,#filterbar,#gps-pill,#emg-bar,#view-toggle,#list-view,#contrib-fab{display:none!important}
   #sidebar{display:flex}
 
-  /* Desktop drawer: slide-in panel over the map, anchored to sidebar edge */
+  /* Desktop: drawer lives inside sidebar, not floating over map */
   #drawer{
-    position:fixed!important;
-    top:0;bottom:0;
-    right:auto!important;left:var(--sidebar-w)!important;
-    width:360px;
-    background:white!important;
-    border-radius:0 var(--r-lg) var(--r-lg) 0!important;
-    box-shadow:var(--sh-lg),4px 0 0 0 var(--sky)!important;
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    max-height:none!important;
+    border-radius:0!important;
+    box-shadow:none!important;
     backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
-    z-index:800!important;
-    max-height:100vh!important;overflow-y:auto;-webkit-overflow-scrolling:touch;
-    transform:translateX(-110%)!important;
-    transition:transform .35s cubic-bezier(.32,.72,0,1)!important;
-    display:block!important
+    z-index:10!important;
+    transform:translateX(110%)!important;
+    transition:transform .28s cubic-bezier(.32,.72,0,1)!important;
+    display:block!important;
+    overflow-y:auto;-webkit-overflow-scrolling:touch
   }
   #drawer.open{transform:translateX(0)!important}
 
-  /* Desktop drawer backdrop — covers map area only */
-  #drw-bg{
-    display:block!important;
-    right:0;left:var(--sidebar-w)!important
-  }
+  /* Backdrop not needed on desktop */
+  #drw-bg{display:none!important}
 
   .drw-handle{display:none}
   #map{padding-top:0!important}
@@ -1584,11 +1581,11 @@ function openDrawer(item,type,refresh=false){
     drw.scrollTop=0;
     if(!refresh)map.panBy([0,-120],{animate:true});
   } else {
-    // Desktop: slide drawer in over the map (keep sidebar list visible)
-    if(drw.parentElement!==document.body)document.body.appendChild(drw);
+    // Desktop: slide drawer inside sidebar (replaces list view)
+    const sb=document.getElementById('sidebar');
+    if(drw.parentElement!==sb)sb.appendChild(drw);
     drw.scrollTop=0;
     requestAnimationFrame(()=>drw.classList.add('open'));
-    document.getElementById('drw-bg').classList.add('show');
     map.panTo([item.lat,item.lng],{animate:true});
   }
   loadRevs(item.id,type);
@@ -1603,12 +1600,17 @@ function closeDrawer(){
   drwItem=null;drwType=null;
   const drw=document.getElementById('drawer');
   drw.classList.remove('open');
-  document.getElementById('drw-bg').classList.remove('show');
   if(mobile()){
+    document.getElementById('drw-bg').classList.remove('show');
     document.getElementById('emg-bar').style.display='';
   } else {
-    // clear content after transition
-    setTimeout(()=>{if(!drw.classList.contains('open'))drw.innerHTML='';},370);
+    // move drawer back to body and clear content after transition
+    setTimeout(()=>{
+      if(!drw.classList.contains('open')){
+        drw.innerHTML='';
+        if(drw.parentElement!==document.body)document.body.appendChild(drw);
+      }
+    },300);
   }
 }
 
