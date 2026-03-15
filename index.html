@@ -447,12 +447,13 @@ a{text-decoration:none;color:inherit}
 .rev-cphoto{margin-top:8px}
 .rev-cphoto img{width:80px;height:60px;object-fit:cover;border-radius:8px}
 .btn-add-rev{
-  width:100%;background:var(--green);color:white;font-size:15px;font-weight:700;
-  padding:14px 20px;border-radius:var(--r-md);min-height:48px;border:none;
+  width:100%;background:transparent;color:var(--text2);font-size:13px;font-weight:600;
+  padding:10px 16px;border-radius:var(--r-md);min-height:40px;
+  border:1.5px solid var(--border);
   display:flex;align-items:center;justify-content:center;gap:6px;
-  margin-top:10px;transition:opacity .15s
+  margin-top:8px;transition:border-color .15s,color .15s
 }
-.btn-add-rev:hover{opacity:.88}
+.btn-add-rev:hover{border-color:var(--green);color:var(--green)}
 .rev-loading,.rev-empty{font-size:13px;color:var(--text2);padding:8px 0}
 .rev-empty{font-style:italic}
 .rev-err{font-size:12px;color:var(--text3);padding:8px 0}
@@ -1289,6 +1290,7 @@ function buildPgDrw(p){
     const b = brng(userLoc.lat, userLoc.lng, p.lat, p.lng);
     distHtml = `<div class="drw-dist"><div class="drw-dist-pill"><span class="drw-dist-num">${arrow(b)} ${fDist(d)}</span><span class="drw-dist-lbl">${t('walk')}</span></div></div>`;
   }
+  const pgMapsUrl = `https://maps.google.com/?daddr=${p.lat},${p.lng}&travelmode=walking`;
   const fromLat = userLoc ? userLoc.lat : p.lat;
   const fromLng = userLoc ? userLoc.lng : p.lng;
   const shRows = nearSh(fromLat, fromLng, 3).map(s => {
@@ -1319,6 +1321,8 @@ function buildPgDrw(p){
   </div>
   <div class="drw-body">
     ${distHtml}
+    <a class="btn-walk" href="${pgMapsUrl}" target="_blank" rel="noopener">${t('showRt')}</a>
+    <div class="drw-div"></div>
     <div class="sec-title">${t('nearSh')}</div>
     ${shRows}
     <div id="rev-sec"><div class="rev-loading">טוען ביקורות...</div></div>
