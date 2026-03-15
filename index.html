@@ -69,8 +69,8 @@ a{text-decoration:none;color:inherit}
   padding:8px 12px;gap:8px;z-index:500;height:var(--topbar-h)
 }
 .tb-logo-img{
-  width:36px;height:36px;border-radius:8px;
-  object-fit:cover;object-position:12% center;
+  width:48px;height:36px;border-radius:8px;
+  object-fit:cover;object-position:15% center;
   flex-shrink:0
 }
 /* name + lang + search all in one row */
@@ -288,7 +288,7 @@ a{text-decoration:none;color:inherit}
 @media(min-width:768px){#loc-card{display:none}}
 /* Welcome card mascot */
 .lc-mascot{display:flex;align-items:flex-end;justify-content:center;gap:0;margin-bottom:4px;position:relative}
-.lc-bird{width:90px;height:90px;flex-shrink:0}
+.lc-bird{flex-shrink:0}/* dimensions set by .bird-96 */
 .lc-scene-icons{display:flex;flex-direction:column;gap:8px;padding-bottom:6px;margin-right:-8px}
 .lc-scene-icon{
   width:44px;height:44px;border-radius:13px;
@@ -654,34 +654,51 @@ textarea.mod-input{resize:vertical;min-height:80px}
 .marker-cluster-small div,.marker-cluster-medium div,.marker-cluster-large div{background:transparent!important}
 
 /* ===== BIRD SPRITES ===== */
-/* Sprite sheet: 2048×2048, 3 cols × 4 rows, each cell ~683×512px */
+/*
+  Sheet: 2048×2048px square, 3 cols × 4 rows
+  Cell: 2048/3 = 682.7px wide, 2048/4 = 512px tall
+  Natural cell aspect ratio: 682.7 / 512 = 1.333 (landscape, 4:3)
+
+  To display a cell at W px wide:
+    sheet-size = (2048/682.7)*W × (2048/512)*W  BUT sheet is square so:
+    sheet-size = (W * 3) × (W * 4)   [cols=3, rows=4]
+    cell width displayed = W, cell height displayed = W * (4/3) ← taller than wide
+
+  Wait — sheet 2048 sq, col unit = 2048/3, row unit = 2048/4
+  Scale to cell-width=W: scale = W / (2048/3) = 3W/2048
+    → sheet-size = 2048 * scale × 2048 * scale = 3W × 3W  (square, scaled)
+    → cell-height = (2048/4) * scale = 512 * (3W/2048) = (3W/4) = 0.75W
+
+  So for W=96px: sheet = 288×288px, cell = 96×72px
+  Positions: col offset = -96*col, row offset = -72*row
+*/
 .bird{
   background-image:url('assets/bird-sprites.png');
   background-repeat:no-repeat;
   display:inline-block;
+  flex-shrink:0;
 }
-/* 90px display — sheet scaled to 270×360 */
-.bird-90{background-size:270px 360px;width:90px;height:90px;flex-shrink:0}
-.bird-wave    {background-position:0 0}         /* R1C1 waving */
-.bird-location{background-position:-90px 0}     /* R1C2 location pin */
-.bird-shield  {background-position:-180px 0}    /* R1C3 shield */
-.bird-map     {background-position:0 -90px}     /* R2C1 reading map — welcome card */
-.bird-fly     {background-position:-90px -90px} /* R2C2 flying — loading */
-.bird-smile   {background-position:-180px -90px}/* R2C3 smiling */
-.bird-think   {background-position:0 -180px}    /* R3C1 thinking */
-.bird-run     {background-position:-90px -180px}/* R3C2 running to playground */
-.bird-thumbs  {background-position:-180px -180px}/* R3C3 thumbs up */
-.bird-celebrate{background-position:0 -270px}   /* R4C1 celebrating */
-/* 60px display — sheet scaled to 180×240 */
-.bird-60{background-size:180px 240px;width:60px;height:60px;flex-shrink:0}
-/* Map placeholder waving bird */
+/* 96px wide × 72px tall per cell — sheet scaled to 288×288 */
+.bird-96{background-size:288px 288px;width:96px;height:72px}
+.bird-wave    {background-position:0 0}          /* R1C1 */
+.bird-location{background-position:-96px 0}      /* R1C2 */
+.bird-shield  {background-position:-192px 0}     /* R1C3 */
+.bird-map     {background-position:0 -72px}      /* R2C1 reading map */
+.bird-fly     {background-position:-96px -72px}  /* R2C2 flying */
+.bird-smile   {background-position:-192px -72px} /* R2C3 */
+.bird-think   {background-position:0 -144px}     /* R3C1 */
+.bird-run     {background-position:-96px -144px} /* R3C2 */
+.bird-thumbs  {background-position:-192px -144px}/* R3C3 */
+.bird-celebrate{background-position:0 -216px}    /* R4C1 */
+
+/* Map placeholder waving bird — 72×54px */
 .bird-map-ph{
   background-image:url('assets/bird-sprites.png');
-  background-size:180px 240px;
+  background-size:216px 216px;
   background-position:0 0;
   background-repeat:no-repeat;
-  width:60px;height:60px;
-  border-radius:8px;
+  width:72px;height:54px;
+  border-radius:6px;
   position:absolute;bottom:32%;left:50%;transform:translateX(-50%);
   z-index:2;animation:fpFloat 3.5s ease-in-out infinite
 }
@@ -743,7 +760,7 @@ textarea.mod-input{resize:vertical;min-height:80px}
   <div id="sidebar">
     <div class="sb-topbar">
       <div class="tb-left" style="display:flex;align-items:center;gap:10px">
-        <img src="assets/logo.png" style="width:40px;height:40px;border-radius:10px;object-fit:cover;object-position:12% center;flex-shrink:0" alt="גינה בטוחה">
+        <img src="assets/logo.png" style="width:56px;height:42px;border-radius:10px;object-fit:cover;object-position:15% center;flex-shrink:0" alt="גינה בטוחה">
         <div class="tb-text">
           <span class="tb-name" style="font-size:20px;font-weight:800;letter-spacing:-0.5px"><span style="color:#1BBCB3">גינה</span> <span style="color:#1C2D5E">בטוחה</span></span>
           <span class="tb-tagline" id="sb-sub" style="display:block;font-size:11px;color:#7B8BAA;margin-top:1px">גינות · מקלטים · בטחון</span>
@@ -818,7 +835,7 @@ textarea.mod-input{resize:vertical;min-height:80px}
     <div id="loc-card">
       <div class="lc-mascot">
         <!-- Real bird mascot from sprite sheet: sitting reading map (R2C1) -->
-        <div class="lc-bird bird bird-90 bird-map" style="border-radius:12px"></div>
+        <div class="lc-bird bird bird-96 bird-map" style="border-radius:12px"></div>
         <!-- Side icons -->
         <div class="lc-scene-icons">
           <div class="lc-scene-icon green">🛝</div>
@@ -916,7 +933,7 @@ textarea.mod-input{resize:vertical;min-height:80px}
 <!-- LOADING -->
 <div id="loading-overlay">
   <!-- Real bird mascot: flying/happy pose (R2C2) -->
-  <div class="bird bird-90 bird-fly" style="border-radius:12px;animation:loadBird 1.6s ease-in-out infinite"></div>
+  <div class="bird bird-96 bird-fly" style="border-radius:12px;animation:loadBird 1.6s ease-in-out infinite"></div>
   <div class="spinner"></div>
   <div class="load-text" id="load-text">מחפש גינות ומקלטים...</div>
 </div>
