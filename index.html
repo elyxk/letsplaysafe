@@ -30,7 +30,7 @@
   --sh-sm: 0 1px 4px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.05);
   --sh-md: 0 2px 12px rgba(0,0,0,0.08), 0 6px 24px rgba(0,0,0,0.07);
   --sh-lg: 0 4px 24px rgba(0,0,0,0.10), 0 12px 48px rgba(0,0,0,0.12);
-  --topbar-h: 56px;
+  --topbar-h: 88px;
   --filter-h: 0px;
   --header-green: transparent;
   --sidebar-w: 360px;
@@ -59,31 +59,34 @@ a{text-decoration:none;color:inherit}
 /* Bottom sheet hidden — not used in full-screen mode */
 #bottom-sheet{display:none}
 
-/* Mobile topbar — vibrancy */
+/* Mobile topbar — vibrancy, two-row */
 #topbar{
   position:fixed;top:0;right:0;left:0;
-  height:var(--topbar-h);
   background:var(--glass-bg);
   backdrop-filter:var(--glass-blur);
   -webkit-backdrop-filter:var(--glass-blur);
   border-bottom:1px solid rgba(0,0,0,0.07);
-  display:flex;align-items:center;
-  padding:0 14px;gap:10px;z-index:500
+  display:flex;flex-direction:column;
+  padding:10px 16px 8px;gap:6px;z-index:500
 }
+/* Row 1: name + lang + search */
+.tb-row1{display:flex;align-items:center;gap:8px;min-height:34px}
+/* Row 2: filter pills */
+.tb-row2{display:flex;align-items:center;gap:8px}
 .tb-pills{display:flex;gap:8px;flex-shrink:0}
 .tb-pill{
-  width:44px;height:44px;border-radius:50%;
+  width:36px;height:36px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  font-size:16px;border:1.5px solid rgba(0,0,0,0.08);
+  font-size:15px;border:1.5px solid rgba(0,0,0,0.08);
   transition:transform .15s
 }
 .tb-pill.red{background:var(--coral)}
 .tb-pill.green{background:var(--green);border-color:rgba(255,255,255,0.5)}
-.tb-pill.active-filter{border-color:white;transform:scale(1.1)}
-.tb-center{flex:1;text-align:center}
-.tb-name{font-size:15px;font-weight:700;color:var(--text);line-height:1.2;letter-spacing:-0.3px}
-.tb-tagline{font-size:10px;color:var(--text2);font-weight:500}
-.tb-menu{color:var(--blue);font-size:20px;padding:4px 6px;flex-shrink:0}
+.tb-pill.active-filter{border-color:white;transform:scale(1.08)}
+.tb-center{flex:1;min-width:0}
+.tb-name{font-size:17px;font-weight:800;color:var(--text);line-height:1;letter-spacing:-0.4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tb-tagline{display:none}
+.tb-menu{color:var(--blue);font-size:20px;padding:4px;flex-shrink:0;width:36px;height:36px;display:flex;align-items:center;justify-content:center}
 
 /* Filter bar hidden on mobile (replaced by pills in header) */
 #filterbar{display:none}
@@ -114,9 +117,16 @@ a{text-decoration:none;color:inherit}
 
 /* ===== LANGUAGE SWITCHER ===== */
 #lang-sw{display:flex;gap:2px}
-.tb-lang-sw{display:flex;gap:2px;flex-shrink:0}
-.tb-lang-sw .lang-btn{color:var(--text2);min-width:44px;min-height:44px;padding:6px 8px}
-.tb-lang-sw .lang-btn.active{background:rgba(0,122,255,0.12);color:var(--blue);border-radius:8px}
+.tb-lang-sw{
+  display:flex;gap:2px;flex-shrink:0;
+  background:rgba(116,116,128,0.12);border-radius:10px;padding:2px
+}
+.tb-lang-sw .lang-btn{
+  color:var(--text2);min-width:0;min-height:0;
+  padding:4px 8px;font-size:11px;font-weight:600;
+  border-radius:8px;transition:all .15s
+}
+.tb-lang-sw .lang-btn.active{background:white;color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,0.12)}
 .lang-btn{
   padding:8px 10px;font-size:12px;font-weight:600;color:var(--text2);
   border-radius:8px;transition:all .15s;min-height:44px;min-width:44px
@@ -616,20 +626,23 @@ textarea.mod-input{resize:vertical;min-height:80px}
 
 <!-- MOBILE TOP BAR -->
 <div id="topbar">
-  <div class="tb-pills">
-    <button class="tb-pill red" id="tb-sh-pill" onclick="toggleShFilter()" title="מקלטים">🛡️</button>
-    <button class="tb-pill green active-filter" id="tb-pg-pill" onclick="togglePgFilter()" title="מגרשים">📍</button>
+  <div class="tb-row1">
+    <div class="tb-center">
+      <div class="tb-name" id="m-sub">מגרשים ומקלטים</div>
+    </div>
+    <div id="tb-lang-sw" class="tb-lang-sw">
+      <button class="lang-btn active" onclick="setLang('he')">עב</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('fr')">FR</button>
+    </div>
+    <button class="tb-menu" onclick="openSrch()">🔍</button>
   </div>
-  <div class="tb-center">
-    <div class="tb-name" id="m-sub">מגרשי משחקים וממ"ד</div>
-    <div class="tb-tagline">מצא מגרש משחקים ומקלט קרוב בישראל</div>
+  <div class="tb-row2">
+    <div class="tb-pills">
+      <button class="tb-pill red" id="tb-sh-pill" onclick="toggleShFilter()" title="מקלטים">🛡️</button>
+      <button class="tb-pill green active-filter" id="tb-pg-pill" onclick="togglePgFilter()" title="מגרשים">🛝</button>
+    </div>
   </div>
-  <div id="tb-lang-sw" class="tb-lang-sw">
-    <button class="lang-btn active" onclick="setLang('he')">עב</button>
-    <button class="lang-btn" onclick="setLang('en')">EN</button>
-    <button class="lang-btn" onclick="setLang('fr')">FR</button>
-  </div>
-  <button class="tb-menu" onclick="openSrch()">🔍</button>
 </div>
 
 <!-- FILTER BAR (hidden on mobile, kept for desktop) -->
