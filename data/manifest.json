@@ -1,1 +1,545 @@
-{"generatedAt":"2026-03-13T10:00:00.000Z","step":0.5,"latMin":26,"lngMin":33,"entries":[{"key":"tel_aviv","name":"תל אביב","type":"city","source":"existing","bbox":{"latMin":32.02,"latMax":32.13,"lngMin":34.73,"lngMax":34.84},"shelterCount":570,"playgroundCount":356},{"key":"raanana","name":"רעננה","type":"city","source":"arcgis","bbox":{"latMin":32.16,"latMax":32.23,"lngMin":34.84,"lngMax":34.91},"shelterCount":43,"playgroundCount":114},{"key":"jerusalem","name":"ירושלים","type":"city","source":"existing","bbox":{"latMin":31.69,"latMax":31.87,"lngMin":35.14,"lngMax":35.29},"shelterCount":15,"playgroundCount":586},{"key":"haifa","name":"חיפה","type":"city","source":"existing","bbox":{"latMin":32.74,"latMax":32.86,"lngMin":34.94,"lngMax":35.08},"shelterCount":64,"playgroundCount":162},{"key":"beer_sheva","name":"באר שבע","type":"city","source":"existing","bbox":{"latMin":31.18,"latMax":31.3,"lngMin":34.75,"lngMax":34.87},"shelterCount":15,"playgroundCount":178},{"key":"netanya","name":"נתניה","type":"city","source":"existing","bbox":{"latMin":32.26,"latMax":32.38,"lngMin":34.82,"lngMax":34.93},"shelterCount":3,"playgroundCount":114},{"key":"petah_tikva","name":"פתח תקווה","type":"city","source":"existing","bbox":{"latMin":32.04,"latMax":32.13,"lngMin":34.84,"lngMax":34.94},"shelterCount":20,"playgroundCount":126},{"key":"rishon","name":"ראשון לציון","type":"city","source":"existing","bbox":{"latMin":31.93,"latMax":32.04,"lngMin":34.76,"lngMax":34.87},"shelterCount":26,"playgroundCount":482},{"key":"ashdod","name":"אשדוד","type":"city","source":"existing","bbox":{"latMin":31.76,"latMax":31.87,"lngMin":34.6,"lngMax":34.72},"shelterCount":17,"playgroundCount":83},{"key":"ashkelon","name":"אשקלון","type":"city","source":"existing","bbox":{"latMin":31.62,"latMax":31.73,"lngMin":34.53,"lngMax":34.64},"shelterCount":1,"playgroundCount":61},{"key":"rehovot","name":"רחובות","type":"city","source":"existing","bbox":{"latMin":31.86,"latMax":31.95,"lngMin":34.77,"lngMax":34.86},"shelterCount":18,"playgroundCount":153},{"key":"herzliya","name":"הרצליה","type":"city","source":"existing","bbox":{"latMin":32.13,"latMax":32.2,"lngMin":34.8,"lngMax":34.89},"shelterCount":36,"playgroundCount":123},{"key":"holon","name":"חולון","type":"city","source":"existing","bbox":{"latMin":31.98,"latMax":32.06,"lngMin":34.75,"lngMax":34.84},"shelterCount":0,"playgroundCount":21},{"key":"kfar_saba","name":"כפר סבא","type":"city","source":"existing","bbox":{"latMin":32.15,"latMax":32.23,"lngMin":34.87,"lngMax":34.95},"shelterCount":1,"playgroundCount":26},{"key":"modiin","name":"מודיעין","type":"city","source":"existing","bbox":{"latMin":31.87,"latMax":31.96,"lngMin":34.98,"lngMax":35.09},"shelterCount":9,"playgroundCount":178},{"key":"eilat","name":"אילת","type":"city","source":"existing","bbox":{"latMin":29.46,"latMax":29.6,"lngMin":34.9,"lngMax":35},"shelterCount":1,"playgroundCount":75},{"key":"nahariya","name":"נהריה","type":"city","source":"existing","bbox":{"latMin":32.98,"latMax":33.05,"lngMin":35.06,"lngMax":35.14},"shelterCount":0,"playgroundCount":18},{"key":"tile_0_0","type":"tile","source":"existing","bbox":{"latMin":26,"latMax":26.5,"lngMin":33,"lngMax":33.5},"shelterCount":9,"playgroundCount":0},{"key":"tile_11_3","type":"tile","source":"existing","bbox":{"latMin":31.5,"latMax":32,"lngMin":34.5,"lngMax":35},"shelterCount":56,"playgroundCount":667},{"key":"tile_14_5","type":"tile","source":"existing","bbox":{"latMin":33,"latMax":33.5,"lngMin":35.5,"lngMax":36},"shelterCount":28,"playgroundCount":72},{"key":"tile_12_3","type":"tile","source":"existing","bbox":{"latMin":32,"latMax":32.5,"lngMin":34.5,"lngMax":35},"shelterCount":17,"playgroundCount":282},{"key":"tile_13_3","type":"tile","source":"existing","bbox":{"latMin":32.5,"latMax":33,"lngMin":34.5,"lngMax":35},"shelterCount":29,"playgroundCount":74},{"key":"tile_11_4","type":"tile","source":"existing","bbox":{"latMin":31.5,"latMax":32,"lngMin":35,"lngMax":35.5},"shelterCount":56,"playgroundCount":523},{"key":"tile_7_4","type":"tile","source":"existing","bbox":{"latMin":29.5,"latMax":30,"lngMin":35,"lngMax":35.5},"shelterCount":3,"playgroundCount":6},{"key":"tile_13_4","type":"tile","source":"existing","bbox":{"latMin":32.5,"latMax":33,"lngMin":35,"lngMax":35.5},"shelterCount":139,"playgroundCount":591},{"key":"tile_10_2","type":"tile","source":"existing","bbox":{"latMin":31,"latMax":31.5,"lngMin":34,"lngMax":34.5},"shelterCount":11,"playgroundCount":41},{"key":"tile_12_5","type":"tile","source":"existing","bbox":{"latMin":32,"latMax":32.5,"lngMin":35.5,"lngMax":36},"shelterCount":4,"playgroundCount":25},{"key":"tile_12_4","type":"tile","source":"existing","bbox":{"latMin":32,"latMax":32.5,"lngMin":35,"lngMax":35.5},"shelterCount":33,"playgroundCount":391},{"key":"tile_11_5","type":"tile","source":"existing","bbox":{"latMin":31.5,"latMax":32,"lngMin":35.5,"lngMax":36},"shelterCount":5,"playgroundCount":8},{"key":"tile_10_3","type":"tile","source":"existing","bbox":{"latMin":31,"latMax":31.5,"lngMin":34.5,"lngMax":35},"shelterCount":6,"playgroundCount":175},{"key":"tile_7_3","type":"tile","source":"existing","bbox":{"latMin":29.5,"latMax":30,"lngMin":34.5,"lngMax":35},"shelterCount":1,"playgroundCount":6},{"key":"tile_13_5","type":"tile","source":"existing","bbox":{"latMin":32.5,"latMax":33,"lngMin":35.5,"lngMax":36},"shelterCount":3,"playgroundCount":132},{"key":"tile_10_4","type":"tile","source":"existing","bbox":{"latMin":31,"latMax":31.5,"lngMin":35,"lngMax":35.5},"shelterCount":92,"playgroundCount":92},{"key":"tile_14_4","type":"tile","source":"existing","bbox":{"latMin":33,"latMax":33.5,"lngMin":35,"lngMax":35.5},"shelterCount":6,"playgroundCount":57},{"key":"tile_9_3","type":"tile","source":"existing","bbox":{"latMin":30.5,"latMax":31,"lngMin":34.5,"lngMax":35},"shelterCount":1,"playgroundCount":40},{"key":"tile_8_4","type":"tile","source":"existing","bbox":{"latMin":30,"latMax":30.5,"lngMin":35,"lngMax":35.5},"shelterCount":4,"playgroundCount":5},{"key":"tile_10_5","type":"tile","source":"existing","bbox":{"latMin":31,"latMax":31.5,"lngMin":35.5,"lngMax":36},"shelterCount":1,"playgroundCount":0},{"key":"tile_11_2","type":"tile","source":"existing","bbox":{"latMin":31.5,"latMax":32,"lngMin":34,"lngMax":34.5},"shelterCount":2,"playgroundCount":16},{"key":"tile_9_2","type":"tile","source":"existing","bbox":{"latMin":30.5,"latMax":31,"lngMin":34,"lngMax":34.5},"shelterCount":0,"playgroundCount":5},{"key":"tile_9_4","type":"tile","source":"existing","bbox":{"latMin":30.5,"latMax":31,"lngMin":35,"lngMax":35.5},"shelterCount":0,"playgroundCount":3}]}
+{
+  "generatedAt": "2026-03-13T10:00:00.000Z",
+  "step": 0.5,
+  "latMin": 26,
+  "lngMin": 33,
+  "entries": [
+    {
+      "key": "tel_aviv",
+      "name": "תל אביב",
+      "type": "city",
+      "source": "arcgis",
+      "bbox": {
+        "latMin": 32.02,
+        "latMax": 32.13,
+        "lngMin": 34.73,
+        "lngMax": 34.84
+      },
+      "shelterCount": 505,
+      "playgroundCount": 356
+    },
+    {
+      "key": "raanana",
+      "name": "רעננה",
+      "type": "city",
+      "source": "arcgis",
+      "bbox": {
+        "latMin": 32.16,
+        "latMax": 32.23,
+        "lngMin": 34.84,
+        "lngMax": 34.91
+      },
+      "shelterCount": 43,
+      "playgroundCount": 114
+    },
+    {
+      "key": "jerusalem",
+      "name": "ירושלים",
+      "type": "city",
+      "source": "existing",
+      "bbox": {
+        "latMin": 31.69,
+        "latMax": 31.87,
+        "lngMin": 35.14,
+        "lngMax": 35.29
+      },
+      "shelterCount": 15,
+      "playgroundCount": 586
+    },
+    {
+      "key": "haifa",
+      "name": "חיפה",
+      "type": "city",
+      "source": "existing",
+      "bbox": {
+        "latMin": 32.74,
+        "latMax": 32.86,
+        "lngMin": 34.94,
+        "lngMax": 35.08
+      },
+      "shelterCount": 64,
+      "playgroundCount": 162
+    },
+    {
+      "key": "beer_sheva",
+      "name": "באר שבע",
+      "type": "city",
+      "source": "existing",
+      "bbox": {
+        "latMin": 31.18,
+        "latMax": 31.3,
+        "lngMin": 34.75,
+        "lngMax": 34.87
+      },
+      "shelterCount": 15,
+      "playgroundCount": 178
+    },
+    {
+      "key": "netanya",
+      "name": "נתניה",
+      "type": "city",
+      "source": "existing",
+      "bbox": {
+        "latMin": 32.26,
+        "latMax": 32.38,
+        "lngMin": 34.82,
+        "lngMax": 34.93
+      },
+      "shelterCount": 3,
+      "playgroundCount": 114
+    },
+    {
+      "key": "petah_tikva",
+      "name": "פתח תקווה",
+      "type": "city",
+      "source": "existing",
+      "bbox": {
+        "latMin": 32.04,
+        "latMax": 32.13,
+        "lngMin": 34.84,
+        "lngMax": 34.94
+      },
+      "shelterCount": 20,
+      "playgroundCount": 126
+    },
+    {
+      "key": "rishon",
+      "name": "ראשון לציון",
+      "type": "city",
+      "source": "existing",
+      "bbox": {
+        "latMin": 31.93,
+        "latMax": 32.04,
+        "lngMin": 34.76,
+        "lngMax": 34.87
+      },
+      "shelterCount": 26,
+      "playgroundCount": 482
+    },
+    {
+      "key": "ashdod",
+      "name": "אשדוד",
+      "type": "city",
+      "source": "existing",
+      "bbox": {
+        "latMin": 31.76,
+        "latMax": 31.87,
+        "lngMin": 34.6,
+        "lngMax": 34.72
+      },
+      "shelterCount": 17,
+      "playgroundCount": 83
+    },
+    {
+      "key": "ashkelon",
+      "name": "אשקלון",
+      "type": "city",
+      "source": "existing",
+      "bbox": {
+        "latMin": 31.62,
+        "latMax": 31.73,
+        "lngMin": 34.53,
+        "lngMax": 34.64
+      },
+      "shelterCount": 1,
+      "playgroundCount": 61
+    },
+    {
+      "key": "rehovot",
+      "name": "רחובות",
+      "type": "city",
+      "source": "existing",
+      "bbox": {
+        "latMin": 31.86,
+        "latMax": 31.95,
+        "lngMin": 34.77,
+        "lngMax": 34.86
+      },
+      "shelterCount": 18,
+      "playgroundCount": 153
+    },
+    {
+      "key": "herzliya",
+      "name": "הרצליה",
+      "type": "city",
+      "source": "arcgis",
+      "bbox": {
+        "latMin": 32.13,
+        "latMax": 32.2,
+        "lngMin": 34.8,
+        "lngMax": 34.89
+      },
+      "shelterCount": 125,
+      "playgroundCount": 123
+    },
+    {
+      "key": "holon",
+      "name": "חולון",
+      "type": "city",
+      "source": "existing",
+      "bbox": {
+        "latMin": 31.98,
+        "latMax": 32.06,
+        "lngMin": 34.75,
+        "lngMax": 34.84
+      },
+      "shelterCount": 0,
+      "playgroundCount": 21
+    },
+    {
+      "key": "kfar_saba",
+      "name": "כפר סבא",
+      "type": "city",
+      "source": "existing",
+      "bbox": {
+        "latMin": 32.15,
+        "latMax": 32.23,
+        "lngMin": 34.87,
+        "lngMax": 34.95
+      },
+      "shelterCount": 1,
+      "playgroundCount": 26
+    },
+    {
+      "key": "modiin",
+      "name": "מודיעין",
+      "type": "city",
+      "source": "existing",
+      "bbox": {
+        "latMin": 31.87,
+        "latMax": 31.96,
+        "lngMin": 34.98,
+        "lngMax": 35.09
+      },
+      "shelterCount": 9,
+      "playgroundCount": 178
+    },
+    {
+      "key": "eilat",
+      "name": "אילת",
+      "type": "city",
+      "source": "existing",
+      "bbox": {
+        "latMin": 29.46,
+        "latMax": 29.6,
+        "lngMin": 34.9,
+        "lngMax": 35
+      },
+      "shelterCount": 1,
+      "playgroundCount": 75
+    },
+    {
+      "key": "nahariya",
+      "name": "נהריה",
+      "type": "city",
+      "source": "existing",
+      "bbox": {
+        "latMin": 32.98,
+        "latMax": 33.05,
+        "lngMin": 35.06,
+        "lngMax": 35.14
+      },
+      "shelterCount": 0,
+      "playgroundCount": 18
+    },
+    {
+      "key": "tile_0_0",
+      "type": "tile",
+      "source": "existing",
+      "bbox": {
+        "latMin": 26,
+        "latMax": 26.5,
+        "lngMin": 33,
+        "lngMax": 33.5
+      },
+      "shelterCount": 9,
+      "playgroundCount": 0
+    },
+    {
+      "key": "tile_11_3",
+      "type": "tile",
+      "source": "existing",
+      "bbox": {
+        "latMin": 31.5,
+        "latMax": 32,
+        "lngMin": 34.5,
+        "lngMax": 35
+      },
+      "shelterCount": 56,
+      "playgroundCount": 667
+    },
+    {
+      "key": "tile_14_5",
+      "type": "tile",
+      "source": "existing",
+      "bbox": {
+        "latMin": 33,
+        "latMax": 33.5,
+        "lngMin": 35.5,
+        "lngMax": 36
+      },
+      "shelterCount": 28,
+      "playgroundCount": 72
+    },
+    {
+      "key": "tile_12_3",
+      "type": "tile",
+      "source": "existing",
+      "bbox": {
+        "latMin": 32,
+        "latMax": 32.5,
+        "lngMin": 34.5,
+        "lngMax": 35
+      },
+      "shelterCount": 17,
+      "playgroundCount": 282
+    },
+    {
+      "key": "tile_13_3",
+      "type": "tile",
+      "source": "existing",
+      "bbox": {
+        "latMin": 32.5,
+        "latMax": 33,
+        "lngMin": 34.5,
+        "lngMax": 35
+      },
+      "shelterCount": 29,
+      "playgroundCount": 74
+    },
+    {
+      "key": "tile_11_4",
+      "type": "tile",
+      "source": "existing",
+      "bbox": {
+        "latMin": 31.5,
+        "latMax": 32,
+        "lngMin": 35,
+        "lngMax": 35.5
+      },
+      "shelterCount": 56,
+      "playgroundCount": 523
+    },
+    {
+      "key": "tile_7_4",
+      "type": "tile",
+      "source": "existing",
+      "bbox": {
+        "latMin": 29.5,
+        "latMax": 30,
+        "lngMin": 35,
+        "lngMax": 35.5
+      },
+      "shelterCount": 3,
+      "playgroundCount": 6
+    },
+    {
+      "key": "tile_13_4",
+      "type": "tile",
+      "source": "existing",
+      "bbox": {
+        "latMin": 32.5,
+        "latMax": 33,
+        "lngMin": 35,
+        "lngMax": 35.5
+      },
+      "shelterCount": 139,
+      "playgroundCount": 591
+    },
+    {
+      "key": "tile_10_2",
+      "type": "tile",
+      "source": "existing",
+      "bbox": {
+        "latMin": 31,
+        "latMax": 31.5,
+        "lngMin": 34,
+        "lngMax": 34.5
+      },
+      "shelterCount": 11,
+      "playgroundCount": 41
+    },
+    {
+      "key": "tile_12_5",
+      "type": "tile",
+      "source": "existing",
+      "bbox": {
+        "latMin": 32,
+        "latMax": 32.5,
+        "lngMin": 35.5,
+        "lngMax": 36
+      },
+      "shelterCount": 4,
+      "playgroundCount": 25
+    },
+    {
+      "key": "tile_12_4",
+      "type": "tile",
+      "source": "existing",
+      "bbox": {
+        "latMin": 32,
+        "latMax": 32.5,
+        "lngMin": 35,
+        "lngMax": 35.5
+      },
+      "shelterCount": 33,
+      "playgroundCount": 391
+    },
+    {
+      "key": "tile_11_5",
+      "type": "tile",
+      "source": "existing",
+      "bbox": {
+        "latMin": 31.5,
+        "latMax": 32,
+        "lngMin": 35.5,
+        "lngMax": 36
+      },
+      "shelterCount": 5,
+      "playgroundCount": 8
+    },
+    {
+      "key": "tile_10_3",
+      "type": "tile",
+      "source": "existing",
+      "bbox": {
+        "latMin": 31,
+        "latMax": 31.5,
+        "lngMin": 34.5,
+        "lngMax": 35
+      },
+      "shelterCount": 6,
+      "playgroundCount": 175
+    },
+    {
+      "key": "tile_7_3",
+      "type": "tile",
+      "source": "existing",
+      "bbox": {
+        "latMin": 29.5,
+        "latMax": 30,
+        "lngMin": 34.5,
+        "lngMax": 35
+      },
+      "shelterCount": 1,
+      "playgroundCount": 6
+    },
+    {
+      "key": "tile_13_5",
+      "type": "tile",
+      "source": "existing",
+      "bbox": {
+        "latMin": 32.5,
+        "latMax": 33,
+        "lngMin": 35.5,
+        "lngMax": 36
+      },
+      "shelterCount": 3,
+      "playgroundCount": 132
+    },
+    {
+      "key": "tile_10_4",
+      "type": "tile",
+      "source": "existing",
+      "bbox": {
+        "latMin": 31,
+        "latMax": 31.5,
+        "lngMin": 35,
+        "lngMax": 35.5
+      },
+      "shelterCount": 92,
+      "playgroundCount": 92
+    },
+    {
+      "key": "tile_14_4",
+      "type": "tile",
+      "source": "existing",
+      "bbox": {
+        "latMin": 33,
+        "latMax": 33.5,
+        "lngMin": 35,
+        "lngMax": 35.5
+      },
+      "shelterCount": 6,
+      "playgroundCount": 57
+    },
+    {
+      "key": "tile_9_3",
+      "type": "tile",
+      "source": "existing",
+      "bbox": {
+        "latMin": 30.5,
+        "latMax": 31,
+        "lngMin": 34.5,
+        "lngMax": 35
+      },
+      "shelterCount": 1,
+      "playgroundCount": 40
+    },
+    {
+      "key": "tile_8_4",
+      "type": "tile",
+      "source": "existing",
+      "bbox": {
+        "latMin": 30,
+        "latMax": 30.5,
+        "lngMin": 35,
+        "lngMax": 35.5
+      },
+      "shelterCount": 4,
+      "playgroundCount": 5
+    },
+    {
+      "key": "tile_10_5",
+      "type": "tile",
+      "source": "existing",
+      "bbox": {
+        "latMin": 31,
+        "latMax": 31.5,
+        "lngMin": 35.5,
+        "lngMax": 36
+      },
+      "shelterCount": 1,
+      "playgroundCount": 0
+    },
+    {
+      "key": "tile_11_2",
+      "type": "tile",
+      "source": "existing",
+      "bbox": {
+        "latMin": 31.5,
+        "latMax": 32,
+        "lngMin": 34,
+        "lngMax": 34.5
+      },
+      "shelterCount": 2,
+      "playgroundCount": 16
+    },
+    {
+      "key": "tile_9_2",
+      "type": "tile",
+      "source": "existing",
+      "bbox": {
+        "latMin": 30.5,
+        "latMax": 31,
+        "lngMin": 34,
+        "lngMax": 34.5
+      },
+      "shelterCount": 0,
+      "playgroundCount": 5
+    },
+    {
+      "key": "tile_9_4",
+      "type": "tile",
+      "source": "existing",
+      "bbox": {
+        "latMin": 30.5,
+        "latMax": 31,
+        "lngMin": 35,
+        "lngMax": 35.5
+      },
+      "shelterCount": 0,
+      "playgroundCount": 3
+    }
+  ]
+}

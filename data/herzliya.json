@@ -1,1 +1,2370 @@
-{"key":"herzliya","name":"הרצליה","type":"city","source":"existing","generatedAt":"2026-03-10T19:36:03.471Z","shelters":[{"id":"arcgis_telaviv_336","lat":32.14297126031885,"lng":34.800903749161016,"address":"","type":"unknown","accessible":false,"source":"arcgis_telaviv","city":"Tel Aviv"},{"id":"osm_node_7557301592","lat":32.1496889,"lng":34.8344451,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_node_11435866956","lat":32.1609526,"lng":34.8290729,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_node_11435866957","lat":32.1609475,"lng":34.8291031,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_node_11435866958","lat":32.1608966,"lng":34.8291072,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_node_11435866959","lat":32.1607676,"lng":34.8299595,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_node_11435866960","lat":32.1607685,"lng":34.8299904,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_node_12095712029","lat":32.1672516,"lng":34.8246376,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_node_12104385865","lat":32.1670854,"lng":34.8316437,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_node_12104385866","lat":32.1674964,"lng":34.8318234,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_node_12104385867","lat":32.1675077,"lng":34.8319347,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_node_12104385868","lat":32.1672784,"lng":34.8317778,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_node_12104385869","lat":32.1672126,"lng":34.8316879,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_node_12111488868","lat":32.1746477,"lng":34.8320525,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_node_12111488869","lat":32.1745909,"lng":34.8321249,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_node_12111488870","lat":32.1746363,"lng":34.8322161,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_node_13046503057","lat":32.1591324,"lng":34.8354848,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_way_420872653","lat":32.134711,"lng":34.8461966,"address":"","type":"unknown","accessible":false,"source":"osm","city":""},{"id":"osm_way_974993694","lat":32.1561491,"lng":34.8363787,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_way_1039371578","lat":32.1652501,"lng":34.8327229,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_way_1051151130","lat":32.1644288,"lng":34.8226293,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_way_1051152159","lat":32.1679961,"lng":34.8216925,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_way_1051152163","lat":32.1689865,"lng":34.8240062,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_way_1051152164","lat":32.1689351,"lng":34.8239543,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_way_1158431965","lat":32.1359858,"lng":34.8252713,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_way_1158431966","lat":32.1359227,"lng":34.8253426,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_way_1164653040","lat":32.1340248,"lng":34.8265899,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_way_1164653041","lat":32.1339574,"lng":34.8265792,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_way_1164653042","lat":32.13389,"lng":34.8265684,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_way_1164653043","lat":32.1338229,"lng":34.8265575,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_way_1164682132","lat":32.1320268,"lng":34.8286372,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_way_1164682133","lat":32.1319382,"lng":34.8286334,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_way_1164682134","lat":32.1318491,"lng":34.8286296,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_way_1233205972","lat":32.1574747,"lng":34.820521,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_way_1233205974","lat":32.1585155,"lng":34.819524,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""},{"id":"osm_way_1233205979","lat":32.1605076,"lng":34.8208958,"address":"","type":"above_ground","accessible":false,"source":"osm","city":""}],"playgrounds":[{"id":"osm_node_1033005316","lat":32.1580164,"lng":34.8455878,"name":"","address":"","source":"osm"},{"id":"osm_node_1033005320","lat":32.1572074,"lng":34.849917,"name":"","address":"","source":"osm"},{"id":"osm_node_1033005322","lat":32.1555852,"lng":34.8452359,"name":"","address":"","source":"osm"},{"id":"osm_node_5821278487","lat":32.1618356,"lng":34.8281326,"name":"","address":"","source":"osm"},{"id":"osm_node_5912204141","lat":32.1576457,"lng":34.8413658,"name":"","address":"","source":"osm"},{"id":"osm_node_5961871357","lat":32.1477241,"lng":34.8401362,"name":"","address":"","source":"osm"},{"id":"osm_node_6221550681","lat":32.1307425,"lng":34.8545102,"name":"","address":"","source":"osm"},{"id":"osm_node_6483090039","lat":32.1350991,"lng":34.8607275,"name":"גן שבי ציון","address":"","source":"osm"},{"id":"osm_node_6498259403","lat":32.1377914,"lng":34.8428721,"name":"","address":"","source":"osm"},{"id":"osm_node_6802372344","lat":32.1425308,"lng":34.846074,"name":"","address":"","source":"osm"},{"id":"osm_node_7443421337","lat":32.1408332,"lng":34.8251179,"name":"","address":"","source":"osm"},{"id":"osm_node_7557231489","lat":32.156421,"lng":34.8355101,"name":"","address":"","source":"osm"},{"id":"osm_node_7618359235","lat":32.1556251,"lng":34.835372,"name":"","address":"","source":"osm"},{"id":"osm_node_7618398416","lat":32.1515955,"lng":34.8378329,"name":"","address":"","source":"osm"},{"id":"osm_node_7641124829","lat":32.1424218,"lng":34.8411535,"name":"","address":"","source":"osm"},{"id":"osm_node_7741849009","lat":32.1595086,"lng":34.8507397,"name":"","address":"","source":"osm"},{"id":"osm_node_7761792275","lat":32.1680847,"lng":34.8354852,"name":"","address":"","source":"osm"},{"id":"osm_node_7772793064","lat":32.1667601,"lng":34.8268463,"name":"","address":"","source":"osm"},{"id":"osm_node_7967222286","lat":32.1496664,"lng":34.8427749,"name":"","address":"","source":"osm"},{"id":"osm_node_8947224753","lat":32.1831439,"lng":34.8369217,"name":"","address":"","source":"osm"},{"id":"osm_node_9021425844","lat":32.1536157,"lng":34.8385787,"name":"","address":"","source":"osm"},{"id":"osm_node_9061265266","lat":32.1807179,"lng":34.8196819,"name":"","address":"","source":"osm"},{"id":"osm_node_9062861207","lat":32.191092,"lng":34.8207045,"name":"","address":"","source":"osm"},{"id":"osm_node_9062861208","lat":32.1910647,"lng":34.8204604,"name":"","address":"","source":"osm"},{"id":"osm_node_9064342098","lat":32.1311002,"lng":34.8582766,"name":"","address":"","source":"osm"},{"id":"osm_node_9235317964","lat":32.1868619,"lng":34.8095855,"name":"","address":"","source":"osm"},{"id":"osm_node_9235389800","lat":32.1692881,"lng":34.8049856,"name":"","address":"","source":"osm"},{"id":"osm_node_9310422796","lat":32.1738606,"lng":34.8273856,"name":"","address":"","source":"osm"},{"id":"osm_node_9586748451","lat":32.1737375,"lng":34.8109683,"name":"","address":"","source":"osm"},{"id":"osm_node_10977153195","lat":32.1642927,"lng":34.8162456,"name":"","address":"","source":"osm"},{"id":"osm_node_11417853407","lat":32.1636065,"lng":34.8330388,"name":"","address":"","source":"osm"},{"id":"osm_node_11445102017","lat":32.161741,"lng":34.8278661,"name":"","address":"","source":"osm"},{"id":"osm_node_11445102018","lat":32.1616365,"lng":34.8281204,"name":"","address":"","source":"osm"},{"id":"osm_node_11922562886","lat":32.1304847,"lng":34.8528908,"name":"","address":"","source":"osm"},{"id":"osm_way_36916331","lat":32.1907968,"lng":34.8108601,"name":"","address":"","source":"osm"},{"id":"osm_way_163291522","lat":32.1636095,"lng":34.8058623,"name":"","address":"","source":"osm"},{"id":"osm_way_163291523","lat":32.1638649,"lng":34.8057076,"name":"","address":"","source":"osm"},{"id":"osm_way_287553109","lat":32.1341817,"lng":34.8372495,"name":"","address":"","source":"osm"},{"id":"osm_way_385628321","lat":32.1711926,"lng":34.8324847,"name":"","address":"","source":"osm"},{"id":"osm_way_401483648","lat":32.1580382,"lng":34.8431451,"name":"","address":"","source":"osm"},{"id":"osm_way_402040279","lat":32.1791776,"lng":34.8169825,"name":"","address":"","source":"osm"},{"id":"osm_way_403101512","lat":32.1760586,"lng":34.8096369,"name":"","address":"","source":"osm"},{"id":"osm_way_408646823","lat":32.1390174,"lng":34.8452104,"name":"","address":"","source":"osm"},{"id":"osm_way_468324971","lat":32.169654,"lng":34.8230119,"name":"מתחם WOW","address":"","source":"osm"},{"id":"osm_way_472355919","lat":32.165189,"lng":34.8318904,"name":"","address":"","source":"osm"},{"id":"osm_way_499372697","lat":32.1654478,"lng":34.8208942,"name":"מתחם חבלים (קומפן)","address":"","source":"osm"},{"id":"osm_way_499372700","lat":32.1656609,"lng":34.8210861,"name":"מתחם גילגל","address":"","source":"osm"},{"id":"osm_way_623774867","lat":32.1488764,"lng":34.8305177,"name":"","address":"","source":"osm"},{"id":"osm_way_668705822","lat":32.1629251,"lng":34.8296346,"name":"","address":"","source":"osm"},{"id":"osm_way_746572364","lat":32.166554,"lng":34.8037683,"name":"","address":"","source":"osm"},{"id":"osm_way_814326430","lat":32.1572126,"lng":34.836762,"name":"","address":"","source":"osm"},{"id":"osm_way_814333693","lat":32.1403855,"lng":34.834821,"name":"","address":"","source":"osm"},{"id":"osm_way_815442797","lat":32.1554938,"lng":34.8380012,"name":"","address":"","source":"osm"},{"id":"osm_way_818163170","lat":32.1570863,"lng":34.8369832,"name":"","address":"","source":"osm"},{"id":"osm_way_828277572","lat":32.1592141,"lng":34.8643261,"name":"גן ציבורי ליל הגשרים","address":"","source":"osm"},{"id":"osm_way_831400149","lat":32.1642055,"lng":34.8317036,"name":"","address":"","source":"osm"},{"id":"osm_way_852345839","lat":32.1402326,"lng":34.8467399,"name":"","address":"","source":"osm"},{"id":"osm_way_855611080","lat":32.1396078,"lng":34.8459529,"name":"","address":"","source":"osm"},{"id":"osm_way_866987445","lat":32.1734182,"lng":34.8299173,"name":"","address":"","source":"osm"},{"id":"osm_way_866993219","lat":32.1715472,"lng":34.8314314,"name":"","address":"","source":"osm"},{"id":"osm_way_925962887","lat":32.1501648,"lng":34.8465773,"name":"","address":"","source":"osm"},{"id":"osm_way_925962892","lat":32.1503456,"lng":34.8455659,"name":"","address":"","source":"osm"},{"id":"osm_way_954743210","lat":32.1563989,"lng":34.8187027,"name":"","address":"","source":"osm"},{"id":"osm_way_970452370","lat":32.1687691,"lng":34.817404,"name":"","address":"","source":"osm"},{"id":"osm_way_973361822","lat":32.1648346,"lng":34.8332143,"name":"","address":"","source":"osm"},{"id":"osm_way_973361824","lat":32.1647436,"lng":34.8332992,"name":"","address":"","source":"osm"},{"id":"osm_way_975108936","lat":32.1534155,"lng":34.841556,"name":"","address":"","source":"osm"},{"id":"osm_way_975108939","lat":32.1533955,"lng":34.8418988,"name":"","address":"","source":"osm"},{"id":"osm_way_975499329","lat":32.1572208,"lng":34.8521427,"name":"","address":"","source":"osm"},{"id":"osm_way_975589389","lat":32.1703337,"lng":34.8227428,"name":"מתחם אומגה","address":"","source":"osm"},{"id":"osm_way_1005030131","lat":32.1626527,"lng":34.836704,"name":"","address":"","source":"osm"},{"id":"osm_way_1018901641","lat":32.1719951,"lng":34.8110009,"name":"","address":"","source":"osm"},{"id":"osm_way_1019559157","lat":32.1753531,"lng":34.8039493,"name":"","address":"","source":"osm"},{"id":"osm_way_1022101608","lat":32.1787759,"lng":34.8098891,"name":"","address":"","source":"osm"},{"id":"osm_way_1022101609","lat":32.1786468,"lng":34.8100958,"name":"","address":"","source":"osm"},{"id":"osm_way_1038902631","lat":32.1517773,"lng":34.8455275,"name":"","address":"","source":"osm"},{"id":"osm_way_1039173095","lat":32.1526465,"lng":34.8490055,"name":"","address":"","source":"osm"},{"id":"osm_way_1039401986","lat":32.1680158,"lng":34.834097,"name":"","address":"","source":"osm"},{"id":"osm_way_1040073936","lat":32.1620055,"lng":34.8221232,"name":"","address":"","source":"osm"},{"id":"osm_way_1040073937","lat":32.1622288,"lng":34.8224517,"name":"","address":"","source":"osm"},{"id":"osm_way_1040073954","lat":32.1617441,"lng":34.8216982,"name":"","address":"","source":"osm"},{"id":"osm_way_1051151156","lat":32.1696176,"lng":34.8226846,"name":"","address":"","source":"osm"},{"id":"osm_way_1057386800","lat":32.1697788,"lng":34.8350531,"name":"","address":"","source":"osm"},{"id":"osm_way_1057386801","lat":32.169635,"lng":34.8349879,"name":"","address":"","source":"osm"},{"id":"osm_way_1076405958","lat":32.1607017,"lng":34.8133535,"name":"","address":"","source":"osm"},{"id":"osm_way_1077800125","lat":32.1680428,"lng":34.8319764,"name":"","address":"","source":"osm"},{"id":"osm_way_1077800133","lat":32.1721018,"lng":34.8368885,"name":"","address":"","source":"osm"},{"id":"osm_way_1077907314","lat":32.1712506,"lng":34.8338737,"name":"","address":"","source":"osm"},{"id":"osm_way_1077907315","lat":32.1713362,"lng":34.8338617,"name":"","address":"","source":"osm"},{"id":"osm_way_1078067644","lat":32.1648124,"lng":34.8293556,"name":"","address":"","source":"osm"},{"id":"osm_way_1078306417","lat":32.1696222,"lng":34.8257646,"name":"","address":"","source":"osm"},{"id":"osm_way_1078306424","lat":32.1695814,"lng":34.8259751,"name":"","address":"","source":"osm"},{"id":"osm_way_1078306425","lat":32.1695549,"lng":34.826406,"name":"","address":"","source":"osm"},{"id":"osm_way_1078306427","lat":32.1698005,"lng":34.8266627,"name":"","address":"","source":"osm"},{"id":"osm_way_1078306430","lat":32.1698251,"lng":34.8257658,"name":"","address":"","source":"osm"},{"id":"osm_way_1078306431","lat":32.1697243,"lng":34.8259257,"name":"","address":"","source":"osm"},{"id":"osm_way_1078306432","lat":32.170087,"lng":34.8257859,"name":"","address":"","source":"osm"},{"id":"osm_way_1093994065","lat":32.1652957,"lng":34.8289102,"name":"","address":"","source":"osm"},{"id":"osm_way_1093994066","lat":32.1659307,"lng":34.8290729,"name":"","address":"","source":"osm"},{"id":"osm_way_1107578371","lat":32.1681703,"lng":34.8388194,"name":"","address":"","source":"osm"},{"id":"osm_way_1158431972","lat":32.1365322,"lng":34.8256593,"name":"","address":"","source":"osm"},{"id":"osm_way_1176619706","lat":32.1747566,"lng":34.8354211,"name":"","address":"","source":"osm"},{"id":"osm_way_1176619707","lat":32.1745139,"lng":34.8369268,"name":"","address":"","source":"osm"},{"id":"osm_way_1176619708","lat":32.1750499,"lng":34.833115,"name":"","address":"","source":"osm"},{"id":"osm_way_1231359026","lat":32.1548144,"lng":34.8412942,"name":"","address":"","source":"osm"},{"id":"osm_way_1233205903","lat":32.1567161,"lng":34.8191777,"name":"","address":"","source":"osm"},{"id":"osm_way_1233205905","lat":32.1571358,"lng":34.8189594,"name":"","address":"","source":"osm"},{"id":"osm_way_1233205956","lat":32.1579456,"lng":34.8207819,"name":"","address":"","source":"osm"},{"id":"osm_way_1233205957","lat":32.1581558,"lng":34.8208528,"name":"","address":"","source":"osm"},{"id":"osm_way_1233205958","lat":32.1584008,"lng":34.8209232,"name":"","address":"","source":"osm"},{"id":"osm_way_1234152969","lat":32.1748057,"lng":34.8331565,"name":"","address":"","source":"osm"},{"id":"osm_way_1234152971","lat":32.1744409,"lng":34.8335414,"name":"","address":"","source":"osm"},{"id":"osm_way_1234153036","lat":32.175043,"lng":34.8334634,"name":"","address":"","source":"osm"},{"id":"osm_way_1234153037","lat":32.1749337,"lng":34.8342929,"name":"","address":"","source":"osm"},{"id":"osm_way_1234161199","lat":32.1758713,"lng":34.8210491,"name":"","address":"","source":"osm"},{"id":"osm_way_1234171764","lat":32.1581584,"lng":34.837752,"name":"","address":"","source":"osm"},{"id":"osm_way_1234171765","lat":32.1581603,"lng":34.8375928,"name":"","address":"","source":"osm"},{"id":"osm_way_1234171781","lat":32.1577489,"lng":34.8376788,"name":"","address":"","source":"osm"},{"id":"osm_way_1274707122","lat":32.1762539,"lng":34.8307444,"name":"","address":"","source":"osm"},{"id":"osm_way_1274707123","lat":32.1762452,"lng":34.8309022,"name":"","address":"","source":"osm"},{"id":"osm_way_1306635562","lat":32.1650467,"lng":34.83811,"name":"גינת משחקים גל","address":"","source":"osm"},{"id":"osm_way_1306636109","lat":32.1635827,"lng":34.8385885,"name":"","address":"","source":"osm"},{"id":"osm_way_1394218346","lat":32.1480457,"lng":34.8770051,"name":"","address":"","source":"osm"}]}
+{
+  "key": "herzliya",
+  "name": "הרצליה",
+  "type": "city",
+  "source": "arcgis",
+  "generatedAt": "2026-03-15T13:53:41.818Z",
+  "shelters": [
+    {
+      "id": "arcgis_herzliya_0",
+      "lat": 32.17619214482011,
+      "lng": 34.85350887599106,
+      "address": "הבשן 16",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · תיאטרון · מס' מקלט: 101"
+    },
+    {
+      "id": "arcgis_herzliya_1",
+      "lat": 32.152301456920725,
+      "lng": 34.84303208603258,
+      "address": "הגאון מוילנה 13",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 182"
+    },
+    {
+      "id": "arcgis_herzliya_2",
+      "lat": 32.163180029816864,
+      "lng": 34.837826241889715,
+      "address": "סימטת לכיש במעונות שרה (מאחורי בר אילן 43 או העצמאות 7)",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מועדון טניס · מס' מקלט: 104"
+    },
+    {
+      "id": "arcgis_herzliya_3",
+      "lat": 32.163809179350956,
+      "lng": 34.83094334656053,
+      "address": "מול רשב\"ם 9",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 105"
+    },
+    {
+      "id": "arcgis_herzliya_4",
+      "lat": 32.1634622979349,
+      "lng": 34.832577387057626,
+      "address": "אבן גבירול 46",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · בית פוסטר · מס' מקלט: 106"
+    },
+    {
+      "id": "arcgis_herzliya_5",
+      "lat": 32.16184737045506,
+      "lng": 34.838510061107,
+      "address": "הרב קוק 30",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · תיכון ראשונים · מס' מקלט: 107"
+    },
+    {
+      "id": "arcgis_herzliya_6",
+      "lat": 32.15360107166721,
+      "lng": 34.8433979680627,
+      "address": "רבי עקיבא 7",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · ביה\"ס לב טוב · מס' מקלט: 108"
+    },
+    {
+      "id": "arcgis_herzliya_7",
+      "lat": 32.16245300549412,
+      "lng": 34.83589970855963,
+      "address": "שמאי 10",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · ביה\"ס אופק · מס' מקלט: 110"
+    },
+    {
+      "id": "arcgis_herzliya_8",
+      "lat": 32.168181553714064,
+      "lng": 34.8492881882928,
+      "address": "יגאל אלון 42",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · ביה\"ס ברנר · מס' מקלט: 111"
+    },
+    {
+      "id": "arcgis_herzliya_9",
+      "lat": 32.16034604179593,
+      "lng": 34.85286996238025,
+      "address": "פנקס 2 (בי\"ס רמב\"ם)",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · ביה\"ס רמב\"ם · מס' מקלט: 112"
+    },
+    {
+      "id": "arcgis_herzliya_10",
+      "lat": 32.17322224845733,
+      "lng": 34.85567259582008,
+      "address": "הר סיני",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · ביה\"ס הרצל · מס' מקלט: 114"
+    },
+    {
+      "id": "arcgis_herzliya_11",
+      "lat": 32.17744593187677,
+      "lng": 34.85362070048441,
+      "address": "זיסו 11",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · חט\"ב  רעות · מס' מקלט: 115"
+    },
+    {
+      "id": "arcgis_herzliya_12",
+      "lat": 32.16374043791409,
+      "lng": 34.83517362327389,
+      "address": "ויצמן 14",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · ביה\"ס ויצמן · מס' מקלט: 116"
+    },
+    {
+      "id": "arcgis_herzliya_13",
+      "lat": 32.165762841126345,
+      "lng": 34.83910930766363,
+      "address": "בר אילן 14",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · ביה\"ס בר אילן · מס' מקלט: 117"
+    },
+    {
+      "id": "arcgis_herzliya_14",
+      "lat": 32.168697565294224,
+      "lng": 34.85649559911382,
+      "address": "8 סמטת ניסנוב",
+      "type": "above_ground",
+      "accessible": true,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "נגיש · מס' מקלט: 118"
+    },
+    {
+      "id": "arcgis_herzliya_15",
+      "lat": 32.15576104624254,
+      "lng": 34.835651032170986,
+      "address": "סעדיה גאון 2",
+      "type": "above_ground",
+      "accessible": true,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "נגיש · קונסרבטוריון · מס' מקלט: 119"
+    },
+    {
+      "id": "arcgis_herzliya_16",
+      "lat": 32.18459016576652,
+      "lng": 34.83846150952311,
+      "address": "אלחריזי 5",
+      "type": "above_ground",
+      "accessible": true,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "נגיש · מתנס יד התשעה · מס' מקלט: 120"
+    },
+    {
+      "id": "arcgis_herzliya_17",
+      "lat": 32.173745188518474,
+      "lng": 34.852383776671545,
+      "address": "רביבים 12",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 121"
+    },
+    {
+      "id": "arcgis_herzliya_18",
+      "lat": 32.163654897049874,
+      "lng": 34.85587867982373,
+      "address": "יצחק שדה 20",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · ביה\"ס גורדון · מס' מקלט: 122"
+    },
+    {
+      "id": "arcgis_herzliya_19",
+      "lat": 32.17420102035572,
+      "lng": 34.85416327903055,
+      "address": "מאחורי הר נבו 19 (באמצע הגינה הציבורית)",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 123"
+    },
+    {
+      "id": "arcgis_herzliya_20",
+      "lat": 32.169852690583426,
+      "lng": 34.83007079448666,
+      "address": "הנדיב 73",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · ביה\"ס מפתן ארז · מס' מקלט: 124"
+    },
+    {
+      "id": "arcgis_herzliya_21",
+      "lat": 32.17156948298598,
+      "lng": 34.85804323369021,
+      "address": "מול רחל 3",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 125"
+    },
+    {
+      "id": "arcgis_herzliya_22",
+      "lat": 32.163843831403945,
+      "lng": 34.85571893756798,
+      "address": "יצחק שדה 20",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · ביה\"ס גורדון · מס' מקלט: 126"
+    },
+    {
+      "id": "arcgis_herzliya_23",
+      "lat": 32.15372638198717,
+      "lng": 34.843068863428975,
+      "address": "רבי עקיבא 7",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · ביה\"ס לב טוב · מס' מקלט: 127"
+    },
+    {
+      "id": "arcgis_herzliya_24",
+      "lat": 32.16079298770763,
+      "lng": 34.8612855709876,
+      "address": "רבן גמליאל 21",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 129"
+    },
+    {
+      "id": "arcgis_herzliya_25",
+      "lat": 32.175825560898765,
+      "lng": 34.85464479297265,
+      "address": "מעפילי מרוקו 24 (בין הבניינים בגינה)",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · השומר הצעיר · מס' מקלט: 130"
+    },
+    {
+      "id": "arcgis_herzliya_26",
+      "lat": 32.17488633822468,
+      "lng": 34.85415005249856,
+      "address": "הרי גלעד 24",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 131"
+    },
+    {
+      "id": "arcgis_herzliya_27",
+      "lat": 32.17254470878176,
+      "lng": 34.85198549984275,
+      "address": "הר סיני 2-4 (בין הבניינים)",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 132"
+    },
+    {
+      "id": "arcgis_herzliya_28",
+      "lat": 32.171994391002535,
+      "lng": 34.85190279994705,
+      "address": "החורש 1",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 133"
+    },
+    {
+      "id": "arcgis_herzliya_29",
+      "lat": 32.157614368397105,
+      "lng": 34.83725488652476,
+      "address": "אלרואי 1",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · ביה\"ס בן צבי · מס' מקלט: 135"
+    },
+    {
+      "id": "arcgis_herzliya_30",
+      "lat": 32.15672630930929,
+      "lng": 34.83888035287507,
+      "address": "הצנחנים 2",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 136"
+    },
+    {
+      "id": "arcgis_herzliya_31",
+      "lat": 32.15488174821286,
+      "lng": 34.83718104149786,
+      "address": "הרב עוזיאל 1 (בצמוד לגינה הציבורית)",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 137"
+    },
+    {
+      "id": "arcgis_herzliya_32",
+      "lat": 32.1563322321841,
+      "lng": 34.83361340912296,
+      "address": "רוחמה 4",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · ביה\"ס נתיב · מס' מקלט: 138"
+    },
+    {
+      "id": "arcgis_herzliya_33",
+      "lat": 32.16389457442391,
+      "lng": 34.835459242297276,
+      "address": "ויצמן 14",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · ביה\"ס ויצמן · מס' מקלט: 139"
+    },
+    {
+      "id": "arcgis_herzliya_34",
+      "lat": 32.168246937545,
+      "lng": 34.850093688429524,
+      "address": "יגאל אלון 42",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · ביה\"ס ברנר · מס' מקלט: 140"
+    },
+    {
+      "id": "arcgis_herzliya_35",
+      "lat": 32.161067405433265,
+      "lng": 34.85939752895061,
+      "address": "דיצה 19",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 141"
+    },
+    {
+      "id": "arcgis_herzliya_36",
+      "lat": 32.16273843214437,
+      "lng": 34.860398362292635,
+      "address": "גרמה זכריה (בגינה הציבורית מול אלעזר דוד 7)",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מתנס נווה ישראל · מס' מקלט: 142"
+    },
+    {
+      "id": "arcgis_herzliya_37",
+      "lat": 32.17238660960605,
+      "lng": 34.85026850302839,
+      "address": "ההגנה 64",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · ביה\"ס יוחנני · מס' מקלט: 143"
+    },
+    {
+      "id": "arcgis_herzliya_38",
+      "lat": 32.168025854199975,
+      "lng": 34.86149169674676,
+      "address": "האבוקה 8",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 145"
+    },
+    {
+      "id": "arcgis_herzliya_39",
+      "lat": 32.16120104739104,
+      "lng": 34.85551698140807,
+      "address": "האר\"י 5",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 146"
+    },
+    {
+      "id": "arcgis_herzliya_40",
+      "lat": 32.1623132055561,
+      "lng": 34.85332886605209,
+      "address": "יצחק שדה 15",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 147"
+    },
+    {
+      "id": "arcgis_herzliya_41",
+      "lat": 32.164879551616224,
+      "lng": 34.86183213729032,
+      "address": "פורצי הדרך 34 דובדבן 2",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 148"
+    },
+    {
+      "id": "arcgis_herzliya_42",
+      "lat": 32.15914474924458,
+      "lng": 34.862033817757236,
+      "address": "גיל 77 (ליל הגשרים)",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 149"
+    },
+    {
+      "id": "arcgis_herzliya_43",
+      "lat": 32.161919889719954,
+      "lng": 34.8578571276302,
+      "address": "י.ל.פרץ 33",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 150"
+    },
+    {
+      "id": "arcgis_herzliya_44",
+      "lat": 32.167331385372464,
+      "lng": 34.85486809739828,
+      "address": "הרקפות 3",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 151"
+    },
+    {
+      "id": "arcgis_herzliya_45",
+      "lat": 32.16346314361889,
+      "lng": 34.85829654619012,
+      "address": "גיבורי עציון 25 (בגינה הציבורית)",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 152"
+    },
+    {
+      "id": "arcgis_herzliya_46",
+      "lat": 32.16574199527711,
+      "lng": 34.850813703217305,
+      "address": "הנוטרים 11",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · ביה\"ס שזר · מס' מקלט: 153"
+    },
+    {
+      "id": "arcgis_herzliya_47",
+      "lat": 32.17089371462124,
+      "lng": 34.84850369208448,
+      "address": "הדר 37",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · משמר אזרחי · מס' מקלט: 154"
+    },
+    {
+      "id": "arcgis_herzliya_48",
+      "lat": 32.163892489134824,
+      "lng": 34.84730114427583,
+      "address": "הכוזרי 3",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 155"
+    },
+    {
+      "id": "arcgis_herzliya_49",
+      "lat": 32.1598409500512,
+      "lng": 34.84960677813424,
+      "address": "פתח תקווה 22 (מתחם הצופים)",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 156"
+    },
+    {
+      "id": "arcgis_herzliya_50",
+      "lat": 32.166321330692206,
+      "lng": 34.83578871637499,
+      "address": "הקוצרים 10",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 157"
+    },
+    {
+      "id": "arcgis_herzliya_51",
+      "lat": 32.17371393470853,
+      "lng": 34.85145201119249,
+      "address": "רביבים 47",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 158"
+    },
+    {
+      "id": "arcgis_herzliya_52",
+      "lat": 32.173150618372254,
+      "lng": 34.85148141718938,
+      "address": "רביבים 25",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 134"
+    },
+    {
+      "id": "arcgis_herzliya_53",
+      "lat": 32.17575563926456,
+      "lng": 34.85219579122759,
+      "address": "הרי גולן 4",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 160"
+    },
+    {
+      "id": "arcgis_herzliya_54",
+      "lat": 32.175143726131274,
+      "lng": 34.8559197390394,
+      "address": "על הכביש צפונית לתיכון אחי\"ה, ליד בית כנסת חללי מינכן",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 161"
+    },
+    {
+      "id": "arcgis_herzliya_55",
+      "lat": 32.174666529992386,
+      "lng": 34.85293157548042,
+      "address": "הרי גלעד 12",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 162"
+    },
+    {
+      "id": "arcgis_herzliya_56",
+      "lat": 32.17365351942971,
+      "lng": 34.85509840857853,
+      "address": "מול הר סיני 32 בגינה הציבורית",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 163"
+    },
+    {
+      "id": "arcgis_herzliya_57",
+      "lat": 32.17121500622487,
+      "lng": 34.85376121747029,
+      "address": "רביבים 1",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · תיכון דור · מס' מקלט: 164"
+    },
+    {
+      "id": "arcgis_herzliya_58",
+      "lat": 32.1712507979578,
+      "lng": 34.837762102934796,
+      "address": "אשר ברש 7",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · ביה\"ס אלון · מס' מקלט: 165"
+    },
+    {
+      "id": "arcgis_herzliya_59",
+      "lat": 32.15351763615365,
+      "lng": 34.836349088058306,
+      "address": "מאחורי הרב עוזיאל 40 בגינה הציבורית",
+      "type": "above_ground",
+      "accessible": true,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "נגיש · עזר מציון · מס' מקלט: 166"
+    },
+    {
+      "id": "arcgis_herzliya_60",
+      "lat": 32.16387194993982,
+      "lng": 34.852845818438325,
+      "address": "רמז דוד 43",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · \"יד שרה\" · מס' מקלט: 167"
+    },
+    {
+      "id": "arcgis_herzliya_61",
+      "lat": 32.15779951749034,
+      "lng": 34.83580183323716,
+      "address": "הר מירון 8 (סמוך לאולם ספורט בי\"ס בן צבי)",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 103"
+    },
+    {
+      "id": "arcgis_herzliya_62",
+      "lat": 32.17065942772616,
+      "lng": 34.85503562340935,
+      "address": "אחווה 5",
+      "type": "above_ground",
+      "accessible": true,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "נגיש · \"יד שרה\" · מס' מקלט: 169"
+    },
+    {
+      "id": "arcgis_herzliya_63",
+      "lat": 32.16611416166885,
+      "lng": 34.832789249986845,
+      "address": "שמואל הנגיד 21",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · חט\"ב שמואל הנגיד · מס' מקלט: 170"
+    },
+    {
+      "id": "arcgis_herzliya_64",
+      "lat": 32.16381455841132,
+      "lng": 34.83585182051341,
+      "address": "ויצמן 14",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · ביה\"ס ויצמן · מס' מקלט: 171"
+    },
+    {
+      "id": "arcgis_herzliya_65",
+      "lat": 32.177804269122866,
+      "lng": 34.8495371201218,
+      "address": "הדקל 35",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · ביה\"ס אילנות · מס' מקלט: 172"
+    },
+    {
+      "id": "arcgis_herzliya_66",
+      "lat": 32.172856234600495,
+      "lng": 34.83475514721155,
+      "address": "דוד שמעוני 27",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · תיכון היובל · מס' מקלט: 176"
+    },
+    {
+      "id": "arcgis_herzliya_67",
+      "lat": 32.173081646354746,
+      "lng": 34.83474363389742,
+      "address": "דוד שמעוני 27",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · תיכון היובל · מס' מקלט: 177"
+    },
+    {
+      "id": "arcgis_herzliya_68",
+      "lat": 32.1772188109512,
+      "lng": 34.85301719669231,
+      "address": "זיסו 10",
+      "type": "above_ground",
+      "accessible": true,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "נגיש · חט\"ב רעות בוסתן · מס' מקלט: 178"
+    },
+    {
+      "id": "arcgis_herzliya_69",
+      "lat": 32.177507230722206,
+      "lng": 34.852963073251516,
+      "address": "זיסו 10",
+      "type": "above_ground",
+      "accessible": true,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "נגיש · חט\"ב רעות בוסתן · מס' מקלט: 179"
+    },
+    {
+      "id": "arcgis_herzliya_70",
+      "lat": 32.150410212362196,
+      "lng": 34.84708873355079,
+      "address": "יהודה הנשיא  90",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · חט\"ב זאב · מס' מקלט: 180"
+    },
+    {
+      "id": "arcgis_herzliya_71",
+      "lat": 32.15047405486101,
+      "lng": 34.847342883606615,
+      "address": "יהודה הנשיא  90",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · חט\"ב זאב · מס' מקלט: 181"
+    },
+    {
+      "id": "arcgis_herzliya_72",
+      "lat": 32.15230886870189,
+      "lng": 34.84247024746132,
+      "address": "הגאון מוילנה 12",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · איצטדיון · מס' מקלט: 102"
+    },
+    {
+      "id": "arcgis_herzliya_73",
+      "lat": 32.1633158485903,
+      "lng": 34.838016523958444,
+      "address": "סימטת לכיש במעונות שרה (מאחורי בר אילן 43 או העצמאות 7)",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 183"
+    },
+    {
+      "id": "arcgis_herzliya_74",
+      "lat": 32.16338224787463,
+      "lng": 34.85186176347564,
+      "address": "הרב גורן  7",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 185"
+    },
+    {
+      "id": "arcgis_herzliya_75",
+      "lat": 32.17782170930394,
+      "lng": 34.84932498978423,
+      "address": "הדקל 35",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · ביה\"ס אילנות · מס' מקלט: 186"
+    },
+    {
+      "id": "arcgis_herzliya_76",
+      "lat": 32.155484545789015,
+      "lng": 34.84932684667389,
+      "address": "דוד רזיאל 24",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · תיכון על\"ה · מס' מקלט: 187"
+    },
+    {
+      "id": "arcgis_herzliya_77",
+      "lat": 32.17721082384178,
+      "lng": 34.85338833464836,
+      "address": "זיסו 10",
+      "type": "above_ground",
+      "accessible": true,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "נגיש · חט\"ב רעות בוסתן · מס' מקלט: 188"
+    },
+    {
+      "id": "arcgis_herzliya_78",
+      "lat": 32.16945601732414,
+      "lng": 34.86013986147196,
+      "address": "מורדי הגטאות 58",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · ביה\"ס וולפסון · מס' מקלט: 189"
+    },
+    {
+      "id": "arcgis_herzliya_79",
+      "lat": 32.16325347012742,
+      "lng": 34.85747042597036,
+      "address": "גיבורי עציון 4",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 190"
+    },
+    {
+      "id": "arcgis_herzliya_80",
+      "lat": 32.17159015704027,
+      "lng": 34.85900797531401,
+      "address": "רחל 11",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 191"
+    },
+    {
+      "id": "arcgis_herzliya_81",
+      "lat": 32.15558344345356,
+      "lng": 34.84922045752073,
+      "address": "דוד רזיאל 24",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · תיכון על\"ה · מס' מקלט: 192"
+    },
+    {
+      "id": "arcgis_herzliya_82",
+      "lat": 32.155646031833626,
+      "lng": 34.849029404524295,
+      "address": "דוד רזיאל 24",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · תיכון על\"ה · מס' מקלט: 193"
+    },
+    {
+      "id": "arcgis_herzliya_83",
+      "lat": 32.15578207199868,
+      "lng": 34.84930449155947,
+      "address": "דוד רזיאל 24",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · תיכון על\"ה · מס' מקלט: 194"
+    },
+    {
+      "id": "arcgis_herzliya_84",
+      "lat": 32.1639642150003,
+      "lng": 34.825461729321596,
+      "address": "שבעת הכוכבים 2",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · תיכון עירוני חדש · מס' מקלט: 205"
+    },
+    {
+      "id": "arcgis_herzliya_85",
+      "lat": 32.1856942844475,
+      "lng": 34.812689288465,
+      "address": "שד הנשיא יצחק בן צבי  29",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · ביה\"ס נוף ים · מס' מקלט: 206"
+    },
+    {
+      "id": "arcgis_herzliya_86",
+      "lat": 32.17030293853688,
+      "lng": 34.81627513803097,
+      "address": "נורדאו 26",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · ביה\"ס ברנדיס · מס' מקלט: 207"
+    },
+    {
+      "id": "arcgis_herzliya_87",
+      "lat": 32.18726954293818,
+      "lng": 34.8088756295949,
+      "address": "החרוב 9",
+      "type": "above_ground",
+      "accessible": true,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "נגיש · מס' מקלט: 208"
+    },
+    {
+      "id": "arcgis_herzliya_88",
+      "lat": 32.18693226457135,
+      "lng": 34.81351111067072,
+      "address": "נווה עובד 3",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 210"
+    },
+    {
+      "id": "arcgis_herzliya_89",
+      "lat": 32.18427982354136,
+      "lng": 34.81311950169983,
+      "address": "העירית 27",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 211"
+    },
+    {
+      "id": "arcgis_herzliya_90",
+      "lat": 32.188268550018265,
+      "lng": 34.814046218793806,
+      "address": "הפועל 14 (בגינה הציבורית)",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 212"
+    },
+    {
+      "id": "arcgis_herzliya_91",
+      "lat": 32.18639786241763,
+      "lng": 34.80697066089935,
+      "address": "יגאל ידין 1 (עלייה לחוף סידני עלי)",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 213"
+    },
+    {
+      "id": "arcgis_herzliya_92",
+      "lat": 32.189045590784545,
+      "lng": 34.808730089564854,
+      "address": "החרצית 3",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 214"
+    },
+    {
+      "id": "arcgis_herzliya_93",
+      "lat": 32.16416425499401,
+      "lng": 34.82601218111996,
+      "address": "ז'בוטינסקי 3",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · חט\"ב יד גיורא · מס' מקלט: 216"
+    },
+    {
+      "id": "arcgis_herzliya_94",
+      "lat": 32.16793647377742,
+      "lng": 34.823929198322396,
+      "address": "איצטדיון – יוסף נבו",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · איצטדיון · מס' מקלט: 217"
+    },
+    {
+      "id": "arcgis_herzliya_95",
+      "lat": 32.17009263245679,
+      "lng": 34.815332432458874,
+      "address": "נורדאו 26",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · ביה\"ס ברנדייס · מס' מקלט: 218"
+    },
+    {
+      "id": "arcgis_herzliya_96",
+      "lat": 32.16820359160014,
+      "lng": 34.802416628758216,
+      "address": "וינגייט 150",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · חט\"ב סמדר · מס' מקלט: 219"
+    },
+    {
+      "id": "arcgis_herzliya_97",
+      "lat": 32.186253609793454,
+      "lng": 34.81276112117489,
+      "address": "נווה עובד 6 (בתוך מתנ\"ס נוף-ים)",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · מתנ\"ס נוף ים · מס' מקלט: 220"
+    },
+    {
+      "id": "arcgis_herzliya_98",
+      "lat": 32.16773792478093,
+      "lng": 34.82387701408441,
+      "address": "איצטדיון - יוסף נבו",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · איצטדיון · מס' מקלט: 221"
+    },
+    {
+      "id": "arcgis_herzliya_99",
+      "lat": 32.1675213084457,
+      "lng": 34.82381430328101,
+      "address": "איצטדיון - יוסף נבו",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · איצטדיון · מס' מקלט: 222"
+    },
+    {
+      "id": "arcgis_herzliya_100",
+      "lat": 32.16724150431558,
+      "lng": 34.823730651817854,
+      "address": "איצטדיון - יוסף נבו",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · איצטדיון · מס' מקלט: 223"
+    },
+    {
+      "id": "arcgis_herzliya_101",
+      "lat": 32.16412900839437,
+      "lng": 34.82628796677088,
+      "address": "ז'בוטינסקי 3",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · חט\"ב יד גיורא · מס' מקלט: 224"
+    },
+    {
+      "id": "arcgis_herzliya_102",
+      "lat": 32.164280438226776,
+      "lng": 34.82566184951714,
+      "address": "שד' שבעת הכוכבים 2",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · מרכז מדעים אפרים קציר · מס' מקלט: 225"
+    },
+    {
+      "id": "arcgis_herzliya_103",
+      "lat": 32.15512068734002,
+      "lng": 34.834141516184545,
+      "address": "כיסופים 30 (ליד הבניינים מעבר לגינה הציבורית)",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 227"
+    },
+    {
+      "id": "arcgis_herzliya_104",
+      "lat": 32.154695431928516,
+      "lng": 34.8343606013534,
+      "address": "כיסופים 9 (בין הבניינים)",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 226"
+    },
+    {
+      "id": "arcgis_herzliya_105",
+      "lat": 32.174343760323914,
+      "lng": 34.85172198668673,
+      "address": "רביבים 51",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מס' מקלט: 159"
+    },
+    {
+      "id": "arcgis_herzliya_106",
+      "lat": 32.18384936072305,
+      "lng": 34.83796334233994,
+      "address": "כנפי נשרים",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מיגונית"
+    },
+    {
+      "id": "arcgis_herzliya_107",
+      "lat": 32.177785338108606,
+      "lng": 34.84389777450726,
+      "address": "הבוסתן",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מיגונית"
+    },
+    {
+      "id": "arcgis_herzliya_108",
+      "lat": 32.15873386087299,
+      "lng": 34.834769844726345,
+      "address": "אריה זייף",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מיגונית"
+    },
+    {
+      "id": "arcgis_herzliya_109",
+      "lat": 32.16388003644682,
+      "lng": 34.85483525290745,
+      "address": "יצחק שדה",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מיגונית"
+    },
+    {
+      "id": "arcgis_herzliya_110",
+      "lat": 32.17621796167676,
+      "lng": 34.855316224826794,
+      "address": "הר שומרון",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מיגונית"
+    },
+    {
+      "id": "arcgis_herzliya_111",
+      "lat": 32.160087545225785,
+      "lng": 34.856174578857654,
+      "address": "עמיאל/פנקס",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מיגונית"
+    },
+    {
+      "id": "arcgis_herzliya_112",
+      "lat": 32.15948470085197,
+      "lng": 34.85112945059406,
+      "address": "פתח תקוה 10",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מיגונית"
+    },
+    {
+      "id": "arcgis_herzliya_113",
+      "lat": 32.16435928121986,
+      "lng": 34.83175789728537,
+      "address": "בן סרוק 33",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מיגונית"
+    },
+    {
+      "id": "arcgis_herzliya_114",
+      "lat": 32.164375317309215,
+      "lng": 34.84242206669611,
+      "address": "העצמאות/בן גוריון",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מיגונית"
+    },
+    {
+      "id": "arcgis_herzliya_115",
+      "lat": 32.16437309369574,
+      "lng": 34.842377702609866,
+      "address": "העצמאות/בן גוריון",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מיגונית"
+    },
+    {
+      "id": "arcgis_herzliya_116",
+      "lat": 32.166264700867345,
+      "lng": 34.8563972700519,
+      "address": "היורה 13",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מיגונית"
+    },
+    {
+      "id": "arcgis_herzliya_117",
+      "lat": 32.17777897747353,
+      "lng": 34.84646049898138,
+      "address": "האילנות מול 47",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מיגונית · האילנות מול מבנה האילנות מס' 47"
+    },
+    {
+      "id": "arcgis_herzliya_118",
+      "lat": 32.17695404051375,
+      "lng": 34.845989647439836,
+      "address": "הצברים 6",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מיגונית"
+    },
+    {
+      "id": "arcgis_herzliya_119",
+      "lat": 32.165199859930965,
+      "lng": 34.85845694292778,
+      "address": "כצנלסון פינת החיצים",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מיגונית"
+    },
+    {
+      "id": "arcgis_herzliya_120",
+      "lat": 32.18251423612432,
+      "lng": 34.8349497377029,
+      "address": "אגרת תימן פינת אסירי ציון/אלדד הדני",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מיגונית"
+    },
+    {
+      "id": "arcgis_herzliya_121",
+      "lat": 32.174765754266524,
+      "lng": 34.81082612871798,
+      "address": "שבט מנשה מול הגינה הציבורית",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מיגונית · מיגונית"
+    },
+    {
+      "id": "arcgis_herzliya_122",
+      "lat": 32.187395205999934,
+      "lng": 34.806899565150474,
+      "address": "אלמוג פינת המפל",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מיגונית · מיגונית"
+    },
+    {
+      "id": "arcgis_herzliya_123",
+      "lat": 32.16435746937796,
+      "lng": 34.82542700511071,
+      "address": "שבעת הכוכבים 2",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מוסד חינוכי · מס' מקלט: 215"
+    },
+    {
+      "id": "arcgis_herzliya_124",
+      "lat": 32.171565811021914,
+      "lng": 34.81208162786767,
+      "address": "שאול המלך 6",
+      "type": "above_ground",
+      "accessible": false,
+      "source": "arcgis_herzliya",
+      "city": "Herzliya",
+      "notes": "מרחב ציבורי · מועדון קרסני"
+    }
+  ],
+  "playgrounds": [
+    {
+      "id": "osm_node_1033005316",
+      "lat": 32.1580164,
+      "lng": 34.8455878,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_1033005320",
+      "lat": 32.1572074,
+      "lng": 34.849917,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_1033005322",
+      "lat": 32.1555852,
+      "lng": 34.8452359,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_5821278487",
+      "lat": 32.1618356,
+      "lng": 34.8281326,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_5912204141",
+      "lat": 32.1576457,
+      "lng": 34.8413658,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_5961871357",
+      "lat": 32.1477241,
+      "lng": 34.8401362,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_6221550681",
+      "lat": 32.1307425,
+      "lng": 34.8545102,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_6483090039",
+      "lat": 32.1350991,
+      "lng": 34.8607275,
+      "name": "גן שבי ציון",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_6498259403",
+      "lat": 32.1377914,
+      "lng": 34.8428721,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_6802372344",
+      "lat": 32.1425308,
+      "lng": 34.846074,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_7443421337",
+      "lat": 32.1408332,
+      "lng": 34.8251179,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_7557231489",
+      "lat": 32.156421,
+      "lng": 34.8355101,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_7618359235",
+      "lat": 32.1556251,
+      "lng": 34.835372,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_7618398416",
+      "lat": 32.1515955,
+      "lng": 34.8378329,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_7641124829",
+      "lat": 32.1424218,
+      "lng": 34.8411535,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_7741849009",
+      "lat": 32.1595086,
+      "lng": 34.8507397,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_7761792275",
+      "lat": 32.1680847,
+      "lng": 34.8354852,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_7772793064",
+      "lat": 32.1667601,
+      "lng": 34.8268463,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_7967222286",
+      "lat": 32.1496664,
+      "lng": 34.8427749,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_8947224753",
+      "lat": 32.1831439,
+      "lng": 34.8369217,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_9021425844",
+      "lat": 32.1536157,
+      "lng": 34.8385787,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_9061265266",
+      "lat": 32.1807179,
+      "lng": 34.8196819,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_9062861207",
+      "lat": 32.191092,
+      "lng": 34.8207045,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_9062861208",
+      "lat": 32.1910647,
+      "lng": 34.8204604,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_9064342098",
+      "lat": 32.1311002,
+      "lng": 34.8582766,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_9235317964",
+      "lat": 32.1868619,
+      "lng": 34.8095855,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_9235389800",
+      "lat": 32.1692881,
+      "lng": 34.8049856,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_9310422796",
+      "lat": 32.1738606,
+      "lng": 34.8273856,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_9586748451",
+      "lat": 32.1737375,
+      "lng": 34.8109683,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_10977153195",
+      "lat": 32.1642927,
+      "lng": 34.8162456,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_11417853407",
+      "lat": 32.1636065,
+      "lng": 34.8330388,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_11445102017",
+      "lat": 32.161741,
+      "lng": 34.8278661,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_11445102018",
+      "lat": 32.1616365,
+      "lng": 34.8281204,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_node_11922562886",
+      "lat": 32.1304847,
+      "lng": 34.8528908,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_36916331",
+      "lat": 32.1907968,
+      "lng": 34.8108601,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_163291522",
+      "lat": 32.1636095,
+      "lng": 34.8058623,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_163291523",
+      "lat": 32.1638649,
+      "lng": 34.8057076,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_287553109",
+      "lat": 32.1341817,
+      "lng": 34.8372495,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_385628321",
+      "lat": 32.1711926,
+      "lng": 34.8324847,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_401483648",
+      "lat": 32.1580382,
+      "lng": 34.8431451,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_402040279",
+      "lat": 32.1791776,
+      "lng": 34.8169825,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_403101512",
+      "lat": 32.1760586,
+      "lng": 34.8096369,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_408646823",
+      "lat": 32.1390174,
+      "lng": 34.8452104,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_468324971",
+      "lat": 32.169654,
+      "lng": 34.8230119,
+      "name": "מתחם WOW",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_472355919",
+      "lat": 32.165189,
+      "lng": 34.8318904,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_499372697",
+      "lat": 32.1654478,
+      "lng": 34.8208942,
+      "name": "מתחם חבלים (קומפן)",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_499372700",
+      "lat": 32.1656609,
+      "lng": 34.8210861,
+      "name": "מתחם גילגל",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_623774867",
+      "lat": 32.1488764,
+      "lng": 34.8305177,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_668705822",
+      "lat": 32.1629251,
+      "lng": 34.8296346,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_746572364",
+      "lat": 32.166554,
+      "lng": 34.8037683,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_814326430",
+      "lat": 32.1572126,
+      "lng": 34.836762,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_814333693",
+      "lat": 32.1403855,
+      "lng": 34.834821,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_815442797",
+      "lat": 32.1554938,
+      "lng": 34.8380012,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_818163170",
+      "lat": 32.1570863,
+      "lng": 34.8369832,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_828277572",
+      "lat": 32.1592141,
+      "lng": 34.8643261,
+      "name": "גן ציבורי ליל הגשרים",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_831400149",
+      "lat": 32.1642055,
+      "lng": 34.8317036,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_852345839",
+      "lat": 32.1402326,
+      "lng": 34.8467399,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_855611080",
+      "lat": 32.1396078,
+      "lng": 34.8459529,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_866987445",
+      "lat": 32.1734182,
+      "lng": 34.8299173,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_866993219",
+      "lat": 32.1715472,
+      "lng": 34.8314314,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_925962887",
+      "lat": 32.1501648,
+      "lng": 34.8465773,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_925962892",
+      "lat": 32.1503456,
+      "lng": 34.8455659,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_954743210",
+      "lat": 32.1563989,
+      "lng": 34.8187027,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_970452370",
+      "lat": 32.1687691,
+      "lng": 34.817404,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_973361822",
+      "lat": 32.1648346,
+      "lng": 34.8332143,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_973361824",
+      "lat": 32.1647436,
+      "lng": 34.8332992,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_975108936",
+      "lat": 32.1534155,
+      "lng": 34.841556,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_975108939",
+      "lat": 32.1533955,
+      "lng": 34.8418988,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_975499329",
+      "lat": 32.1572208,
+      "lng": 34.8521427,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_975589389",
+      "lat": 32.1703337,
+      "lng": 34.8227428,
+      "name": "מתחם אומגה",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1005030131",
+      "lat": 32.1626527,
+      "lng": 34.836704,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1018901641",
+      "lat": 32.1719951,
+      "lng": 34.8110009,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1019559157",
+      "lat": 32.1753531,
+      "lng": 34.8039493,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1022101608",
+      "lat": 32.1787759,
+      "lng": 34.8098891,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1022101609",
+      "lat": 32.1786468,
+      "lng": 34.8100958,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1038902631",
+      "lat": 32.1517773,
+      "lng": 34.8455275,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1039173095",
+      "lat": 32.1526465,
+      "lng": 34.8490055,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1039401986",
+      "lat": 32.1680158,
+      "lng": 34.834097,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1040073936",
+      "lat": 32.1620055,
+      "lng": 34.8221232,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1040073937",
+      "lat": 32.1622288,
+      "lng": 34.8224517,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1040073954",
+      "lat": 32.1617441,
+      "lng": 34.8216982,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1051151156",
+      "lat": 32.1696176,
+      "lng": 34.8226846,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1057386800",
+      "lat": 32.1697788,
+      "lng": 34.8350531,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1057386801",
+      "lat": 32.169635,
+      "lng": 34.8349879,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1076405958",
+      "lat": 32.1607017,
+      "lng": 34.8133535,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1077800125",
+      "lat": 32.1680428,
+      "lng": 34.8319764,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1077800133",
+      "lat": 32.1721018,
+      "lng": 34.8368885,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1077907314",
+      "lat": 32.1712506,
+      "lng": 34.8338737,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1077907315",
+      "lat": 32.1713362,
+      "lng": 34.8338617,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1078067644",
+      "lat": 32.1648124,
+      "lng": 34.8293556,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1078306417",
+      "lat": 32.1696222,
+      "lng": 34.8257646,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1078306424",
+      "lat": 32.1695814,
+      "lng": 34.8259751,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1078306425",
+      "lat": 32.1695549,
+      "lng": 34.826406,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1078306427",
+      "lat": 32.1698005,
+      "lng": 34.8266627,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1078306430",
+      "lat": 32.1698251,
+      "lng": 34.8257658,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1078306431",
+      "lat": 32.1697243,
+      "lng": 34.8259257,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1078306432",
+      "lat": 32.170087,
+      "lng": 34.8257859,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1093994065",
+      "lat": 32.1652957,
+      "lng": 34.8289102,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1093994066",
+      "lat": 32.1659307,
+      "lng": 34.8290729,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1107578371",
+      "lat": 32.1681703,
+      "lng": 34.8388194,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1158431972",
+      "lat": 32.1365322,
+      "lng": 34.8256593,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1176619706",
+      "lat": 32.1747566,
+      "lng": 34.8354211,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1176619707",
+      "lat": 32.1745139,
+      "lng": 34.8369268,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1176619708",
+      "lat": 32.1750499,
+      "lng": 34.833115,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1231359026",
+      "lat": 32.1548144,
+      "lng": 34.8412942,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1233205903",
+      "lat": 32.1567161,
+      "lng": 34.8191777,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1233205905",
+      "lat": 32.1571358,
+      "lng": 34.8189594,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1233205956",
+      "lat": 32.1579456,
+      "lng": 34.8207819,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1233205957",
+      "lat": 32.1581558,
+      "lng": 34.8208528,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1233205958",
+      "lat": 32.1584008,
+      "lng": 34.8209232,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1234152969",
+      "lat": 32.1748057,
+      "lng": 34.8331565,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1234152971",
+      "lat": 32.1744409,
+      "lng": 34.8335414,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1234153036",
+      "lat": 32.175043,
+      "lng": 34.8334634,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1234153037",
+      "lat": 32.1749337,
+      "lng": 34.8342929,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1234161199",
+      "lat": 32.1758713,
+      "lng": 34.8210491,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1234171764",
+      "lat": 32.1581584,
+      "lng": 34.837752,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1234171765",
+      "lat": 32.1581603,
+      "lng": 34.8375928,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1234171781",
+      "lat": 32.1577489,
+      "lng": 34.8376788,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1274707122",
+      "lat": 32.1762539,
+      "lng": 34.8307444,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1274707123",
+      "lat": 32.1762452,
+      "lng": 34.8309022,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1306635562",
+      "lat": 32.1650467,
+      "lng": 34.83811,
+      "name": "גינת משחקים גל",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1306636109",
+      "lat": 32.1635827,
+      "lng": 34.8385885,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    },
+    {
+      "id": "osm_way_1394218346",
+      "lat": 32.1480457,
+      "lng": 34.8770051,
+      "name": "",
+      "address": "",
+      "source": "osm"
+    }
+  ]
+}
