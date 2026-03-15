@@ -216,8 +216,8 @@ a{text-decoration:none;color:inherit}
 .sb-contribute-btn:hover{background:#17a09a}
 .sb-contribute-btn:active{transform:scale(.96)}
 .sb-contribute-thanks{font-size:12px;color:var(--green-dark);font-weight:600;display:none;margin-top:4px}
-.sb-disclaimer{padding:10px 14px 0;flex-shrink:0;font-size:11px;color:var(--text3);line-height:1.5;text-align:center;border-top:1px solid var(--border)}
-.sb-footer{padding:6px 14px 10px;flex-shrink:0;text-align:center}
+.sb-disclaimer{display:none}
+.sb-footer{display:none}
 .sb-footer-txt{font-size:11px;color:var(--text3);font-weight:500}
 .sb-footer-txt a{color:var(--text2);font-weight:600}
 .sb-footer-txt a:hover{color:var(--blue)}
@@ -269,11 +269,17 @@ a{text-decoration:none;color:inherit}
 }
 #contrib-fab:hover{color:var(--blue);box-shadow:var(--sh-md)}
 
-/* Contribute modal */
-#contrib-modal-bg{
-  position:fixed;inset:0;z-index:1200;
+/* Contribute backdrop — full-screen dim layer, pointer events only on bg itself */
+#contrib-backdrop{
+  position:fixed;inset:0;z-index:1199;
   background:rgba(28,45,94,0.45);backdrop-filter:blur(4px);
-  display:none;align-items:flex-end;justify-content:center
+  display:none;
+}
+#contrib-backdrop.open{display:block}
+/* Contribute sheet — bottom-anchored only, NOT inset:0, so iOS keyboard doesn't push the viewport */
+#contrib-modal-bg{
+  position:fixed;bottom:0;left:0;right:0;z-index:1200;
+  display:none;justify-content:center;
 }
 #contrib-modal-bg.open{display:flex}
 #contrib-modal{
@@ -304,10 +310,28 @@ a{text-decoration:none;color:inherit}
 .contrib-modal-thanks{font-size:13px;color:var(--green-dark);font-weight:600;display:none;margin-top:10px;text-align:center}
 
 /* Emergency bar — fixed floating */
+/* ===== SITE FOOTER (always visible) ===== */
+#site-footer{
+  position:fixed;bottom:0;left:0;right:0;z-index:390;
+  background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border-top:1px solid var(--border);
+  padding:6px 16px 8px;
+  display:flex;flex-direction:column;align-items:center;gap:2px;
+  pointer-events:none
+}
+#site-footer-disclaimer{font-size:10px;color:var(--text3);line-height:1.4;text-align:center}
+#site-footer-by{font-size:10px;color:var(--text3);font-weight:500}
+#site-footer-by a{color:var(--text2);font-weight:600;pointer-events:auto}
+#site-footer-by a:hover{color:var(--blue)}
+@media(min-width:768px){
+  #site-footer{left:var(--sidebar-w)}
+}
+
 #emg-bar{
-  position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
+  position:fixed;bottom:56px;left:50%;transform:translateX(-50%);
   z-index:400;width:calc(100% - 32px);max-width:420px;
 }
+@media(min-width:768px){#emg-bar{bottom:24px}}
 #emg-btn{
   width:100%;background:var(--coral);color:white;
   font-size:17px;font-weight:700;padding:16px 24px;
@@ -945,7 +969,6 @@ textarea.mod-input{resize:vertical;min-height:80px}
         <button id="card-gps-btn" onclick="requestGPS()"><span id="card-gps-lbl">אפשר גישה למיקום</span></button>
         <button id="card-srch-btn" onclick="openSrch()"><span id="card-srch-lbl">הכנס כתובת במקום</span></button>
       </div>
-      <div class="lc-disclaimer" id="lc-disclaimer">המידע מתעדכן באופן שוטף אך ייתכנו שינויים — לפרטים מדויקים פנו לעירייה שלכם או חייגו לקו החירום העירוני 🏛️</div>
     </div>
 
     <!-- GPS pill -->
@@ -1035,7 +1058,8 @@ textarea.mod-input{resize:vertical;min-height:80px}
 <button id="contrib-fab" onclick="openContribModal()">🗺️ <span id="contrib-fab-lbl">מפה עדכנית?</span></button>
 
 <!-- CONTRIBUTE MODAL (mobile) -->
-<div id="contrib-modal-bg" onclick="contribBgTap(event)">
+<div id="contrib-backdrop" onclick="closeContribModal()"></div>
+<div id="contrib-modal-bg">
   <div id="contrib-modal">
     <div class="contrib-handle" onclick="closeContribModal()"></div>
     <div class="contrib-modal-title" id="contrib-modal-title">יש לך מפה עדכנית?</div>
@@ -1854,11 +1878,11 @@ function setLang(l){
     'sb-contrib-title':t('contribTitle'),'contrib-fab-lbl':t('contribFab'),
     'contrib-modal-title':t('contribTitle'),'contrib-modal-sub':t('contribSub'),
     'sb-contrib-btn':t('contribBtn'),'contrib-modal-btn':t('contribBtn'),
-    'lc-disclaimer':t('disclaimer'),'sb-disclaimer':t('disclaimer'),
+    'site-footer-disclaimer':t('disclaimer'),
   };
   const sbContribInp=document.getElementById('sb-contrib-input');if(sbContribInp)sbContribInp.placeholder=t('contribPh');
   const contribInp=document.getElementById('contrib-modal-input');if(contribInp)contribInp.placeholder=t('contribPh');
-  const footerEl=document.getElementById('sb-footer-txt');
+  const footerEl=document.getElementById('site-footer-by');
   if(footerEl)footerEl.innerHTML=`${t('footerBy')} <a href="https://github.com/elyxk" target="_blank" rel="noopener">elyxk</a>`;
   Object.entries(ids).forEach(([id,val])=>{const el=document.getElementById(id);if(el)el.textContent=val;});
   const srchInp=document.getElementById('srch-input');if(srchInp)srchInp.placeholder=t('srchPh');
@@ -1878,14 +1902,14 @@ function setLang(l){
 // ===========================
 function openContribModal(){
   const m=document.getElementById('contrib-modal-bg');
-  if(m){m.classList.add('open');document.getElementById('contrib-modal-input').focus();}
+  const bd=document.getElementById('contrib-backdrop');
+  if(m){m.classList.add('open');if(bd)bd.classList.add('open');document.getElementById('contrib-modal-input').focus();}
 }
 function closeContribModal(){
   const m=document.getElementById('contrib-modal-bg');
+  const bd=document.getElementById('contrib-backdrop');
   if(m)m.classList.remove('open');
-}
-function contribBgTap(e){
-  if(e.target===document.getElementById('contrib-modal-bg'))closeContribModal();
+  if(bd)bd.classList.remove('open');
 }
 async function submitContrib(src){
   const inputId=src==='modal'?'contrib-modal-input':'sb-contrib-input';
@@ -2119,5 +2143,11 @@ document.addEventListener('touchend',e=>{
 
 if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init);}else{init();}
 </script>
+
+<!-- SITE FOOTER — always visible -->
+<div id="site-footer">
+  <div id="site-footer-disclaimer">המידע מתעדכן באופן שוטף אך ייתכנו שינויים — לפרטים מדויקים פנו לעירייה שלכם או חייגו לקו החירום העירוני 🏛️</div>
+  <div id="site-footer-by">נבנה ע"י <a href="https://github.com/elyxk" target="_blank" rel="noopener">elyxk</a></div>
+</div>
 </body>
 </html>
